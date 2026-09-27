@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SLR GRAPHICS — Give Your Brand A Visual Identity</title>
-  <meta name="description" content="SLR GRAPHICS is a creative graphic design studio focused on building strong, professional, and memorable visual identities, logos, social media visuals, and print collateral." />
-  <meta name="keywords" content="SLR GRAPHICS, Graphic Design, Brand Identity, Logo Design, Social Media Design, Print Design, Visual Identity Studio" />
+  <meta name="description" content="SLR GRAPHICS is a creative graphic design studio focused on building strong, professional, and memorable visual identities, marketing collateral, advertising creatives, UI/UX, website handling, and SEO." />
+  <meta name="keywords" content="SLR GRAPHICS, Brand Identity, Marketing Collateral, Advertising Creatives, Digital Social Media, Print Packaging, UI UX Design Development, Website Handling, SEO" />
   
   <!-- Official Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-purple.png" />
@@ -453,7 +453,7 @@
       margin-bottom: 4.5rem;
     }
 
-    /* Studio Artboard Card with Official Brand Logo System */
+    /* Studio Master Showcase Artboard */
     .hero-artboard {
       max-width: 1040px;
       margin: 0 auto;
@@ -782,19 +782,19 @@
     }
 
     /* ==========================================================================
-       03 — OUR SERVICES (WHAT WE DO)
+       03 — OUR SERVICES (WHAT WE DO - 8 CORE DISCIPLINES)
        ========================================================================== */
-    .services-grid {
+    .services-grid-8 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.75rem;
     }
 
-    .service-card {
+    .service-card-8 {
       background: #FFFFFF;
       border: 1px solid rgba(124, 58, 237, 0.16);
-      border-radius: 1.75rem;
-      padding: 2.5rem 2rem;
+      border-radius: 1.5rem;
+      padding: 2.25rem 1.75rem;
       transition: var(--transition-smooth);
       position: relative;
       overflow: hidden;
@@ -804,7 +804,7 @@
       box-shadow: var(--shadow-card);
     }
 
-    .service-card::before {
+    .service-card-8::before {
       content: '';
       position: absolute;
       top: 0;
@@ -816,63 +816,64 @@
       transition: opacity 0.3s ease;
     }
 
-    .service-card:hover {
+    .service-card-8:hover {
       transform: translateY(-6px);
       border-color: var(--accent-violet);
       box-shadow: var(--shadow-hover);
     }
-    .service-card:hover::before {
+    .service-card-8:hover::before {
       opacity: 1;
     }
 
     .service-num {
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--accent-violet);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       letter-spacing: 0.1em;
     }
 
     .service-icon-box {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
       background: rgba(124, 58, 237, 0.08);
       border: 1px solid rgba(124, 58, 237, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.65rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .service-heading {
-      font-size: 1.45rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.65rem;
       color: var(--text-dark);
       font-weight: 800;
+      line-height: 1.25;
     }
 
     .service-description {
       color: var(--text-body);
-      font-size: 0.96rem;
-      line-height: 1.65;
-      margin-bottom: 1.75rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
       flex-grow: 1;
     }
 
     .service-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      gap: 0.45rem;
+      margin-bottom: 1.25rem;
     }
 
     .service-tag {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 600;
-      padding: 0.3rem 0.8rem;
+      padding: 0.28rem 0.75rem;
       background: var(--bg-subtle);
       border: 1px solid rgba(124, 58, 237, 0.15);
       border-radius: 9999px;
@@ -882,15 +883,15 @@
     .service-action-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
       color: var(--accent-violet);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       text-decoration: none;
       transition: gap 0.2s ease;
     }
     .service-action-link:hover {
-      gap: 0.75rem;
+      gap: 0.7rem;
     }
 
     /* ==========================================================================
@@ -1439,8 +1440,14 @@
     }
 
     /* Responsive */
+    @media (max-width: 1200px) {
+      .services-grid-8 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 1024px) {
-      .services-grid, .portfolio-grid {
+      .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .pillars-strip {
@@ -1474,7 +1481,7 @@
       section {
         padding: 5rem 0;
       }
-      .services-grid, .portfolio-grid, .pillars-strip, .artboard-content {
+      .services-grid-8, .portfolio-grid, .pillars-strip, .artboard-content {
         grid-template-columns: 1fr;
       }
       .form-group-row, .estimate-services-grid {
@@ -1683,7 +1690,7 @@
               At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
             </p>
             <p class="about-desc">
-              From brand identity and social media graphics to promotional designs and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
+              From brand identity and social media graphics to promotional designs, UI/UX, website handling, and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
             </p>
 
             <div style="display:flex; gap:1rem; flex-wrap:wrap;">
@@ -1772,7 +1779,7 @@
     </section>
 
     <!-- ==========================================================================
-         03 — OUR SERVICES (WHAT WE DO)
+         03 — OUR SERVICES (WHAT WE DO - 8 CORE DISCIPLINES)
          ========================================================================== -->
     <section id="services" style="background:#FAF8FF;">
       <div class="container">
@@ -1780,128 +1787,168 @@
           <div class="section-eyebrow">OUR SERVICES</div>
           <h2 class="section-title">WHAT WE DO</h2>
           <p class="section-desc">
-            Tailored graphic design services to establish and elevate your visual presence across all digital and print platforms.
+            Complete creative design and digital development solutions crafted to establish, elevate, and scale your brand across every touchpoint.
           </p>
         </div>
 
-        <div class="services-grid">
-          <!-- 1. BRAND IDENTITY -->
-          <div class="service-card">
+        <div class="services-grid-8">
+          <!-- 1. Brand Identity -->
+          <div class="service-card-8">
             <div>
               <div class="service-num">01 / SERVICE</div>
               <div class="service-icon-box">🎨</div>
-              <h3 class="service-heading">BRAND IDENTITY</h3>
+              <h3 class="service-heading">Brand Identity</h3>
               <p class="service-description">
-                Build a recognizable and consistent visual identity for your business. Cohesive visual systems including logos, color palettes, typography, and brand guidelines that keep your brand professional everywhere.
+                Logos, colors, typography, brand guidelines. Build a recognizable and consistent visual identity that defines your brand character across all platforms.
               </p>
             </div>
             <div>
               <div class="service-tags">
-                <span class="service-tag">Logo Design</span>
-                <span class="service-tag">Color Palette</span>
-                <span class="service-tag">Brand Guidelines</span>
+                <span class="service-tag">Logos</span>
+                <span class="service-tag">Color Systems</span>
+                <span class="service-tag">Guidelines</span>
               </div>
               <a href="#contact" class="service-action-link" onclick="preselectService('Brand Identity')">Inquire Brand Identity →</a>
             </div>
           </div>
 
-          <!-- 2. LOGO DESIGN -->
-          <div class="service-card">
+          <!-- 2. Marketing Collateral -->
+          <div class="service-card-8">
             <div>
               <div class="service-num">02 / SERVICE</div>
-              <div class="service-icon-box">✒️</div>
-              <h3 class="service-heading">LOGO DESIGN</h3>
+              <div class="service-icon-box">📑</div>
+              <h3 class="service-heading">Marketing Collateral</h3>
               <p class="service-description">
-                Create distinctive logos that represent your brand and make a strong first impression. Clean, memorable vector marks engineered to scale perfectly across tiny favicons to giant billboards.
-              </p>
-            </div>
-            <div>
-              <div class="service-tags">
-                <span class="service-tag">Primary Logo</span>
-                <span class="service-tag">Submarks</span>
-                <span class="service-tag">Vector AI/EPS/SVG</span>
-              </div>
-              <a href="#contact" class="service-action-link" onclick="preselectService('Logo Design')">Commission Logo →</a>
-            </div>
-          </div>
-
-          <!-- 3. SOCIAL MEDIA DESIGN -->
-          <div class="service-card">
-            <div>
-              <div class="service-num">03 / SERVICE</div>
-              <div class="service-icon-box">📱</div>
-              <h3 class="service-heading">SOCIAL MEDIA DESIGN</h3>
-              <p class="service-description">
-                Maintain your visual presence with engaging and professional social media graphics. We design social media posts, stories, reels covers, promotional creatives, and advertisement graphics that stop the scroll.
-              </p>
-            </div>
-            <div>
-              <div class="service-tags">
-                <span class="service-tag">Feed Posts</span>
-                <span class="service-tag">Stories & Reels</span>
-                <span class="service-tag">Campaign Creatives</span>
-              </div>
-              <a href="#contact" class="service-action-link" onclick="preselectService('Social Media Design')">Order Social Creatives →</a>
-            </div>
-          </div>
-
-          <!-- 4. POSTER & PROMOTIONAL DESIGN -->
-          <div class="service-card">
-            <div>
-              <div class="service-num">04 / SERVICE</div>
-              <div class="service-icon-box">📢</div>
-              <h3 class="service-heading">POSTER & PROMOTIONAL DESIGN</h3>
-              <p class="service-description">
-                Create attention-grabbing posters, advertisements, banners, and promotional materials. High-impact layouts crafted to command interest, announce events, and boost campaign response rates.
-              </p>
-            </div>
-            <div>
-              <div class="service-tags">
-                <span class="service-tag">Event Posters</span>
-                <span class="service-tag">Digital Ads</span>
-                <span class="service-tag">Promotional Banners</span>
-              </div>
-              <a href="#contact" class="service-action-link" onclick="preselectService('Poster & Promotional Design')">Design Posters →</a>
-            </div>
-          </div>
-
-          <!-- 5. PRINT DESIGN -->
-          <div class="service-card">
-            <div>
-              <div class="service-num">05 / SERVICE</div>
-              <div class="service-icon-box">🖨️</div>
-              <h3 class="service-heading">PRINT DESIGN</h3>
-              <p class="service-description">
-                From digital to print. Professional designs for business cards, brochures, flyers, menus, invitations, banners, packaging, and certificates with precise 300 DPI CMYK press standards.
+                Brochures, flyers, business cards, company profiles. Professional business collateral designed to leave an unforgettable impression on prospects.
               </p>
             </div>
             <div>
               <div class="service-tags">
                 <span class="service-tag">Business Cards</span>
-                <span class="service-tag">Flyers & Brochures</span>
-                <span class="service-tag">Packaging & Menus</span>
+                <span class="service-tag">Brochures</span>
+                <span class="service-tag">Company Profiles</span>
               </div>
-              <a href="#contact" class="service-action-link" onclick="preselectService('Print Design')">Order Print Files →</a>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Marketing Collateral')">Order Collateral →</a>
             </div>
           </div>
 
-          <!-- 6. MARKETING DESIGN -->
-          <div class="service-card">
+          <!-- 3. Advertising Creatives -->
+          <div class="service-card-8">
             <div>
-              <div class="service-num">06 / SERVICE</div>
-              <div class="service-icon-box">📊</div>
-              <h3 class="service-heading">MARKETING DESIGN</h3>
+              <div class="service-num">03 / SERVICE</div>
+              <div class="service-icon-box">📢</div>
+              <h3 class="service-heading">Advertising Creatives</h3>
               <p class="service-description">
-                Visual content designed to support your marketing campaigns and business communication. Investor pitch decks, sales one-pagers, catalogs, and collateral engineered for commercial conversion.
+                Ad designs, promotional posters, campaigns, banners. High-converting creative assets crafted to stop the scroll, announce events, and boost conversions.
               </p>
             </div>
             <div>
               <div class="service-tags">
-                <span class="service-tag">Pitch Decks</span>
-                <span class="service-tag">Sales Collateral</span>
-                <span class="service-tag">Campaign Graphics</span>
+                <span class="service-tag">Ad Designs</span>
+                <span class="service-tag">Posters</span>
+                <span class="service-tag">Campaign Banners</span>
               </div>
-              <a href="#contact" class="service-action-link" onclick="preselectService('Marketing Design')">Book Marketing Suite →</a>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Advertising Creatives')">Design Ad Creatives →</a>
+            </div>
+          </div>
+
+          <!-- 4. Digital & Social Media Design -->
+          <div class="service-card-8">
+            <div>
+              <div class="service-num">04 / SERVICE</div>
+              <div class="service-icon-box">📱</div>
+              <h3 class="service-heading">Digital & Social Media Design</h3>
+              <p class="service-description">
+                Instagram, Facebook, YouTube, website graphics. Engaging posts, reels covers, thumbnails, and carousel templates that keep your feed consistent.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Instagram Feeds</span>
+                <span class="service-tag">YouTube Thumbnails</span>
+                <span class="service-tag">Web Graphics</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Digital & Social Media Design')">Order Social Creatives →</a>
+            </div>
+          </div>
+
+          <!-- 5. Print & Packaging Design -->
+          <div class="service-card-8">
+            <div>
+              <div class="service-num">05 / SERVICE</div>
+              <div class="service-icon-box">📦</div>
+              <h3 class="service-heading">Print & Packaging Design</h3>
+              <p class="service-description">
+                Packaging, labels, menus, stationery, print materials. Tangible print-ready packaging with custom dielines and accurate 300 DPI CMYK color matching.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Custom Boxes</span>
+                <span class="service-tag">Bottle Labels</span>
+                <span class="service-tag">Menus & Stationery</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Print & Packaging Design')">Order Packaging →</a>
+            </div>
+          </div>
+
+          <!-- 6. UI & UX DESIGN AND DEVELOPMENT -->
+          <div class="service-card-8">
+            <div>
+              <div class="service-num">06 / SERVICE</div>
+              <div class="service-icon-box">💻</div>
+              <h3 class="service-heading">UI & UX Design and Development</h3>
+              <p class="service-description">
+                Modern website and mobile app user interfaces, interactive wireframes, seamless user journeys, and clean, responsive frontend code development.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">UI/UX Wireframes</span>
+                <span class="service-tag">Mobile & Web Apps</span>
+                <span class="service-tag">Frontend Dev</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('UI & UX DESIGN AND DEVELOPMENT')">Start UI/UX Project →</a>
+            </div>
+          </div>
+
+          <!-- 7. WEBSITE HANDLING -->
+          <div class="service-card-8">
+            <div>
+              <div class="service-num">07 / SERVICE</div>
+              <div class="service-icon-box">⚙️</div>
+              <h3 class="service-heading">Website Handling</h3>
+              <p class="service-description">
+                Comprehensive website maintenance, speed optimization, content updates, security patches, domain management, and dependable hosting support.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Site Maintenance</span>
+                <span class="service-tag">Content Updates</span>
+                <span class="service-tag">Hosting Support</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('WEBSITE HANDLING')">Get Website Support →</a>
+            </div>
+          </div>
+
+          <!-- 8. SEO -->
+          <div class="service-card-8">
+            <div>
+              <div class="service-num">08 / SERVICE</div>
+              <div class="service-icon-box">🚀</div>
+              <h3 class="service-heading">SEO</h3>
+              <p class="service-description">
+                Search Engine Optimization, on-page visual asset optimization, structured meta tags, speed improvements, and strategies to rank higher on Google.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">On-Page SEO</span>
+                <span class="service-tag">Google Ranking</span>
+                <span class="service-tag">Speed & Meta</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('SEO')">Boost Search Ranking →</a>
             </div>
           </div>
         </div>
@@ -2146,16 +2193,19 @@
                 <input type="email" class="form-control" id="clientEmail" placeholder="e.g. contact@yourbrand.com" required />
               </div>
 
+              <!-- Service Dropdown: Updated to User's Exact 8 Services -->
               <div class="form-field">
                 <label class="form-label" for="serviceSelect">Service Needed *</label>
                 <select class="form-control" id="serviceSelect" required onchange="updateEstimatorPreview()">
-                  <option value="Brand Identity">Brand Identity</option>
-                  <option value="Logo Design">Logo Design</option>
-                  <option value="Social Media Design">Social Media Design</option>
-                  <option value="Poster & Promotional Design">Poster & Promotional Design</option>
-                  <option value="Print Design">Print Design (Cards, Flyers, Menus)</option>
-                  <option value="Marketing Design">Marketing Design (Pitch Decks, Ads)</option>
-                  <option value="Complete Design Package">Complete Design Package</option>
+                  <option value="Brand Identity">01 — Brand Identity (Logos, colors, guidelines)</option>
+                  <option value="Marketing Collateral">02 — Marketing Collateral (Brochures, flyers, cards)</option>
+                  <option value="Advertising Creatives">03 — Advertising Creatives (Ads, posters, campaigns)</option>
+                  <option value="Digital & Social Media Design">04 — Digital & Social Media Design</option>
+                  <option value="Print & Packaging Design">05 — Print & Packaging Design</option>
+                  <option value="UI & UX DESIGN AND DEVELOPMENT">06 — UI & UX Design and Development</option>
+                  <option value="WEBSITE HANDLING">07 — Website Handling</option>
+                  <option value="SEO">08 — SEO (Search Engine Optimization)</option>
+                  <option value="Complete Design Package">09 — Complete Comprehensive Package</option>
                 </select>
               </div>
 
@@ -2167,22 +2217,28 @@
                 </div>
                 <div class="estimate-services-grid">
                   <label class="estimate-checkbox-label">
-                    <input type="checkbox" id="scopeLogo" checked onchange="calculateScope()" /> Logo & Vector Source
+                    <input type="checkbox" id="scopeBrand" checked onchange="calculateScope()" /> Brand Identity & Logo
                   </label>
                   <label class="estimate-checkbox-label">
-                    <input type="checkbox" id="scopePalette" checked onchange="calculateScope()" /> Color & Typography
+                    <input type="checkbox" id="scopeCollateral" checked onchange="calculateScope()" /> Marketing Collateral
                   </label>
                   <label class="estimate-checkbox-label">
-                    <input type="checkbox" id="scopeCards" checked onchange="calculateScope()" /> Business Cards
+                    <input type="checkbox" id="scopeAds" onchange="calculateScope()" /> Advertising Creatives
                   </label>
                   <label class="estimate-checkbox-label">
-                    <input type="checkbox" id="scopeSocial" onchange="calculateScope()" /> Social Media Graphics
+                    <input type="checkbox" id="scopeSocial" onchange="calculateScope()" /> Digital & Social Media
                   </label>
                   <label class="estimate-checkbox-label">
-                    <input type="checkbox" id="scopePrint" onchange="calculateScope()" /> Print Collateral / Flyer
+                    <input type="checkbox" id="scopePrint" onchange="calculateScope()" /> Print & Packaging
                   </label>
                   <label class="estimate-checkbox-label">
-                    <input type="checkbox" id="scopeGuidelines" onchange="calculateScope()" /> Brand Guidelines
+                    <input type="checkbox" id="scopeUiUx" onchange="calculateScope()" /> UI & UX Design / Dev
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopeWeb" onchange="calculateScope()" /> Website Handling
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopeSeo" onchange="calculateScope()" /> SEO Optimization
                   </label>
                 </div>
               </div>
@@ -2222,7 +2278,7 @@
   </a>
 
   <!-- ==========================================================================
-       FOOTER (WITH OFFICIAL LOGO)
+       FOOTER (WITH OFFICIAL LOGO & 8 SERVICES)
        ========================================================================== -->
   <footer>
     <div class="container">
@@ -2243,11 +2299,13 @@
           <div class="footer-heading">Services</div>
           <ul class="footer-links">
             <li><a href="#services">Brand Identity</a></li>
-            <li><a href="#services">Logo Design</a></li>
-            <li><a href="#services">Social Media Design</a></li>
-            <li><a href="#services">Poster & Promo Design</a></li>
-            <li><a href="#services">Print Design</a></li>
-            <li><a href="#services">Marketing Design</a></li>
+            <li><a href="#services">Marketing Collateral</a></li>
+            <li><a href="#services">Advertising Creatives</a></li>
+            <li><a href="#services">Digital & Social Media</a></li>
+            <li><a href="#services">Print & Packaging</a></li>
+            <li><a href="#services">UI & UX Design / Dev</a></li>
+            <li><a href="#services">Website Handling</a></li>
+            <li><a href="#services">SEO Optimization</a></li>
           </ul>
         </div>
 
@@ -2491,24 +2549,26 @@
 
     // 7. Scope Calculator
     function calculateScope() {
-      const logo = document.getElementById('scopeLogo').checked;
-      const palette = document.getElementById('scopePalette').checked;
-      const cards = document.getElementById('scopeCards').checked;
+      const brand = document.getElementById('scopeBrand').checked;
+      const collateral = document.getElementById('scopeCollateral').checked;
+      const ads = document.getElementById('scopeAds').checked;
       const social = document.getElementById('scopeSocial').checked;
       const print = document.getElementById('scopePrint').checked;
-      const guides = document.getElementById('scopeGuidelines').checked;
+      const uiux = document.getElementById('scopeUiUx').checked;
+      const web = document.getElementById('scopeWeb').checked;
+      const seo = document.getElementById('scopeSeo').checked;
 
-      const checkedCount = [logo, palette, cards, social, print, guides].filter(Boolean).length;
+      const checkedCount = [brand, collateral, ads, social, print, uiux, web, seo].filter(Boolean).length;
       const badge = document.getElementById('scopeSummaryBadge');
 
       if (checkedCount <= 2) {
-        badge.textContent = "Essential Scope (1–2 Days)";
+        badge.textContent = "Essential Scope (1–3 Days)";
         badge.style.background = "#7C3AED";
       } else if (checkedCount <= 4) {
-        badge.textContent = "Standard Scope (2–4 Days)";
+        badge.textContent = "Standard Scope (3–5 Days)";
         badge.style.background = "#A855F7";
       } else {
-        badge.textContent = "Complete Master Suite (4–6 Days)";
+        badge.textContent = "Complete Master Suite (5–8 Days)";
         badge.style.background = "#1B1035";
       }
     }
