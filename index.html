@@ -653,136 +653,7 @@
     }
 
     /* ==========================================================================
-       02 — ABOUT US SECTION
-       ========================================================================== */
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4.5rem;
-      align-items: center;
-    }
-
-    .about-lead {
-      font-size: 1.18rem;
-      color: var(--text-dark);
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-    }
-
-    .about-desc {
-      font-size: 1.02rem;
-      color: var(--text-body);
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-
-    /* Approach Box */
-    .approach-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(124, 58, 237, 0.2);
-      border-radius: 1.75rem;
-      padding: 2.25rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .approach-formula {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--accent-violet);
-      background: var(--bg-subtle);
-      border: 1px solid rgba(124, 58, 237, 0.18);
-      padding: 0.75rem 1.25rem;
-      border-radius: 12px;
-      margin-bottom: 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .approach-step-item {
-      display: flex;
-      gap: 1.25rem;
-      padding: 1.1rem;
-      background: var(--bg-subtle);
-      border: 1px solid rgba(124, 58, 237, 0.1);
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-      transition: var(--transition-smooth);
-    }
-    .approach-step-item:hover {
-      border-color: var(--accent-violet);
-      background: #FFFFFF;
-      transform: translateX(6px);
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
-    }
-
-    .step-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(168, 85, 247, 0.08));
-      border: 1px solid rgba(124, 58, 237, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .step-text h4 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--text-dark);
-      margin-bottom: 0.25rem;
-    }
-
-    .step-text p {
-      font-size: 0.9rem;
-      color: var(--text-body);
-      line-height: 1.55;
-    }
-
-    /* Pillars */
-    .pillars-strip {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.25rem;
-      margin-top: 4.5rem;
-    }
-
-    .pillar-item {
-      background: #FFFFFF;
-      border: 1px solid rgba(124, 58, 237, 0.14);
-      border-radius: 1.25rem;
-      padding: 1.75rem 1.25rem;
-      text-align: center;
-      transition: var(--transition-smooth);
-    }
-    .pillar-item:hover {
-      border-color: var(--accent-violet);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-soft);
-    }
-    .pillar-item h5 {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: var(--text-dark);
-      margin-top: 0.5rem;
-      margin-bottom: 0.35rem;
-    }
-    .pillar-item p {
-      font-size: 0.82rem;
-      color: var(--text-body);
-      line-height: 1.45;
-    }
-
-    /* ==========================================================================
-       03 — OUR SERVICES (WHAT WE DO - 8 CORE DISCIPLINES)
+       02 — OUR SERVICES (WHAT WE DO - 8 CORE DISCIPLINES)
        ========================================================================== */
     .services-grid-8 {
       display: grid;
@@ -895,7 +766,7 @@
     }
 
     /* ==========================================================================
-       04 — PORTFOLIO (OUR WORK)
+       03 — PORTFOLIO (OUR WORK)
        ========================================================================== */
     .portfolio-tabs {
       display: flex;
@@ -1095,6 +966,135 @@
     .modal-close-btn:hover {
       background: var(--accent-violet);
       color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       04 — ABOUT US SECTION (POSITIONED AT END BEFORE CONTACT)
+       ========================================================================== */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .about-lead {
+      font-size: 1.18rem;
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .about-desc {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    /* Approach Box */
+    .approach-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 1.75rem;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .approach-formula {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--accent-violet);
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.18);
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .approach-step-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.1rem;
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.1);
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      transition: var(--transition-smooth);
+    }
+    .approach-step-item:hover {
+      border-color: var(--accent-violet);
+      background: #FFFFFF;
+      transform: translateX(6px);
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
+    }
+
+    .step-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(168, 85, 247, 0.08));
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .step-text h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* Pillars */
+    .pillars-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-top: 4.5rem;
+    }
+
+    .pillar-item {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .pillar-item:hover {
+      border-color: var(--accent-violet);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
+    .pillar-item h5 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .pillar-item p {
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.45;
     }
 
     /* ==========================================================================
@@ -1351,7 +1351,7 @@
     }
 
     /* ==========================================================================
-       FOOTER
+       FOOTER (WITH OFFICIAL LOGO & 8 SERVICES)
        ========================================================================== */
     footer {
       background: #FAF8FF;
@@ -1510,7 +1510,7 @@
   <div id="toast-notification">Email copied to clipboard!</div>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION (WITH OFFICIAL LOGO)
+       HEADER & NAVIGATION (Home → Our Services → Portfolio → About Us → Contact)
        ========================================================================== -->
   <header id="mainHeader">
     <div class="container nav-inner">
@@ -1518,13 +1518,13 @@
         <img src="assets/logo-black.png" alt="SLR GRAPHICS" class="header-logo-image" />
       </a>
 
-      <!-- Desktop Nav: Only 5 Sections -->
+      <!-- Desktop Nav -->
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
           <li class="nav-item"><a href="#home">Home</a></li>
-          <li class="nav-item"><a href="#about">About Us</a></li>
           <li class="nav-item"><a href="#services">Our Services</a></li>
           <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a href="#about">About Us</a></li>
           <li class="nav-item"><a href="#contact">Contact</a></li>
           <li>
             <a href="#contact" class="btn btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.88rem;">Start a Project</a>
@@ -1540,9 +1540,9 @@
   <div class="mobile-nav" id="mobileNav">
     <ul>
       <li><a href="#home" onclick="toggleMobileNav()">Home</a></li>
-      <li><a href="#about" onclick="toggleMobileNav()">About Us</a></li>
       <li><a href="#services" onclick="toggleMobileNav()">Our Services</a></li>
       <li><a href="#portfolio" onclick="toggleMobileNav()">Portfolio</a></li>
+      <li><a href="#about" onclick="toggleMobileNav()">About Us</a></li>
       <li><a href="#contact" onclick="toggleMobileNav()">Contact</a></li>
       <li><a href="#contact" class="btn btn-primary" onclick="toggleMobileNav()" style="width:100%; margin-top:0.5rem;">Start a Project</a></li>
     </ul>
@@ -1678,108 +1678,7 @@
     </div>
 
     <!-- ==========================================================================
-         02 — ABOUT US SECTION
-         ========================================================================== -->
-    <section id="about">
-      <div class="container">
-        <div class="about-layout">
-          <div class="about-text">
-            <div class="section-eyebrow">ABOUT US</div>
-            <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
-            <p class="about-lead">
-              At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
-            </p>
-            <p class="about-desc">
-              From brand identity and social media graphics to promotional designs, UI/UX, website handling, and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
-            </p>
-
-            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-              <a href="#contact" class="btn btn-primary">Start a Project →</a>
-              <a href="#portfolio" class="btn btn-secondary">Explore Our Portfolio</a>
-            </div>
-          </div>
-
-          <!-- Approach Card: UNDERSTAND → CREATE → REFINE → DELIVER -->
-          <div class="approach-card">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
-              <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.15em;">OUR APPROACH</span>
-              <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted);">HOW WE WORK</span>
-            </div>
-
-            <div class="approach-formula">
-              <strong>UNDERSTAND</strong> <span>→</span>
-              <strong>CREATE</strong> <span>→</span>
-              <strong>REFINE</strong> <span>→</span>
-              <strong>DELIVER</strong>
-            </div>
-
-            <div class="approach-step-item">
-              <div class="step-icon-wrap">🔍</div>
-              <div class="step-text">
-                <h4>1. Understand Your Goals</h4>
-                <p>We understand your goals, audience, and objectives to develop a strategic visual foundation.</p>
-              </div>
-            </div>
-
-            <div class="approach-step-item">
-              <div class="step-icon-wrap">💡</div>
-              <div class="step-text">
-                <h4>2. Develop Creative Concepts</h4>
-                <p>We transform your ideas into distinctive, memorable, and polished design concepts.</p>
-              </div>
-            </div>
-
-            <div class="approach-step-item">
-              <div class="step-icon-wrap">✨</div>
-              <div class="step-text">
-                <h4>3. Refine Every Detail</h4>
-                <p>We refine every detail with obsessive precision—from spacing to typography balance.</p>
-              </div>
-            </div>
-
-            <div class="approach-step-item" style="margin-bottom:0;">
-              <div class="step-icon-wrap">🚀</div>
-              <div class="step-text">
-                <h4>4. Deliver Ready-to-Use Files</h4>
-                <p>You receive high-resolution vector and print-ready master files ready for immediate use.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 Core Pillars: Why SLR Graphics -->
-        <div class="pillars-strip">
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">💡</div>
-            <h5>CREATIVE THINKING</h5>
-            <p>We turn ideas into visually meaningful designs.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">💎</div>
-            <h5>PROFESSIONAL QUALITY</h5>
-            <p>Every design is created with attention to detail and consistency.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">🎯</div>
-            <h5>CUSTOM SOLUTIONS</h5>
-            <p>We create designs based on your brand, audience, and goals.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">🛡️</div>
-            <h5>CONSISTENT VISUALS</h5>
-            <p>We help maintain a strong and recognizable identity across platforms.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">🤝</div>
-            <h5>CLIENT-FOCUSED PROCESS</h5>
-            <p>Your ideas and requirements remain at the center of every project.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         03 — OUR SERVICES (WHAT WE DO - 8 CORE DISCIPLINES)
+         02 — OUR SERVICES (WHAT WE DO - 8 CORE DISCIPLINES)
          ========================================================================== -->
     <section id="services" style="background:#FAF8FF;">
       <div class="container">
@@ -1956,7 +1855,7 @@
     </section>
 
     <!-- ==========================================================================
-         04 — PORTFOLIO (OUR WORK)
+         03 — PORTFOLIO (OUR WORK)
          ========================================================================== -->
     <section id="portfolio">
       <div class="container">
@@ -2110,9 +2009,110 @@
     </div>
 
     <!-- ==========================================================================
+         04 — ABOUT US SECTION (MOVED TO END BEFORE CONTACT)
+         ========================================================================== -->
+    <section id="about" style="background:#FAF8FF;">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-text">
+            <div class="section-eyebrow">ABOUT US</div>
+            <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
+            <p class="about-lead">
+              At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
+            </p>
+            <p class="about-desc">
+              From brand identity and social media graphics to promotional designs, UI/UX, website handling, and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
+            </p>
+
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="#contact" class="btn btn-primary">Start a Project →</a>
+              <a href="#portfolio" class="btn btn-secondary">Explore Our Portfolio</a>
+            </div>
+          </div>
+
+          <!-- Approach Card: UNDERSTAND → CREATE → REFINE → DELIVER -->
+          <div class="approach-card">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+              <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.15em;">OUR APPROACH</span>
+              <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted);">HOW WE WORK</span>
+            </div>
+
+            <div class="approach-formula">
+              <strong>UNDERSTAND</strong> <span>→</span>
+              <strong>CREATE</strong> <span>→</span>
+              <strong>REFINE</strong> <span>→</span>
+              <strong>DELIVER</strong>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">🔍</div>
+              <div class="step-text">
+                <h4>1. Understand Your Goals</h4>
+                <p>We understand your goals, audience, and objectives to develop a strategic visual foundation.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">💡</div>
+              <div class="step-text">
+                <h4>2. Develop Creative Concepts</h4>
+                <p>We transform your ideas into distinctive, memorable, and polished design concepts.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">✨</div>
+              <div class="step-text">
+                <h4>3. Refine Every Detail</h4>
+                <p>We refine every detail with obsessive precision—from spacing to typography balance.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item" style="margin-bottom:0;">
+              <div class="step-icon-wrap">🚀</div>
+              <div class="step-text">
+                <h4>4. Deliver Ready-to-Use Files</h4>
+                <p>You receive high-resolution vector and print-ready master files ready for immediate use.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Core Pillars: Why SLR Graphics -->
+        <div class="pillars-strip">
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">💡</div>
+            <h5>CREATIVE THINKING</h5>
+            <p>We turn ideas into visually meaningful designs.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">💎</div>
+            <h5>PROFESSIONAL QUALITY</h5>
+            <p>Every design is created with attention to detail and consistency.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🎯</div>
+            <h5>CUSTOM SOLUTIONS</h5>
+            <p>We create designs based on your brand, audience, and goals.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🛡️</div>
+            <h5>CONSISTENT VISUALS</h5>
+            <p>We help maintain a strong and recognizable identity across platforms.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🤝</div>
+            <h5>CLIENT-FOCUSED PROCESS</h5>
+            <p>Your ideas and requirements remain at the center of every project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          05 — CONTACT SECTION & ESTIMATOR
          ========================================================================== -->
-    <section id="contact" style="background:#FAF8FF;">
+    <section id="contact">
       <div class="container">
         <div class="contact-container-grid">
           <!-- Contact Info Column -->
@@ -2193,7 +2193,7 @@
                 <input type="email" class="form-control" id="clientEmail" placeholder="e.g. contact@yourbrand.com" required />
               </div>
 
-              <!-- Service Dropdown: Updated to User's Exact 8 Services -->
+              <!-- Service Dropdown: All 8 Services -->
               <div class="form-field">
                 <label class="form-label" for="serviceSelect">Service Needed *</label>
                 <select class="form-control" id="serviceSelect" required onchange="updateEstimatorPreview()">
@@ -2278,7 +2278,7 @@
   </a>
 
   <!-- ==========================================================================
-       FOOTER (WITH OFFICIAL LOGO & 8 SERVICES)
+       FOOTER (WITH OFFICIAL LOGO, REORDERED NAV & 8 SERVICES)
        ========================================================================== -->
   <footer>
     <div class="container">
@@ -2313,9 +2313,9 @@
           <div class="footer-heading">Navigation</div>
           <ul class="footer-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
             <li><a href="#services">Our Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
