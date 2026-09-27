@@ -178,14 +178,15 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+      background: linear-gradient(135deg, #1B1035 0%, #7C3AED 100%);
       color: var(--text-white);
-      box-shadow: 0 6px 25px rgba(124, 58, 237, 0.3);
-      border-color: rgba(124, 58, 237, 0.2);
+      box-shadow: 0 6px 25px rgba(27, 16, 53, 0.28);
+      border-color: rgba(27, 16, 53, 0.2);
     }
     .btn-primary:hover {
+      background: linear-gradient(135deg, #7C3AED 0%, #1B1035 100%);
       transform: translateY(-2px);
-      box-shadow: 0 10px 35px rgba(124, 58, 237, 0.45);
+      box-shadow: 0 10px 35px rgba(124, 58, 237, 0.4);
       filter: brightness(1.05);
       color: var(--text-white);
     }
@@ -471,12 +472,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+      border-bottom: 1px solid rgba(27, 16, 53, 0.1);
       padding-bottom: 1.25rem;
       margin-bottom: 2rem;
-      font-family: var(--font-mono);
+      font-family: var(--font-cinzel), var(--font-mono);
       font-size: 0.82rem;
-      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #1B1035;
     }
 
     .window-dots {
@@ -998,20 +1001,21 @@
     /* Approach Box */
     .approach-card {
       background: #FFFFFF;
-      border: 1px solid rgba(124, 58, 237, 0.2);
+      border: 1px solid rgba(27, 16, 53, 0.12);
+      border-top: 4px solid #1B1035;
       border-radius: 1.75rem;
       padding: 2.25rem;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 15px 40px -10px rgba(27, 16, 53, 0.08);
     }
 
     .approach-formula {
-      font-family: var(--font-display);
+      font-family: var(--font-cinzel), var(--font-display);
       font-size: 1.05rem;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--accent-violet);
+      letter-spacing: 0.08em;
+      color: #1B1035;
       background: var(--bg-subtle);
-      border: 1px solid rgba(124, 58, 237, 0.18);
+      border: 1px solid rgba(27, 16, 53, 0.12);
       padding: 0.75rem 1.25rem;
       border-radius: 12px;
       margin-bottom: 1.75rem;
@@ -1512,7 +1516,7 @@
   <div id="toast-notification">Email copied to clipboard!</div>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION (Home → Our Services → Portfolio → About Us → Contact)
+       HEADER & NAVIGATION (Home → Our Services → Portfolio → Contact → About Us)
        ========================================================================== -->
   <header id="mainHeader">
     <div class="container nav-inner">
@@ -1526,8 +1530,8 @@
           <li class="nav-item"><a href="#home">Home</a></li>
           <li class="nav-item"><a href="#services">Our Services</a></li>
           <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a href="#about">About Us</a></li>
           <li class="nav-item"><a href="#contact">Contact</a></li>
+          <li class="nav-item"><a href="#about">About Us</a></li>
           <li>
             <a href="#contact" class="btn btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.88rem;">Start a Project</a>
           </li>
@@ -1544,8 +1548,8 @@
       <li><a href="#home" onclick="toggleMobileNav()">Home</a></li>
       <li><a href="#services" onclick="toggleMobileNav()">Our Services</a></li>
       <li><a href="#portfolio" onclick="toggleMobileNav()">Portfolio</a></li>
-      <li><a href="#about" onclick="toggleMobileNav()">About Us</a></li>
       <li><a href="#contact" onclick="toggleMobileNav()">Contact</a></li>
+      <li><a href="#about" onclick="toggleMobileNav()">About Us</a></li>
       <li><a href="#contact" class="btn btn-primary" onclick="toggleMobileNav()" style="width:100%; margin-top:0.5rem;">Start a Project</a></li>
     </ul>
   </div>
@@ -1625,32 +1629,6 @@
             </div>
           </div>
 
-          <!-- Official Brand Logo Variations Showcase Inside Artboard -->
-          <div class="brand-marks-showcase">
-            <div class="showcase-eyebrow">OFFICIAL BRAND IDENTITY SYSTEM</div>
-            <div class="logo-variants-grid">
-              <!-- Violet 3D Edition -->
-              <div class="logo-variant-card variant-card-purple">
-                <img src="assets/logo-purple.png" alt="SLR Graphics 3D Violet Edition" class="variant-img" />
-                <div class="variant-title">Violet 3D Edition</div>
-                <div class="variant-desc">Signature 3D Gradient Emblem</div>
-              </div>
-
-              <!-- Dark Minimal Edition -->
-              <div class="logo-variant-card variant-card-black">
-                <img src="assets/logo-black.png" alt="SLR Graphics Monochrome Edition" class="variant-img" />
-                <div class="variant-title">Dark Minimal Mark</div>
-                <div class="variant-desc">Crisp High-Contrast Media</div>
-              </div>
-
-              <!-- White Inverted Edition -->
-              <div class="logo-variant-card variant-card-white">
-                <img src="assets/logo-white.png" alt="SLR Graphics Inverted White Edition" class="variant-img" />
-                <div class="variant-title">Inverted Light Mark</div>
-                <div class="variant-desc">Dark Canvas & Print Stamping</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -2006,108 +1984,7 @@
     </div>
 
     <!-- ==========================================================================
-         04 — ABOUT US SECTION (MOVED TO END BEFORE CONTACT)
-         ========================================================================== -->
-    <section id="about" style="background:#FAF8FF;">
-      <div class="container">
-        <div class="about-layout">
-          <div class="about-text">
-            <div class="section-eyebrow">ABOUT US</div>
-            <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
-            <p class="about-lead">
-              At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
-            </p>
-            <p class="about-desc">
-              From brand identity and social media graphics to promotional designs, UI/UX, website handling, and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
-            </p>
-
-            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-              <a href="#contact" class="btn btn-primary">Start a Project →</a>
-              <a href="#portfolio" class="btn btn-secondary">Explore Our Portfolio</a>
-            </div>
-          </div>
-
-          <!-- Approach Card: UNDERSTAND → CREATE → REFINE → DELIVER -->
-          <div class="approach-card">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
-              <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.15em;">OUR APPROACH</span>
-              <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted);">HOW WE WORK</span>
-            </div>
-
-            <div class="approach-formula">
-              <strong>UNDERSTAND</strong> <span>→</span>
-              <strong>CREATE</strong> <span>→</span>
-              <strong>REFINE</strong> <span>→</span>
-              <strong>DELIVER</strong>
-            </div>
-
-            <div class="approach-step-item">
-              <div class="step-icon-wrap">🔍</div>
-              <div class="step-text">
-                <h4>1. Understand Your Goals</h4>
-                <p>We understand your goals, audience, and objectives to develop a strategic visual foundation.</p>
-              </div>
-            </div>
-
-            <div class="approach-step-item">
-              <div class="step-icon-wrap">💡</div>
-              <div class="step-text">
-                <h4>2. Develop Creative Concepts</h4>
-                <p>We transform your ideas into distinctive, memorable, and polished design concepts.</p>
-              </div>
-            </div>
-
-            <div class="approach-step-item">
-              <div class="step-icon-wrap">✨</div>
-              <div class="step-text">
-                <h4>3. Refine Every Detail</h4>
-                <p>We refine every detail with obsessive precision—from spacing to typography balance.</p>
-              </div>
-            </div>
-
-            <div class="approach-step-item" style="margin-bottom:0;">
-              <div class="step-icon-wrap">🚀</div>
-              <div class="step-text">
-                <h4>4. Deliver Ready-to-Use Files</h4>
-                <p>You receive high-resolution vector and print-ready master files ready for immediate use.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 Core Pillars: Why SLR Graphics -->
-        <div class="pillars-strip">
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">💡</div>
-            <h5>CREATIVE THINKING</h5>
-            <p>We turn ideas into visually meaningful designs.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">💎</div>
-            <h5>PROFESSIONAL QUALITY</h5>
-            <p>Every design is created with attention to detail and consistency.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">🎯</div>
-            <h5>CUSTOM SOLUTIONS</h5>
-            <p>We create designs based on your brand, audience, and goals.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">🛡️</div>
-            <h5>CONSISTENT VISUALS</h5>
-            <p>We help maintain a strong and recognizable identity across platforms.</p>
-          </div>
-          <div class="pillar-item">
-            <div style="font-size:1.8rem;">🤝</div>
-            <h5>CLIENT-FOCUSED PROCESS</h5>
-            <p>Your ideas and requirements remain at the center of every project.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         05 — CONTACT SECTION & ESTIMATOR
+         04 — CONTACT SECTION & ESTIMATOR
          ========================================================================== -->
     <section id="contact">
       <div class="container">
@@ -2260,6 +2137,107 @@
         </div>
       </div>
     </section>
+
+    <!-- ==========================================================================
+         05 — ABOUT US SECTION (AT END AFTER CONTACT)
+         ========================================================================== -->
+    <section id="about" style="background:#FAF8FF;">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-text">
+            <div class="section-eyebrow">ABOUT US</div>
+            <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
+            <p class="about-lead">
+              At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
+            </p>
+            <p class="about-desc">
+              From brand identity and social media graphics to promotional designs, UI/UX, website handling, and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
+            </p>
+
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="#contact" class="btn btn-primary">Start a Project →</a>
+              <a href="#portfolio" class="btn btn-secondary">Explore Our Portfolio</a>
+            </div>
+          </div>
+
+          <!-- Approach Card: UNDERSTAND → CREATE → REFINE → DELIVER -->
+          <div class="approach-card">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+              <span style="font-family:var(--font-cinzel), var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.15em;">OUR APPROACH</span>
+              <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted);">HOW WE WORK</span>
+            </div>
+
+            <div class="approach-formula">
+              <strong>UNDERSTAND</strong> <span>→</span>
+              <strong>CREATE</strong> <span>→</span>
+              <strong>REFINE</strong> <span>→</span>
+              <strong>DELIVER</strong>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">🔍</div>
+              <div class="step-text">
+                <h4>1. Understand Your Goals</h4>
+                <p>We understand your goals, audience, and objectives to develop a strategic visual foundation.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">💡</div>
+              <div class="step-text">
+                <h4>2. Develop Creative Concepts</h4>
+                <p>We transform your ideas into distinctive, memorable, and polished design concepts.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">✨</div>
+              <div class="step-text">
+                <h4>3. Refine Every Detail</h4>
+                <p>We refine every detail with obsessive precision—from spacing to typography balance.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item" style="margin-bottom:0;">
+              <div class="step-icon-wrap">🚀</div>
+              <div class="step-text">
+                <h4>4. Deliver Ready-to-Use Files</h4>
+                <p>You receive high-resolution vector and print-ready master files ready for immediate use.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Core Pillars: Why SLR Graphics -->
+        <div class="pillars-strip">
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">💡</div>
+            <h5>CREATIVE THINKING</h5>
+            <p>We turn ideas into visually meaningful designs.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">💎</div>
+            <h5>PROFESSIONAL QUALITY</h5>
+            <p>Every design is created with attention to detail and consistency.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🎯</div>
+            <h5>CUSTOM SOLUTIONS</h5>
+            <p>We create designs based on your brand, audience, and goals.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🛡️</div>
+            <h5>CONSISTENT VISUALS</h5>
+            <p>We help maintain a strong and recognizable identity across platforms.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🤝</div>
+            <h5>CLIENT-FOCUSED PROCESS</h5>
+            <p>Your ideas and requirements remain at the center of every project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Floating WhatsApp (+91 7004953962) -->
@@ -2312,8 +2290,8 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Our Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About Us</a></li>
           </ul>
         </div>
 
