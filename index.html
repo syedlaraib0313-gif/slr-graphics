@@ -7,8 +7,8 @@
   <meta name="description" content="SLR GRAPHICS is a creative graphic design studio focused on building strong, professional, and memorable visual identities, logos, social media visuals, and print collateral." />
   <meta name="keywords" content="SLR GRAPHICS, Graphic Design, Brand Identity, Logo Design, Social Media Design, Print Design, Visual Identity Studio" />
   
-  <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%237C3AED'/%3E%3Cpath d='M30 68L48 28h12l18 40h-11l-4.5-10.5h-19L39 68H30zm17.5-19h12.5L54 36.5 47.5 49z' fill='%23FFFFFF'/%3E%3C/svg%3E" />
+  <!-- Official Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-purple.png" />
 
   <!-- Fonts: Syne (Display), Plus Jakarta Sans (Body), Space Grotesk (Tech) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -220,7 +220,7 @@
     }
 
     /* ==========================================================================
-       NAVIGATION BAR
+       NAVIGATION BAR & OFFICIAL LOGO
        ========================================================================== */
     header {
       position: fixed;
@@ -229,9 +229,9 @@
       right: 0;
       z-index: 100;
       transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
     }
 
     header.scrolled {
@@ -247,49 +247,20 @@
       height: 5.25rem;
     }
 
-    .brand-logo {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      gap: 0.1rem;
-    }
-
-    .logo-main {
+    .brand-logo-link {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-      color: var(--text-dark);
+      text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+    .brand-logo-link:hover {
+      transform: scale(1.03);
     }
 
-    .logo-mark {
-      background: linear-gradient(135deg, #7C3AED, #A855F7);
-      color: #FFFFFF;
-      padding: 0.2rem 0.6rem;
-      border-radius: 8px;
-      font-size: 1.15rem;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-    }
-
-    .logo-text-slr {
-      font-weight: 900;
-      color: var(--text-dark);
-    }
-
-    .logo-text-graphics {
-      color: #7C3AED;
-    }
-
-    .logo-sub {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: var(--text-muted);
-      font-weight: 700;
+    .header-logo-image {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
     }
 
     .nav-menu {
@@ -377,12 +348,43 @@
     }
 
     /* ==========================================================================
-       01 — HOME SECTION
+       01 — HOME SECTION & LOGO SHOWCASE
        ========================================================================== */
     .hero-section {
-      padding: 11.5rem 0 6.5rem;
+      padding: 10.5rem 0 6.5rem;
       text-align: center;
       position: relative;
+    }
+
+    .hero-signature-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-emblem-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem 2.5rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 2rem;
+      box-shadow: 0 15px 45px -10px rgba(124, 58, 237, 0.2), 0 4px 15px rgba(27, 16, 53, 0.04);
+      transition: var(--transition-smooth);
+    }
+    .hero-emblem-badge:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 60px -10px rgba(124, 58, 237, 0.3);
+      border-color: var(--accent-violet);
+    }
+
+    .hero-signature-img {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     .hero-tagline-rotator {
@@ -398,7 +400,7 @@
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.08em;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
     }
 
@@ -451,7 +453,7 @@
       margin-bottom: 4.5rem;
     }
 
-    /* Studio Artboard Card (Clean White & Purple) */
+    /* Studio Artboard Card with Official Brand Logo System */
     .hero-artboard {
       max-width: 1040px;
       margin: 0 auto;
@@ -492,6 +494,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .artboard-stat {
@@ -527,6 +530,83 @@
     .stat-sub {
       font-size: 0.78rem;
       color: var(--text-muted);
+    }
+
+    /* 3-Logo Identity Variations Showcase */
+    .brand-marks-showcase {
+      border-top: 1px solid rgba(124, 58, 237, 0.12);
+      padding-top: 2.25rem;
+    }
+
+    .showcase-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-violet);
+      margin-bottom: 1.25rem;
+    }
+
+    .logo-variants-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .logo-variant-card {
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(124, 58, 237, 0.15);
+    }
+    .logo-variant-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(27, 16, 53, 0.08);
+    }
+
+    .variant-card-purple {
+      background: linear-gradient(135deg, #1B1035, #2B1654);
+      color: #FFFFFF;
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+    .variant-card-black {
+      background: #FFFFFF;
+      color: var(--text-dark);
+      box-shadow: var(--shadow-card);
+    }
+    .variant-card-white {
+      background: #1B1035;
+      color: #FFFFFF;
+    }
+
+    .variant-img {
+      height: 52px;
+      width: auto;
+      max-width: 90%;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .logo-variant-card:hover .variant-img {
+      transform: scale(1.06);
+    }
+
+    .variant-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .variant-desc {
+      font-size: 0.78rem;
+      opacity: 0.8;
+      font-family: var(--font-mono);
     }
 
     /* Taglines Marquee */
@@ -1366,6 +1446,9 @@
       .pillars-strip {
         grid-template-columns: repeat(3, 1fr);
       }
+      .logo-variants-grid {
+        grid-template-columns: 1fr;
+      }
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1420,16 +1503,12 @@
   <div id="toast-notification">Email copied to clipboard!</div>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION (5 SECTIONS ONLY: Home, About Us, Services, Portfolio, Contact)
+       HEADER & NAVIGATION (WITH OFFICIAL LOGO)
        ========================================================================== -->
   <header id="mainHeader">
     <div class="container nav-inner">
-      <a href="#home" class="brand-logo" aria-label="SLR GRAPHICS Home">
-        <div class="logo-main">
-          <span class="logo-mark">SLR</span>
-          <span class="logo-text-slr">GRAPHICS</span>
-        </div>
-        <div class="logo-sub">Visual Identity Studio</div>
+      <a href="#home" class="brand-logo-link" aria-label="SLR GRAPHICS Home">
+        <img src="assets/logo-black.png" alt="SLR GRAPHICS" class="header-logo-image" />
       </a>
 
       <!-- Desktop Nav: Only 5 Sections -->
@@ -1468,6 +1547,13 @@
          ========================================================================== -->
     <section id="home" class="hero-section">
       <div class="container">
+        <!-- Official Signature 3D Violet Logo Centerpiece -->
+        <div class="hero-signature-wrap">
+          <div class="hero-emblem-badge">
+            <img src="assets/logo-purple.png" alt="SLR GRAPHICS 3D Brand Mark" class="hero-signature-img" />
+          </div>
+        </div>
+
         <!-- Live Tagline Rotator -->
         <div class="hero-tagline-rotator">
           <span class="tagline-dot"></span>
@@ -1532,6 +1618,33 @@
               <div class="stat-number">5.0 ★</div>
               <div class="stat-label">Client Trust</div>
               <div class="stat-sub">Top Rated Graphic Quality</div>
+            </div>
+          </div>
+
+          <!-- Official Brand Logo Variations Showcase Inside Artboard -->
+          <div class="brand-marks-showcase">
+            <div class="showcase-eyebrow">OFFICIAL BRAND IDENTITY SYSTEM</div>
+            <div class="logo-variants-grid">
+              <!-- Violet 3D Edition -->
+              <div class="logo-variant-card variant-card-purple">
+                <img src="assets/logo-purple.png" alt="SLR Graphics 3D Violet Edition" class="variant-img" />
+                <div class="variant-title">Violet 3D Edition</div>
+                <div class="variant-desc">Signature 3D Gradient Emblem</div>
+              </div>
+
+              <!-- Dark Minimal Edition -->
+              <div class="logo-variant-card variant-card-black">
+                <img src="assets/logo-black.png" alt="SLR Graphics Monochrome Edition" class="variant-img" />
+                <div class="variant-title">Dark Minimal Mark</div>
+                <div class="variant-desc">Crisp High-Contrast Media</div>
+              </div>
+
+              <!-- White Inverted Edition -->
+              <div class="logo-variant-card variant-card-white">
+                <img src="assets/logo-white.png" alt="SLR Graphics Inverted White Edition" class="variant-img" />
+                <div class="variant-title">Inverted Light Mark</div>
+                <div class="variant-desc">Dark Canvas & Print Stamping</div>
+              </div>
             </div>
           </div>
         </div>
@@ -2109,17 +2222,18 @@
   </a>
 
   <!-- ==========================================================================
-       FOOTER
+       FOOTER (WITH OFFICIAL LOGO)
        ========================================================================== -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="logo-main" style="font-size:1.75rem;">
-            <span class="logo-mark">SLR</span>
-            <span class="logo-text-slr">GRAPHICS</span>
+          <a href="#home" style="display:inline-block; margin-bottom:0.75rem;">
+            <img src="assets/logo-black.png" alt="SLR GRAPHICS" style="height:44px; width:auto; object-fit:contain;" />
+          </a>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-violet); font-weight:700; text-transform:uppercase; letter-spacing:0.18em; margin-bottom:0.75rem;">
+            GIVE YOUR BRAND A VISUAL IDENTITY
           </div>
-          <div class="logo-sub" style="margin-top:0.4rem;">GIVE YOUR BRAND A VISUAL IDENTITY</div>
           <p class="footer-desc">
             SLR GRAPHICS is a creative graphic design studio focused on building strong, professional, and memorable visual identities. We create designs that help businesses, brands, creators, and individuals communicate their ideas with clarity and style.
           </p>
