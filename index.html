@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLR GRAPHICS — Give Your Brand A Visual Identity</title>
+  <meta name="description" content="SLR GRAPHICS is a creative graphic design studio focused on building strong, professional, and memorable visual identities, logos, social media visuals, and print collateral." />
+  <meta name="keywords" content="SLR GRAPHICS, Graphic Design, Brand Identity, Logo Design, Social Media Design, Print Design, Visual Identity Studio" />
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%237C3AED'/%3E%3Cpath d='M30 68L48 28h12l18 40h-11l-4.5-10.5h-19L39 68H30zm17.5-19h12.5L54 36.5 47.5 49z' fill='%23FFFFFF'/%3E%3C/svg%3E" />
+
+  <!-- Fonts: Syne (Display), Plus Jakarta Sans (Body), Space Grotesk (Tech) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       BRAND DESIGN SYSTEM & PALETTE (LIGHT THEME)
+       - Primary Canvas:   #FFFFFF (Pure White for entire page)
+       - Surface Subtle:   #FAF8FF (Lightest lavender/purple tint)
+       - Dark Purple:      #1B1035 (Headings, primary typography, high-contrast)
+       - Violet:           #7C3AED (Primary interactive, buttons, accents)
+       - Bright Violet:    #A855F7 (Glow highlights, gradient accents)
+       ========================================================================== */
+    :root {
+      --bg-white: #FFFFFF;
+      --bg-subtle: #FAF8FF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F6F2FF;
+      
+      --text-dark: #1B1035;
+      --text-body: #4A3E65;
+      --text-muted: #736491;
+      --text-white: #FFFFFF;
+      
+      --accent-violet: #7C3AED;
+      --accent-bright: #A855F7;
+      --accent-light: #C084FC;
+      --accent-tint: rgba(124, 58, 237, 0.08);
+      --accent-glow: rgba(124, 58, 237, 0.25);
+      
+      --border-light: rgba(124, 58, 237, 0.14);
+      --border-focus: #7C3AED;
+
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+      
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-soft: 0 10px 30px -5px rgba(27, 16, 53, 0.06);
+      --shadow-hover: 0 20px 40px -10px rgba(124, 58, 237, 0.15);
+      --shadow-card: 0 4px 20px rgba(27, 16, 53, 0.04);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-white);
+      color: var(--text-body);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle background ambient mesh */
+    .ambient-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(circle at 10% 8%, rgba(168, 85, 247, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 90% 30%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 15% 75%, rgba(168, 85, 247, 0.05) 0%, transparent 45%);
+    }
+
+    /* Subtle grid overlay */
+    .grid-lines {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .brand-font {
+      font-family: var(--font-display);
+      letter-spacing: -0.025em;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Section structure */
+    section {
+      padding: 7rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 4.25rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent-violet);
+      margin-bottom: 0.85rem;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      padding: 0.35rem 1.15rem;
+      border-radius: 9999px;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.25rem);
+      line-height: 1.15;
+      margin-bottom: 1.15rem;
+      color: var(--text-dark);
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.95rem 2rem;
+      border-radius: 9999px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: 1px solid transparent;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+      color: var(--text-white);
+      box-shadow: 0 6px 25px rgba(124, 58, 237, 0.3);
+      border-color: rgba(124, 58, 237, 0.2);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 35px rgba(124, 58, 237, 0.45);
+      filter: brightness(1.05);
+      color: var(--text-white);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--text-dark);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      box-shadow: 0 4px 15px rgba(27, 16, 53, 0.05);
+    }
+    .btn-secondary:hover {
+      background: rgba(124, 58, 237, 0.05);
+      border-color: var(--accent-violet);
+      transform: translateY(-2px);
+      color: var(--accent-violet);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      color: var(--accent-violet);
+    }
+    .btn-outline:hover {
+      background: rgba(124, 58, 237, 0.08);
+      border-color: var(--accent-violet);
+      transform: translateY(-2px);
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, #1B1035 20%, #7C3AED 70%, #A855F7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 8px 25px rgba(27, 16, 53, 0.06);
+      border-bottom-color: rgba(124, 58, 237, 0.2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 5.25rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 0.1rem;
+    }
+
+    .logo-main {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--text-dark);
+    }
+
+    .logo-mark {
+      background: linear-gradient(135deg, #7C3AED, #A855F7);
+      color: #FFFFFF;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    }
+
+    .logo-text-slr {
+      font-weight: 900;
+      color: var(--text-dark);
+    }
+
+    .logo-text-graphics {
+      color: #7C3AED;
+    }
+
+    .logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-item a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 0.35rem 0;
+    }
+
+    .nav-item a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #7C3AED, #A855F7);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+
+    .nav-item a:hover {
+      color: var(--accent-violet);
+    }
+    .nav-item a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-light);
+      color: var(--text-dark);
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 5.25rem;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      padding: 2rem 1.5rem;
+      z-index: 99;
+      box-shadow: 0 20px 40px rgba(27, 16, 53, 0.1);
+    }
+    .mobile-nav.open {
+      display: block;
+      animation: slideDown 0.25s ease forwards;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .mobile-nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: block;
+      padding: 0.5rem 0;
+    }
+
+    /* ==========================================================================
+       01 — HOME SECTION
+       ========================================================================== */
+    .hero-section {
+      padding: 11.5rem 0 6.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-tagline-rotator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.55rem 1.5rem;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 9999px;
+      color: var(--accent-violet);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
+    }
+
+    .tagline-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #7C3AED;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #7C3AED;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.75rem, 6.5vw, 5.2rem);
+      line-height: 1.08;
+      max-width: 1040px;
+      margin: 0 auto 1.75rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: var(--text-dark);
+    }
+
+    .hero-statement {
+      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+      color: var(--text-dark);
+      max-width: 840px;
+      margin: 0 auto 1.25rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .hero-subtext {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      max-width: 760px;
+      margin: 0 auto 3rem;
+      line-height: 1.75;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 4.5rem;
+    }
+
+    /* Studio Artboard Card (Clean White & Purple) */
+    .hero-artboard {
+      max-width: 1040px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      box-shadow: 0 20px 50px -10px rgba(124, 58, 237, 0.12), 0 4px 20px rgba(27, 16, 53, 0.04);
+      position: relative;
+    }
+
+    .artboard-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #EF4444; }
+    .dot-yellow { background: #F59E0B; }
+    .dot-green { background: #10B981; }
+
+    .artboard-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .artboard-stat {
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      border-radius: 1.25rem;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .artboard-stat:hover {
+      border-color: var(--accent-violet);
+      background: #FFFFFF;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent-violet);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Taglines Marquee */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: #FAF8FF;
+      border-top: 1px solid rgba(124, 58, 237, 0.12);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+      padding: 1.25rem 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--text-dark);
+      text-transform: uppercase;
+    }
+
+    .marquee-star {
+      color: var(--accent-violet);
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       02 — ABOUT US SECTION
+       ========================================================================== */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .about-lead {
+      font-size: 1.18rem;
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .about-desc {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    /* Approach Box */
+    .approach-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 1.75rem;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .approach-formula {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--accent-violet);
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.18);
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .approach-step-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.1rem;
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.1);
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      transition: var(--transition-smooth);
+    }
+    .approach-step-item:hover {
+      border-color: var(--accent-violet);
+      background: #FFFFFF;
+      transform: translateX(6px);
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.08);
+    }
+
+    .step-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(168, 85, 247, 0.08));
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .step-text h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* Pillars */
+    .pillars-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-top: 4.5rem;
+    }
+
+    .pillar-item {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .pillar-item:hover {
+      border-color: var(--accent-violet);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
+    .pillar-item h5 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .pillar-item p {
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       03 — OUR SERVICES (WHAT WE DO)
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.16);
+      border-radius: 1.75rem;
+      padding: 2.5rem 2rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-card);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7C3AED, #A855F7);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-violet);
+      box-shadow: var(--shadow-hover);
+    }
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-violet);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.1em;
+    }
+
+    .service-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.65rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-heading {
+      font-size: 1.45rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+      font-weight: 800;
+    }
+
+    .service-description {
+      color: var(--text-body);
+      font-size: 0.96rem;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      border-radius: 9999px;
+      color: var(--accent-violet);
+    }
+
+    .service-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-violet);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+    .service-action-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* ==========================================================================
+       04 — PORTFOLIO (OUR WORK)
+       ========================================================================== */
+    .portfolio-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .tab-pill {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--text-dark);
+      padding: 0.75rem 1.65rem;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .tab-pill.active, .tab-pill:hover {
+      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+      color: #FFFFFF;
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.25rem;
+    }
+
+    .portfolio-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.16);
+      border-radius: 1.75rem;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-violet);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-stage {
+      height: 250px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .stage-p1 { background: linear-gradient(135deg, #FAF5FF 0%, #E9D5FF 100%); }
+    .stage-p2 { background: linear-gradient(135deg, #F5F3FF 0%, #DDD6FE 100%); }
+    .stage-p3 { background: linear-gradient(135deg, #FAF8FF 0%, #C4B5FD 100%); }
+    .stage-p4 { background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%); }
+    .stage-p5 { background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); }
+    .stage-p6 { background: linear-gradient(135deg, #FAF5FF 0%, #D8B4FE 100%); }
+
+    .stage-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--accent-violet);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .art-glyph {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: var(--text-dark);
+      transition: transform 0.4s ease;
+    }
+    .portfolio-card:hover .art-glyph {
+      transform: scale(1.08);
+      color: var(--accent-violet);
+    }
+
+    .project-details {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .project-cat-badge {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-violet);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.65rem;
+    }
+
+    .project-summary {
+      font-size: 0.93rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(124, 58, 237, 0.1);
+      padding-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .view-case-link {
+      color: var(--accent-violet);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Modal / Lightbox */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 16, 53, 0.75);
+      backdrop-filter: blur(12px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.active {
+      display: flex;
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-body {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      border-radius: 2rem;
+      max-width: 860px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 3rem;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(27, 16, 53, 0.25);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--bg-subtle);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--text-dark);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+    .modal-close-btn:hover {
+      background: var(--accent-violet);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       05 — CONTACT SECTION & ESTIMATOR
+       ========================================================================== */
+    .contact-container-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 4.5rem;
+    }
+
+    .contact-info-panel h3 {
+      font-size: clamp(2.1rem, 3.5vw, 2.75rem);
+      margin-bottom: 1.15rem;
+      line-height: 1.2;
+      color: var(--text-dark);
+    }
+
+    .contact-info-panel p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .channel-box {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.16);
+      border-radius: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+    .channel-box:hover {
+      border-color: var(--accent-violet);
+      transform: translateX(6px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .channel-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .channel-meta {
+      flex-grow: 1;
+    }
+
+    .channel-label {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.2rem;
+    }
+
+    .channel-link {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .channel-link:hover {
+      color: var(--accent-violet);
+    }
+
+    .copy-pill-btn {
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      color: var(--accent-violet);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .copy-pill-btn:hover {
+      background: var(--accent-violet);
+      color: #FFFFFF;
+    }
+
+    /* Instagram Only Card */
+    .instagram-solo-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(168, 85, 247, 0.12));
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+    }
+    .instagram-solo-card:hover {
+      background: linear-gradient(135deg, #7C3AED, #A855F7);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+    }
+
+    /* Form Card */
+    .contact-form-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 2rem;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 15px 45px rgba(27, 16, 53, 0.08);
+    }
+
+    .form-header-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header-sub {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      margin-bottom: 2rem;
+    }
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-field {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.95rem 1.25rem;
+      background: #FAF8FF;
+      border: 1px solid rgba(124, 58, 237, 0.18);
+      border-radius: 0.85rem;
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-violet);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+      background: #FFFFFF;
+    }
+
+    /* Estimator box */
+    .estimator-box {
+      background: #FAF8FF;
+      border: 1px dashed rgba(124, 58, 237, 0.35);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .estimator-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--accent-violet);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .estimate-services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
+    }
+
+    .estimate-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.84rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .estimate-checkbox-label input {
+      accent-color: #7C3AED;
+    }
+
+    /* Floating WhatsApp widget */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 150;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 0.85rem 1.45rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      transition: var(--transition-smooth);
+      border: 2px solid #FFFFFF;
+    }
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+      color: #FFFFFF;
+    }
+    .whatsapp-icon-svg {
+      width: 22px;
+      height: 22px;
+      fill: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer {
+      background: #FAF8FF;
+      border-top: 1px solid rgba(124, 58, 237, 0.12);
+      padding: 5rem 0 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.25fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-desc {
+      color: var(--text-body);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 360px;
+      margin-top: 1.15rem;
+    }
+
+    .footer-heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-dark);
+      margin-bottom: 1.35rem;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: var(--accent-violet);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(124, 58, 237, 0.12);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Toast notification */
+    #toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: linear-gradient(135deg, #7C3AED, #A855F7);
+      color: #FFFFFF;
+      padding: 0.85rem 1.75rem;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    #toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-grid, .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pillars-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .about-layout, .contact-container-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .artboard-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 5rem 0;
+      }
+      .services-grid, .portfolio-grid, .pillars-strip, .artboard-content {
+        grid-template-columns: 1fr;
+      }
+      .form-group-row, .estimate-services-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .floating-whatsapp span {
+        display: none;
+      }
+      .floating-whatsapp {
+        padding: 0.85rem;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Clean Ambient Background Mesh -->
+  <div class="ambient-bg"></div>
+  <div class="grid-lines"></div>
+
+  <!-- Toast for Copy Email / Actions -->
+  <div id="toast-notification">Email copied to clipboard!</div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (5 SECTIONS ONLY: Home, About Us, Services, Portfolio, Contact)
+       ========================================================================== -->
+  <header id="mainHeader">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo" aria-label="SLR GRAPHICS Home">
+        <div class="logo-main">
+          <span class="logo-mark">SLR</span>
+          <span class="logo-text-slr">GRAPHICS</span>
+        </div>
+        <div class="logo-sub">Visual Identity Studio</div>
+      </a>
+
+      <!-- Desktop Nav: Only 5 Sections -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home">Home</a></li>
+          <li class="nav-item"><a href="#about">About Us</a></li>
+          <li class="nav-item"><a href="#services">Our Services</a></li>
+          <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.88rem;">Start a Project</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#home" onclick="toggleMobileNav()">Home</a></li>
+      <li><a href="#about" onclick="toggleMobileNav()">About Us</a></li>
+      <li><a href="#services" onclick="toggleMobileNav()">Our Services</a></li>
+      <li><a href="#portfolio" onclick="toggleMobileNav()">Portfolio</a></li>
+      <li><a href="#contact" onclick="toggleMobileNav()">Contact</a></li>
+      <li><a href="#contact" class="btn btn-primary" onclick="toggleMobileNav()" style="width:100%; margin-top:0.5rem;">Start a Project</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         01 — HOME SECTION
+         ========================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <!-- Live Tagline Rotator -->
+        <div class="hero-tagline-rotator">
+          <span class="tagline-dot"></span>
+          <span id="rotatingTagline">GIVE YOUR BRAND A VISUAL IDENTITY</span>
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="gradient-text">DESIGN THAT MAKES YOUR BRAND STAND OUT.</span>
+        </h1>
+
+        <p class="hero-statement">
+          We create modern, purposeful, and impactful visuals that turn ideas into memorable brand experiences.
+        </p>
+
+        <p class="hero-subtext">
+          <strong>SLR GRAPHICS</strong> is a creative graphic design studio focused on building strong, professional, and memorable visual identities. We create designs that help businesses, brands, creators, and individuals communicate their ideas with clarity and style.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-primary">
+            <span>START A PROJECT</span>
+            <span>→</span>
+          </a>
+          <a href="#portfolio" class="btn btn-secondary">
+            <span>VIEW OUR WORK</span>
+            <span>↓</span>
+          </a>
+        </div>
+
+        <!-- Studio Master Showcase Artboard -->
+        <div class="hero-artboard">
+          <div class="artboard-topbar">
+            <div class="window-dots">
+              <div class="window-dot dot-red"></div>
+              <div class="window-dot dot-yellow"></div>
+              <div class="window-dot dot-green"></div>
+            </div>
+            <div>SLR GRAPHICS STUDIO // VISUAL IDENTITY SUITE</div>
+            <div>ONLINE & READY FOR COMMISSIONS</div>
+          </div>
+
+          <div class="artboard-content">
+            <div class="artboard-stat">
+              <div class="stat-number">150+</div>
+              <div class="stat-label">Visual Identities</div>
+              <div class="stat-sub">Crafted for Global Brands</div>
+            </div>
+
+            <div class="artboard-stat">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Custom Tailored</div>
+              <div class="stat-sub">Zero Recycled Templates</div>
+            </div>
+
+            <div class="artboard-stat">
+              <div class="stat-number">24–48h</div>
+              <div class="stat-label">Fast Turnaround</div>
+              <div class="stat-sub">First Design Concepts</div>
+            </div>
+
+            <div class="artboard-stat">
+              <div class="stat-number">5.0 ★</div>
+              <div class="stat-label">Client Trust</div>
+              <div class="stat-sub">Top Rated Graphic Quality</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Brand Taglines Marquee -->
+    <div class="marquee-container" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">GIVE YOUR BRAND A VISUAL IDENTITY <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">DESIGNING IDEAS. BUILDING IDENTITIES. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">YOUR VISION. OUR DESIGN. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">CREATIVE DESIGN. STRONGER BRANDS. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">WE TURN IDEAS INTO VISUALS. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">DESIGN THAT DEFINES YOUR BRAND. <span class="marquee-star">✦</span></div>
+        <!-- Duplicated for continuous loop -->
+        <div class="marquee-item">GIVE YOUR BRAND A VISUAL IDENTITY <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">DESIGNING IDEAS. BUILDING IDENTITIES. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">YOUR VISION. OUR DESIGN. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">CREATIVE DESIGN. STRONGER BRANDS. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">WE TURN IDEAS INTO VISUALS. <span class="marquee-star">✦</span></div>
+        <div class="marquee-item">DESIGN THAT DEFINES YOUR BRAND. <span class="marquee-star">✦</span></div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         02 — ABOUT US SECTION
+         ========================================================================== -->
+    <section id="about">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-text">
+            <div class="section-eyebrow">ABOUT US</div>
+            <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
+            <p class="about-lead">
+              At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
+            </p>
+            <p class="about-desc">
+              From brand identity and social media graphics to promotional designs and print materials, we provide creative solutions tailored to your brand. Whether you're launching a new venture, refreshing an existing brand, or need everyday design support, we craft visuals that communicate your ideas with clarity, authority, and style.
+            </p>
+
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="#contact" class="btn btn-primary">Start a Project →</a>
+              <a href="#portfolio" class="btn btn-secondary">Explore Our Portfolio</a>
+            </div>
+          </div>
+
+          <!-- Approach Card: UNDERSTAND → CREATE → REFINE → DELIVER -->
+          <div class="approach-card">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+              <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.15em;">OUR APPROACH</span>
+              <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted);">HOW WE WORK</span>
+            </div>
+
+            <div class="approach-formula">
+              <strong>UNDERSTAND</strong> <span>→</span>
+              <strong>CREATE</strong> <span>→</span>
+              <strong>REFINE</strong> <span>→</span>
+              <strong>DELIVER</strong>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">🔍</div>
+              <div class="step-text">
+                <h4>1. Understand Your Goals</h4>
+                <p>We understand your goals, audience, and objectives to develop a strategic visual foundation.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">💡</div>
+              <div class="step-text">
+                <h4>2. Develop Creative Concepts</h4>
+                <p>We transform your ideas into distinctive, memorable, and polished design concepts.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item">
+              <div class="step-icon-wrap">✨</div>
+              <div class="step-text">
+                <h4>3. Refine Every Detail</h4>
+                <p>We refine every detail with obsessive precision—from spacing to typography balance.</p>
+              </div>
+            </div>
+
+            <div class="approach-step-item" style="margin-bottom:0;">
+              <div class="step-icon-wrap">🚀</div>
+              <div class="step-text">
+                <h4>4. Deliver Ready-to-Use Files</h4>
+                <p>You receive high-resolution vector and print-ready master files ready for immediate use.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Core Pillars: Why SLR Graphics -->
+        <div class="pillars-strip">
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">💡</div>
+            <h5>CREATIVE THINKING</h5>
+            <p>We turn ideas into visually meaningful designs.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">💎</div>
+            <h5>PROFESSIONAL QUALITY</h5>
+            <p>Every design is created with attention to detail and consistency.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🎯</div>
+            <h5>CUSTOM SOLUTIONS</h5>
+            <p>We create designs based on your brand, audience, and goals.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🛡️</div>
+            <h5>CONSISTENT VISUALS</h5>
+            <p>We help maintain a strong and recognizable identity across platforms.</p>
+          </div>
+          <div class="pillar-item">
+            <div style="font-size:1.8rem;">🤝</div>
+            <h5>CLIENT-FOCUSED PROCESS</h5>
+            <p>Your ideas and requirements remain at the center of every project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03 — OUR SERVICES (WHAT WE DO)
+         ========================================================================== -->
+    <section id="services" style="background:#FAF8FF;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">OUR SERVICES</div>
+          <h2 class="section-title">WHAT WE DO</h2>
+          <p class="section-desc">
+            Tailored graphic design services to establish and elevate your visual presence across all digital and print platforms.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- 1. BRAND IDENTITY -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">01 / SERVICE</div>
+              <div class="service-icon-box">🎨</div>
+              <h3 class="service-heading">BRAND IDENTITY</h3>
+              <p class="service-description">
+                Build a recognizable and consistent visual identity for your business. Cohesive visual systems including logos, color palettes, typography, and brand guidelines that keep your brand professional everywhere.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Logo Design</span>
+                <span class="service-tag">Color Palette</span>
+                <span class="service-tag">Brand Guidelines</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Brand Identity')">Inquire Brand Identity →</a>
+            </div>
+          </div>
+
+          <!-- 2. LOGO DESIGN -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">02 / SERVICE</div>
+              <div class="service-icon-box">✒️</div>
+              <h3 class="service-heading">LOGO DESIGN</h3>
+              <p class="service-description">
+                Create distinctive logos that represent your brand and make a strong first impression. Clean, memorable vector marks engineered to scale perfectly across tiny favicons to giant billboards.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Primary Logo</span>
+                <span class="service-tag">Submarks</span>
+                <span class="service-tag">Vector AI/EPS/SVG</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Logo Design')">Commission Logo →</a>
+            </div>
+          </div>
+
+          <!-- 3. SOCIAL MEDIA DESIGN -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">03 / SERVICE</div>
+              <div class="service-icon-box">📱</div>
+              <h3 class="service-heading">SOCIAL MEDIA DESIGN</h3>
+              <p class="service-description">
+                Maintain your visual presence with engaging and professional social media graphics. We design social media posts, stories, reels covers, promotional creatives, and advertisement graphics that stop the scroll.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Feed Posts</span>
+                <span class="service-tag">Stories & Reels</span>
+                <span class="service-tag">Campaign Creatives</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Social Media Design')">Order Social Creatives →</a>
+            </div>
+          </div>
+
+          <!-- 4. POSTER & PROMOTIONAL DESIGN -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">04 / SERVICE</div>
+              <div class="service-icon-box">📢</div>
+              <h3 class="service-heading">POSTER & PROMOTIONAL DESIGN</h3>
+              <p class="service-description">
+                Create attention-grabbing posters, advertisements, banners, and promotional materials. High-impact layouts crafted to command interest, announce events, and boost campaign response rates.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Event Posters</span>
+                <span class="service-tag">Digital Ads</span>
+                <span class="service-tag">Promotional Banners</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Poster & Promotional Design')">Design Posters →</a>
+            </div>
+          </div>
+
+          <!-- 5. PRINT DESIGN -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">05 / SERVICE</div>
+              <div class="service-icon-box">🖨️</div>
+              <h3 class="service-heading">PRINT DESIGN</h3>
+              <p class="service-description">
+                From digital to print. Professional designs for business cards, brochures, flyers, menus, invitations, banners, packaging, and certificates with precise 300 DPI CMYK press standards.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Business Cards</span>
+                <span class="service-tag">Flyers & Brochures</span>
+                <span class="service-tag">Packaging & Menus</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Print Design')">Order Print Files →</a>
+            </div>
+          </div>
+
+          <!-- 6. MARKETING DESIGN -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">06 / SERVICE</div>
+              <div class="service-icon-box">📊</div>
+              <h3 class="service-heading">MARKETING DESIGN</h3>
+              <p class="service-description">
+                Visual content designed to support your marketing campaigns and business communication. Investor pitch decks, sales one-pagers, catalogs, and collateral engineered for commercial conversion.
+              </p>
+            </div>
+            <div>
+              <div class="service-tags">
+                <span class="service-tag">Pitch Decks</span>
+                <span class="service-tag">Sales Collateral</span>
+                <span class="service-tag">Campaign Graphics</span>
+              </div>
+              <a href="#contact" class="service-action-link" onclick="preselectService('Marketing Design')">Book Marketing Suite →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04 — PORTFOLIO (OUR WORK)
+         ========================================================================== -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">PORTFOLIO</div>
+          <h2 class="section-title">DESIGN THAT SPEAKS FOR ITSELF.</h2>
+          <p class="section-desc">
+            Explore our selected projects across branding, social media, advertising, print, and promotional design.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="portfolio-tabs">
+          <button class="tab-pill active" onclick="filterWork('all')">All Work</button>
+          <button class="tab-pill" onclick="filterWork('branding')">Brand Identity</button>
+          <button class="tab-pill" onclick="filterWork('social')">Social Media</button>
+          <button class="tab-pill" onclick="filterWork('poster')">Posters & Ads</button>
+          <button class="tab-pill" onclick="filterWork('print')">Print Design</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioContainer">
+          <!-- Item 1: Aura Skincare -->
+          <div class="portfolio-card" data-category="branding" onclick="openProjectModal('aura')">
+            <div class="project-stage stage-p1">
+              <span class="stage-badge">BRAND IDENTITY</span>
+              <div class="art-glyph">AURA</div>
+            </div>
+            <div class="project-details">
+              <div>
+                <div class="project-cat-badge">Brand Identity • Packaging</div>
+                <h3 class="project-name">Aura Botanical Skincare</h3>
+                <p class="project-summary">Minimalist luxury identity system, organic bottle packaging dielines, and cohesive social launch assets.</p>
+              </div>
+              <div class="project-foot">
+                <span>Complete Identity Suite</span>
+                <span class="view-case-link">View Case Study →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Kinetic Pulse Festival -->
+          <div class="portfolio-card" data-category="poster" onclick="openProjectModal('pulse')">
+            <div class="project-stage stage-p2">
+              <span class="stage-badge">POSTER & PROMO</span>
+              <div class="art-glyph">PULSE</div>
+            </div>
+            <div class="project-details">
+              <div>
+                <div class="project-cat-badge">Poster & Promotional Design</div>
+                <h3 class="project-name">Kinetic Pulse Sound Fest</h3>
+                <p class="project-summary">Bold typography festival campaign, billboard artwork, stage screen graphics, and event passes.</p>
+              </div>
+              <div class="project-foot">
+                <span>Festival Campaign</span>
+                <span class="view-case-link">View Case Study →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Zenith Wealth -->
+          <div class="portfolio-card" data-category="print" onclick="openProjectModal('zenith')">
+            <div class="project-stage stage-p3">
+              <span class="stage-badge">PRINT & STATIONERY</span>
+              <div class="art-glyph">ZENITH</div>
+            </div>
+            <div class="project-details">
+              <div>
+                <div class="project-cat-badge">Print Design • Stationery</div>
+                <h3 class="project-name">Zenith Private Capital</h3>
+                <p class="project-summary">Prestige gold-foil business cards, corporate letterheads, pitch deck presentation, and bespoke folders.</p>
+              </div>
+              <div class="project-foot">
+                <span>Executive Print Collateral</span>
+                <span class="view-case-link">View Case Study →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Nova Stream -->
+          <div class="portfolio-card" data-category="social" onclick="openProjectModal('nova')">
+            <div class="project-stage stage-p4">
+              <span class="stage-badge">SOCIAL MEDIA</span>
+              <div class="art-glyph">NOVA</div>
+            </div>
+            <div class="project-details">
+              <div>
+                <div class="project-cat-badge">Social Media Design • Ad Suite</div>
+                <h3 class="project-name">Nova Stream Music App</h3>
+                <p class="project-summary">High-energy Instagram carousel templates, promotional story sequences, and high-CTR Meta ad campaigns.</p>
+              </div>
+              <div class="project-foot">
+                <span>Digital Growth Kit</span>
+                <span class="view-case-link">View Case Study →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Solaris Coffee -->
+          <div class="portfolio-card" data-category="print" onclick="openProjectModal('solaris')">
+            <div class="project-stage stage-p5">
+              <span class="stage-badge">PACKAGING & MENU</span>
+              <div class="art-glyph">SOLARIS</div>
+            </div>
+            <div class="project-details">
+              <div>
+                <div class="project-cat-badge">Print & Packaging Design</div>
+                <h3 class="project-name">Solaris Coffee Artisans</h3>
+                <p class="project-summary">Handcrafted logo mark, matte coffee pouches, cafe table menus, and takeaway cup stamp designs.</p>
+              </div>
+              <div class="project-foot">
+                <span>Retail Packaging System</span>
+                <span class="view-case-link">View Case Study →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Apex Dynamics -->
+          <div class="portfolio-card" data-category="branding" onclick="openProjectModal('apex')">
+            <div class="project-stage stage-p6">
+              <span class="stage-badge">BRAND IDENTITY</span>
+              <div class="art-glyph">APEX</div>
+            </div>
+            <div class="project-details">
+              <div>
+                <div class="project-cat-badge">Brand Identity • Marketing Design</div>
+                <h3 class="project-name">Apex Athletics & Performance</h3>
+                <p class="project-summary">Dynamic geometric icon, athletic apparel mockup graphics, vehicle wraps, and comprehensive brand book.</p>
+              </div>
+              <div class="project-foot">
+                <span>Athletic Brand Guide</span>
+                <span class="view-case-link">View Case Study →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:3.5rem;">
+          <a href="#contact" class="btn btn-primary" style="padding:1rem 2.5rem; font-size:1.05rem;">
+            START YOUR PROJECT WITH US →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Lightbox Modal -->
+    <div class="lightbox-modal" id="portfolioModal" onclick="closeModalOnOutsideClick(event)">
+      <div class="lightbox-body">
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">✕</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         05 — CONTACT SECTION & ESTIMATOR
+         ========================================================================== -->
+    <section id="contact" style="background:#FAF8FF;">
+      <div class="container">
+        <div class="contact-container-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info-panel">
+            <div class="section-eyebrow">CONTACT</div>
+            <h3>HAVE A PROJECT IN MIND?</h3>
+            <p>
+              Let's discuss your idea and create visuals that represent your brand professionally. Reach out directly via email, phone, WhatsApp, or through our project inquiry form.
+            </p>
+
+            <div class="contact-channels">
+              <!-- Email -->
+              <div class="channel-box">
+                <div class="channel-icon">✉️</div>
+                <div class="channel-meta">
+                  <div class="channel-label">EMAIL</div>
+                  <a href="mailto:slrgraphics.contact@email.com" class="channel-link">
+                    <span>slrgraphics.contact@email.com</span>
+                  </a>
+                </div>
+                <button class="copy-pill-btn" onclick="copyEmail('slrgraphics.contact@email.com')">Copy</button>
+              </div>
+
+              <!-- Phone -->
+              <div class="channel-box">
+                <div class="channel-icon">📞</div>
+                <div class="channel-meta">
+                  <div class="channel-label">PHONE & WHATSAPP</div>
+                  <a href="tel:+917004953962" class="channel-link">
+                    <span>+91 7004953962</span>
+                  </a>
+                </div>
+                <a href="https://wa.me/917004953962?text=Hello%20SLR%20GRAPHICS,%20I'd%20like%20to%20inquire%20about%20a%20design%20project!" target="_blank" class="copy-pill-btn" style="text-decoration:none;">WhatsApp</a>
+              </div>
+
+              <!-- Instagram Only -->
+              <div class="channel-box">
+                <div class="channel-icon">📸</div>
+                <div class="channel-meta">
+                  <div class="channel-label">INSTAGRAM</div>
+                  <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="channel-link">
+                    <span>@slr_graphics</span>
+                  </a>
+                </div>
+                <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="copy-pill-btn" style="text-decoration:none;">Follow</a>
+              </div>
+            </div>
+
+            <!-- Follow on Instagram Pill -->
+            <div style="margin-top:1.5rem;">
+              <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="instagram-solo-card">
+                <span>📸</span>
+                <span>Follow <strong>@slr_graphics</strong> on Instagram</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Inquiry Form + Interactive Estimator -->
+          <div class="contact-form-card">
+            <div class="form-header-title">START A PROJECT</div>
+            <div class="form-header-sub">Fill out your details below to get a tailored proposal for your brand.</div>
+
+            <form id="projectContactForm" onsubmit="handleInquirySubmit(event)">
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label class="form-label" for="clientName">Your Name *</label>
+                  <input type="text" class="form-control" id="clientName" placeholder="e.g. Rahul Sharma" required />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="clientPhone">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-control" id="clientPhone" placeholder="+91 7004953962" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="clientEmail">Email Address *</label>
+                <input type="email" class="form-control" id="clientEmail" placeholder="e.g. contact@yourbrand.com" required />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="serviceSelect">Service Needed *</label>
+                <select class="form-control" id="serviceSelect" required onchange="updateEstimatorPreview()">
+                  <option value="Brand Identity">Brand Identity</option>
+                  <option value="Logo Design">Logo Design</option>
+                  <option value="Social Media Design">Social Media Design</option>
+                  <option value="Poster & Promotional Design">Poster & Promotional Design</option>
+                  <option value="Print Design">Print Design (Cards, Flyers, Menus)</option>
+                  <option value="Marketing Design">Marketing Design (Pitch Decks, Ads)</option>
+                  <option value="Complete Design Package">Complete Design Package</option>
+                </select>
+              </div>
+
+              <!-- Interactive Project Scope Selector -->
+              <div class="estimator-box">
+                <div class="estimator-title">
+                  <span>✦ CUSTOMIZE YOUR SCOPE</span>
+                  <span id="scopeSummaryBadge" style="font-family:var(--font-mono); font-size:0.75rem; color:#FFFFFF; background:var(--accent-violet); padding:0.2rem 0.6rem; border-radius:6px;">Standard Scope</span>
+                </div>
+                <div class="estimate-services-grid">
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopeLogo" checked onchange="calculateScope()" /> Logo & Vector Source
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopePalette" checked onchange="calculateScope()" /> Color & Typography
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopeCards" checked onchange="calculateScope()" /> Business Cards
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopeSocial" onchange="calculateScope()" /> Social Media Graphics
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopePrint" onchange="calculateScope()" /> Print Collateral / Flyer
+                  </label>
+                  <label class="estimate-checkbox-label">
+                    <input type="checkbox" id="scopeGuidelines" onchange="calculateScope()" /> Brand Guidelines
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="projectBrief">Project Details & Vision</label>
+                <textarea class="form-control" id="projectBrief" rows="3" placeholder="Tell us about your brand, audience, and timeline..."></textarea>
+              </div>
+
+              <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+                <button type="submit" class="btn btn-primary" style="flex:1; padding:1.05rem;">
+                  <span>SUBMIT INQUIRY 🚀</span>
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="sendViaWhatsApp()" style="padding:1.05rem 1.5rem;">
+                  <span>Chat on WhatsApp</span>
+                </button>
+              </div>
+
+              <div id="formSuccessMessage" style="display:none; margin-top:1.25rem; background:rgba(124,58,237,0.08); border:1px solid #7C3AED; border-radius:12px; padding:1rem; font-size:0.95rem; text-align:center; color:var(--text-dark);"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp (+91 7004953962) -->
+  <a href="https://wa.me/917004953962?text=Hello%20SLR%20GRAPHICS,%20I'd%20like%20to%20discuss%20a%20design%20project!" 
+     class="floating-whatsapp" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Direct WhatsApp Chat with SLR GRAPHICS">
+    <svg class="whatsapp-icon-svg" viewBox="0 0 24 24">
+      <path d="M12.031 2C6.495 2 2 6.494 2 12.029c0 1.768.459 3.492 1.332 5.006L2 22l5.127-1.346a10.007 10.007 0 004.904 1.282h.004c5.534 0 10.029-4.494 10.029-10.029C22.064 6.494 17.568 2 12.031 2zm5.864 14.214c-.244.686-1.42 1.259-1.956 1.341-.518.078-1.196.111-1.929-.124-.442-.142-1.011-.334-1.742-.65-3.08-1.336-5.086-4.444-5.24-4.65-.154-.205-1.25-1.666-1.25-3.178 0-1.512.793-2.257 1.074-2.563.282-.307.615-.384.82-.384.205 0 .41.002.589.011.189.01.442-.072.692.528.256.615.871 2.127.948 2.28.077.154.128.334.025.539-.102.205-.154.333-.307.512-.154.18-.323.4-.462.538-.154.154-.315.323-.135.632.18.307.8 1.319 1.716 2.135 1.178 1.049 2.17 1.374 2.477 1.528.307.154.487.128.666-.077.18-.205.769-.897.974-1.205.205-.307.41-.256.692-.154.282.102 1.794.846 2.101 1.001.307.154.512.23.589.359.077.128.077.743-.167 1.429z"/>
+    </svg>
+    <span>Chat on WhatsApp</span>
+  </a>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-main" style="font-size:1.75rem;">
+            <span class="logo-mark">SLR</span>
+            <span class="logo-text-slr">GRAPHICS</span>
+          </div>
+          <div class="logo-sub" style="margin-top:0.4rem;">GIVE YOUR BRAND A VISUAL IDENTITY</div>
+          <p class="footer-desc">
+            SLR GRAPHICS is a creative graphic design studio focused on building strong, professional, and memorable visual identities. We create designs that help businesses, brands, creators, and individuals communicate their ideas with clarity and style.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Services</div>
+          <ul class="footer-links">
+            <li><a href="#services">Brand Identity</a></li>
+            <li><a href="#services">Logo Design</a></li>
+            <li><a href="#services">Social Media Design</a></li>
+            <li><a href="#services">Poster & Promo Design</a></li>
+            <li><a href="#services">Print Design</a></li>
+            <li><a href="#services">Marketing Design</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Direct Contact</div>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:slrgraphics.contact@email.com" style="color:var(--text-dark); font-weight:700;">
+                ✉️ slrgraphics.contact@email.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+917004953962" style="color:var(--text-dark); font-weight:700;">
+                📞 +91 7004953962
+              </a>
+            </li>
+            <li style="margin-top:0.5rem;">
+              <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" style="color:var(--accent-violet); font-weight:700;">
+                📸 Instagram: @slr_graphics
+              </a>
+            </li>
+            <li style="margin-top:1rem;">
+              <a href="https://wa.me/917004953962" target="_blank" class="btn btn-outline" style="padding:0.45rem 1rem; font-size:0.82rem;">
+                WhatsApp Direct Link
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 SLR GRAPHICS. All Rights Reserved.</div>
+        <div style="font-family:var(--font-mono); font-size:0.8rem;">
+          CREATIVE DESIGN. STRONGER BRANDS. WE TURN IDEAS INTO VISUALS.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC & INTERACTIONS
+       ========================================================================== -->
+  <script>
+    // 1. Taglines Array for Dynamic Rotation
+    const brandTaglines = [
+      "GIVE YOUR BRAND A VISUAL IDENTITY.",
+      "DESIGNING IDEAS. BUILDING IDENTITIES.",
+      "YOUR VISION. OUR DESIGN.",
+      "CREATIVE DESIGN. STRONGER BRANDS.",
+      "WE TURN IDEAS INTO VISUALS.",
+      "DESIGN THAT DEFINES YOUR BRAND."
+    ];
+    let taglineIndex = 0;
+    const rotatingTaglineEl = document.getElementById('rotatingTagline');
+
+    setInterval(() => {
+      taglineIndex = (taglineIndex + 1) % brandTaglines.length;
+      rotatingTaglineEl.style.opacity = '0';
+      setTimeout(() => {
+        rotatingTaglineEl.textContent = brandTaglines[taglineIndex];
+        rotatingTaglineEl.style.opacity = '1';
+      }, 300);
+    }, 3800);
+
+    // 2. Header Scroll Effect
+    const mainHeader = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        mainHeader.classList.add('scrolled');
+      } else {
+        mainHeader.classList.remove('scrolled');
+      }
+    });
+
+    // 3. Mobile Navigation Drawer Toggle
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('open');
+    }
+
+    // 4. Portfolio Filter Logic
+    function filterWork(cat) {
+      const buttons = document.querySelectorAll('.tab-pill');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.portfolio-card');
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (cat === 'all' || cardCat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 5. Portfolio Case Studies Data & Modal Lightbox
+    const projectDatabase = {
+      aura: {
+        title: "Aura Botanical Skincare",
+        category: "Brand Identity • Packaging",
+        client: "Aura Organics Studio",
+        deliverables: "Logo Mark, Primary & Submark, Pastel Glass Bottle Labels, Color System, Brand Guidelines",
+        overview: "Aura sought a tranquil, minimalist, and ultra-premium visual identity to enter luxury beauty retailers. We established an organic geometric monogram coupled with gentle lavender and violet color harmonies.",
+        colors: ["#1B1035", "#7C3AED", "#E9D5FF", "#FFFFFF"],
+        fonts: "Syne 800 & Plus Jakarta Sans"
+      },
+      pulse: {
+        title: "Kinetic Pulse Sound Fest",
+        category: "Poster & Promotional Design",
+        client: "Pulse Entertainment Group",
+        deliverables: "Event Key Visuals, Billboard Flex, Instagram Motion Covers, Festival Passes, Stage Backdrops",
+        overview: "A high-octane electronic music festival required an unmistakable typographic aesthetic that pulsed with energy under stage lighting.",
+        colors: ["#1B1035", "#7C3AED", "#A855F7", "#22C55E"],
+        fonts: "Syne Display & Space Grotesk"
+      },
+      zenith: {
+        title: "Zenith Private Capital",
+        category: "Print Design • Stationery",
+        client: "Zenith Wealth Management",
+        deliverables: "Gold Foil Business Cards, Letterhead Suite, Pitch Deck Presentation, Corporate Folders",
+        overview: "Crafted for an elite wealth advisory firm demanding supreme authority. We engineered tactile print materials utilizing 400 GSM soft-touch cardstock with metallic gold hot stamping.",
+        colors: ["#1B1035", "#D4AF37", "#FFFFFF", "#7C3AED"],
+        fonts: "Syne SemiBold & Plus Jakarta Sans"
+      },
+      nova: {
+        title: "Nova Stream Music App",
+        category: "Social Media Design • Ad Creatives",
+        client: "Nova Audio Labs",
+        deliverables: "30-Day Social Carousel Kit, High-CTR Meta Ad Creatives, Feature Release Stories, App Store Screenshots",
+        overview: "Engineered to drive user installs and maintain feed cohesion. We developed reusable carousel design systems that boosted organic social engagement by 180%.",
+        colors: ["#1B1035", "#A855F7", "#7C3AED", "#38BDF8"],
+        fonts: "Syne Heavy & Plus Jakarta Sans"
+      },
+      solaris: {
+        title: "Solaris Coffee Artisans",
+        category: "Print & Packaging Design",
+        client: "Solaris Roastery",
+        deliverables: "Kraft Coffee Pouches, Matte Dieline Stickers, Cafe Menus, Rubber Stamp Marks, Takeaway Sleeves",
+        overview: "A specialty micro-roastery needed rustic yet modern packaging that communicates single-origin purity and artisanal dedication on store shelves.",
+        colors: ["#1B1035", "#A855F7", "#F59E0B", "#FAF5FF"],
+        fonts: "Syne Bold & Space Grotesk"
+      },
+      apex: {
+        title: "Apex Athletics & Performance",
+        category: "Brand Identity • Marketing Design",
+        client: "Apex Fitness Brand",
+        deliverables: "Dynamic Falcon Icon, Apparel Silk-Screen Graphics, Brand Standards Manual, Social Launch Assets",
+        overview: "A bold, angular athletic brand identity symbolizing unyielding speed, endurance, and upward momentum for active lifestyle enthusiasts.",
+        colors: ["#1B1035", "#7C3AED", "#C084FC", "#FFFFFF"],
+        fonts: "Syne Black & Plus Jakarta Sans"
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectDatabase[key];
+      if (!data) return;
+
+      const modal = document.getElementById('portfolioModal');
+      const content = document.getElementById('modalContent');
+
+      content.innerHTML = `
+        <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem; font-weight:700;">
+          ${data.category}
+        </div>
+        <h2 style="font-size:2.2rem; color:var(--text-dark); margin-bottom:1rem; font-weight:900;">${data.title}</h2>
+        <div style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.75rem;">Client: <strong style="color:var(--text-dark);">${data.client}</strong></div>
+
+        <p style="font-size:1.05rem; color:var(--text-body); line-height:1.75; margin-bottom:2rem;">
+          ${data.overview}
+        </p>
+
+        <div style="background:#FAF8FF; border:1px solid rgba(124,58,237,0.18); border-radius:1rem; padding:1.5rem; margin-bottom:2rem;">
+          <h4 style="font-size:1rem; color:var(--text-dark); margin-bottom:0.6rem;">Key Deliverables:</h4>
+          <p style="font-size:0.92rem; color:var(--text-body); margin-bottom:1.25rem;">${data.deliverables}</p>
+
+          <h4 style="font-size:1rem; color:var(--text-dark); margin-bottom:0.6rem;">Color Palette:</h4>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            ${data.colors.map(col => `
+              <div style="display:flex; align-items:center; gap:0.4rem; background:#FFFFFF; border:1px solid rgba(124,58,237,0.18); padding:0.35rem 0.75rem; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dark); font-weight:700;">
+                <span style="width:14px; height:14px; border-radius:4px; background:${col}; border:1px solid rgba(0,0,0,0.1);"></span>
+                <span>${col}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div style="font-size:0.85rem; color:var(--text-muted); font-family:var(--font-mono);">
+            Typography Spec: <span style="color:var(--text-dark); font-weight:700;">${data.fonts}</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-primary" onclick="closeModal(); preselectService('${data.category.split('•')[0].trim()}');">
+            Request Similar Design →
+          </a>
+          <button class="btn btn-secondary" onclick="closeModal()">Back to Portfolio</button>
+        </div>
+      `;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('portfolioModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnOutsideClick(e) {
+      if (e.target.id === 'portfolioModal') {
+        closeModal();
+      }
+    }
+
+    // 6. Preselect Service in Contact Form
+    function preselectService(serviceName) {
+      const select = document.getElementById('serviceSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.toLowerCase().includes(serviceName.toLowerCase()) || select.options[i].value.toLowerCase().includes(serviceName.toLowerCase())) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      updateEstimatorPreview();
+      const contactSection = document.getElementById('contact');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 7. Scope Calculator
+    function calculateScope() {
+      const logo = document.getElementById('scopeLogo').checked;
+      const palette = document.getElementById('scopePalette').checked;
+      const cards = document.getElementById('scopeCards').checked;
+      const social = document.getElementById('scopeSocial').checked;
+      const print = document.getElementById('scopePrint').checked;
+      const guides = document.getElementById('scopeGuidelines').checked;
+
+      const checkedCount = [logo, palette, cards, social, print, guides].filter(Boolean).length;
+      const badge = document.getElementById('scopeSummaryBadge');
+
+      if (checkedCount <= 2) {
+        badge.textContent = "Essential Scope (1–2 Days)";
+        badge.style.background = "#7C3AED";
+      } else if (checkedCount <= 4) {
+        badge.textContent = "Standard Scope (2–4 Days)";
+        badge.style.background = "#A855F7";
+      } else {
+        badge.textContent = "Complete Master Suite (4–6 Days)";
+        badge.style.background = "#1B1035";
+      }
+    }
+
+    function updateEstimatorPreview() {
+      calculateScope();
+    }
+
+    // 8. Copy Email to Clipboard
+    function copyEmail(email) {
+      navigator.clipboard.writeText(email).then(() => {
+        showToast("Email copied: " + email);
+      }).catch(() => {
+        showToast("Email: " + email);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // 9. Send via WhatsApp directly
+    function sendViaWhatsApp() {
+      const name = document.getElementById('clientName').value || "Client";
+      const service = document.getElementById('serviceSelect').value;
+      const brief = document.getElementById('projectBrief').value || "I would like to discuss design services.";
+      
+      const text = `Hello SLR GRAPHICS! My name is ${name}. I am interested in ${service}. Project Details: ${brief}`;
+      const url = `https://wa.me/917004953962?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+
+    // 10. Form Submission
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const service = document.getElementById('serviceSelect').value;
+      const phone = document.getElementById('clientPhone').value;
+      const email = document.getElementById('clientEmail').value;
+      const brief = document.getElementById('projectBrief').value;
+      
+      const successMsg = document.getElementById('formSuccessMessage');
+      successMsg.style.display = 'block';
+      successMsg.innerHTML = `
+        ✨ Thank you, <strong>${name}</strong>! Your inquiry for <strong>${service}</strong> has been transmitted successfully.<br>
+        We will reach out to you via WhatsApp (<strong>${phone}</strong>) or Email (<strong>${email}</strong>) within 2-4 hours.
+      `;
+
+      setTimeout(() => {
+        if (confirm("Inquiry recorded! Would you also like to open WhatsApp to connect directly with SLR GRAPHICS right now?")) {
+          sendViaWhatsApp();
+        }
+      }, 800);
+
+      document.getElementById('projectContactForm').reset();
+      calculateScope();
+    }
+  </script>
+</body>
+</html>
