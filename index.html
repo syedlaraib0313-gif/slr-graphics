@@ -577,162 +577,375 @@
     }
 
     /* ==========================================================================
-       NEW LUXURY STUDIO CONSOLE (REDESIGNED FIRST PAGE BOX)
+       EDITORIAL LUXURY STUDIO CANVAS (INSPIRED BY REFERENCE DESIGN)
        ========================================================================== */
-    .hero-studio-console {
-      max-width: 920px;
+    .hero-studio-canvas {
+      max-width: 1040px;
+      width: 100%;
       margin: 0 auto;
-      background: linear-gradient(145deg, #1B1035 0%, #130926 100%);
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      border-radius: 1.5rem;
-      padding: clamp(1.15rem, 2.2vh, 1.6rem);
-      box-shadow: 0 20px 45px -10px rgba(27, 16, 53, 0.35),
-                  0 0 25px rgba(124, 58, 237, 0.12);
+      background: radial-gradient(circle at 65% 15%, rgba(235, 75, 40, 0.32) 0%, transparent 50%),
+                  radial-gradient(circle at 92% 35%, rgba(245, 158, 11, 0.22) 0%, transparent 45%),
+                  radial-gradient(circle at 15% 75%, rgba(124, 58, 237, 0.22) 0%, transparent 50%),
+                  #0E071A;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1.75rem;
+      padding: clamp(1.25rem, 2.5vh, 2rem) clamp(1.25rem, 3vw, 2.5rem);
+      box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.55),
+                  0 0 35px rgba(235, 75, 40, 0.12),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.15);
       position: relative;
       overflow: hidden;
+      text-align: left;
     }
-    .hero-studio-console::before {
+    .hero-studio-canvas::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(90deg, transparent, transparent 170px, rgba(255, 255, 255, 0.035) 170px, rgba(255, 255, 255, 0.035) 171px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-studio-canvas::before {
       content: '';
       position: absolute;
       top: 0;
       left: 15%;
       right: 15%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), #FFFFFF, rgba(168, 85, 247, 0.8), transparent);
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.8), #FFFFFF, rgba(235, 75, 40, 0.8), transparent);
+      z-index: 2;
     }
-    .console-header {
+
+    /* Canvas Topbar (Reference Header inside frame) */
+    .studio-canvas-topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding-bottom: 0.85rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(168, 85, 247, 0.18);
-      flex-wrap: wrap;
+      position: relative;
+      z-index: 3;
+      padding-bottom: clamp(0.75rem, 1.8vh, 1.25rem);
     }
-    .console-brand-badge {
+    .studio-brand-mark {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
+      gap: 0.65rem;
+    }
+    .studio-mark-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #EB4B28;
+      box-shadow: 0 0 10px #EB4B28;
+      animation: waPulse 2s infinite;
+    }
+    .studio-brand-name {
+      font-family: var(--font-cinzel), var(--font-mono);
+      font-size: 0.95rem;
       font-weight: 800;
       color: #FFFFFF;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
     }
-    .console-logo-icon {
-      color: #A855F7;
-      font-size: 0.9rem;
-    }
-    .console-divider {
-      color: rgba(168, 85, 247, 0.4);
-    }
-    .console-sub-badge {
-      color: #C084FC;
-      font-size: 0.7rem;
-    }
-    .console-status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.35);
-      color: #4ADE80;
+    .studio-live-badge {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 0.25rem 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.12em;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.3rem 0.85rem;
       border-radius: 9999px;
     }
-    .status-indicator-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #22C55E;
-      box-shadow: 0 0 8px #22C55E;
-      animation: waPulse 1.8s infinite;
+
+    /* Giant Centerpiece Stage: "Design [CARDS DECK] Studio" */
+    .studio-headline-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.4rem, 1.6vw, 1.2rem);
+      padding: clamp(1rem, 2.5vh, 2.2rem) 0 clamp(1.2rem, 3vh, 2.5rem);
+      position: relative;
+      z-index: 3;
     }
-    .console-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.85rem;
-      margin-bottom: 1rem;
+    .studio-headline-text {
+      font-family: var(--font-body);
+      font-size: clamp(2.4rem, 6.2vw, 5.2rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      user-select: none;
     }
-    .console-stat-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(168, 85, 247, 0.2);
-      border-radius: 1rem;
-      padding: 0.95rem 0.65rem;
-      text-align: center;
-      transition: var(--transition-smooth);
+
+    /* Interactive 5-Card Fanned Portfolio Deck */
+    .hero-cards-fan {
+      position: relative;
+      width: clamp(105px, 13vw, 150px);
+      height: clamp(135px, 17vw, 185px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      perspective: 1200px;
+      flex-shrink: 0;
+      margin: 0 clamp(0.2rem, 1vw, 0.75rem);
+    }
+    .fan-card {
+      position: absolute;
+      width: clamp(85px, 10.5vw, 120px);
+      height: clamp(125px, 15.5vw, 170px);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+      transform-origin: 50% 115%;
+    }
+    /* Fan rotation angles */
+    .fan-card-1 {
+      transform: rotate(-24deg) translateX(-26px) translateY(8px);
+      z-index: 1;
+    }
+    .fan-card-2 {
+      transform: rotate(-12deg) translateX(-13px) translateY(4px);
+      z-index: 2;
+    }
+    .fan-card-3 {
+      transform: rotate(0deg) translateY(0);
+      z-index: 3;
+    }
+    .fan-card-4 {
+      transform: rotate(12deg) translateX(13px) translateY(4px);
+      z-index: 4;
+    }
+    .fan-card-5 {
+      transform: rotate(24deg) translateX(26px) translateY(8px);
+      z-index: 5;
+    }
+
+    /* Hover Fan Spreading Animation */
+    .hero-cards-fan:hover .fan-card-1 {
+      transform: rotate(-36deg) translateX(-42px) translateY(14px) scale(1.04);
+    }
+    .hero-cards-fan:hover .fan-card-2 {
+      transform: rotate(-18deg) translateX(-21px) translateY(6px) scale(1.04);
+    }
+    .hero-cards-fan:hover .fan-card-3 {
+      transform: rotate(0deg) translateY(-10px) scale(1.08);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 58, 237, 0.3);
+    }
+    .hero-cards-fan:hover .fan-card-4 {
+      transform: rotate(18deg) translateX(21px) translateY(6px) scale(1.04);
+    }
+    .hero-cards-fan:hover .fan-card-5 {
+      transform: rotate(36deg) translateX(42px) translateY(14px) scale(1.04);
+    }
+
+    /* Inner card visuals */
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.65rem 0.55rem;
       position: relative;
     }
-    .console-stat-card:hover {
-      background: rgba(124, 58, 237, 0.14);
-      border-color: #A855F7;
-      transform: translateY(-2px);
-    }
-    .console-stat-icon {
-      font-size: 1.15rem;
-      margin-bottom: 0.25rem;
-    }
-    .console-stat-card .stat-number {
-      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-      font-weight: 900;
-      color: #FFFFFF;
-      font-family: var(--font-cinzel), var(--font-mono);
-      line-height: 1.1;
-      margin-bottom: 0.2rem;
-      text-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
-    }
-    .console-stat-card .stat-label {
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: #C084FC;
-      margin-bottom: 0.15rem;
-    }
-    .console-stat-card .stat-sub {
-      font-size: 0.65rem;
-      color: rgba(250, 248, 255, 0.65);
-    }
-    .console-portals-strip {
-      display: flex;
-      justify-content: center;
-      gap: 0.65rem;
-      flex-wrap: wrap;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(168, 85, 247, 0.15);
-    }
-    .console-portal-pill {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(168, 85, 247, 0.25);
-      padding: 0.38rem 0.95rem;
-      border-radius: 9999px;
+    .card-tag {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      opacity: 0.85;
+    }
+    .card-symbol {
+      align-self: center;
+      font-size: 1.3rem;
+      margin: auto 0;
+    }
+
+    /* Card Themes */
+    .card-bg-1 {
+      background: linear-gradient(145deg, #1C2438, #0B111E);
+      color: #93C5FD;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+    }
+    .card-bg-2 {
+      background: linear-gradient(145deg, #2D1438, #11071A);
+      color: #F472B6;
+      border: 1px solid rgba(244, 114, 182, 0.3);
+    }
+    .card-bg-3 {
+      background: linear-gradient(145deg, #182E38, #08161D);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .card-bg-4 {
+      background: linear-gradient(145deg, #2A1F14, #120A04);
+      color: #FBBF24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    /* Card 5 (Front Featured - Embers & Silhouette evoking reference image) */
+    .card-bg-featured {
+      background: radial-gradient(circle at 60% 30%, rgba(245, 158, 11, 0.45) 0%, transparent 60%),
+                  radial-gradient(circle at 20% 70%, rgba(235, 75, 40, 0.45) 0%, transparent 70%),
+                  #130906;
+      border: 1px solid rgba(251, 191, 36, 0.5);
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+    .card-featured-art {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .card-glow-core {
+      position: absolute;
+      top: 20%;
+      left: 30%;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.8) 0%, rgba(235, 75, 40, 0.4) 60%, transparent 100%);
+      filter: blur(8px);
+    }
+    .card-art-figure {
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 42px;
+      height: 65px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, #000000 90%);
+      clip-path: polygon(50% 0%, 80% 25%, 70% 65%, 90% 100%, 10% 100%, 30% 65%, 20% 25%);
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
+    }
+    .card-embers {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(1.5px 1.5px at 20% 30%, #FBBF24 50%, transparent),
+        radial-gradient(2px 2px at 70% 40%, #F59E0B 50%, transparent),
+        radial-gradient(1px 1px at 40% 70%, #EB4B28 50%, transparent),
+        radial-gradient(1.5px 1.5px at 80% 80%, #FBBF24 50%, transparent);
+      animation: waPulse 2.5s infinite alternate;
+    }
+    .card-featured-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      border-top: 1px solid rgba(251, 191, 36, 0.25);
+      padding-top: 0.25rem;
+    }
+    .card-tag-gold {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 800;
+      color: #FBBF24;
+      letter-spacing: 0.12em;
+    }
+    .card-explore-hint {
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
       font-weight: 700;
-      color: #FAF8FF;
-      text-decoration: none;
+      color: #FFFFFF;
+      background: rgba(251, 191, 36, 0.25);
+      padding: 0.12rem 0.35rem;
+      border-radius: 4px;
+    }
+
+    /* Canvas Bottom: 2 Columns (Statement + Button on Left, Disciplines on Right) */
+    .studio-canvas-bottom {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(1.5rem, 3.5vw, 3rem);
+      align-items: end;
+      position: relative;
+      z-index: 3;
+      padding-top: clamp(0.75rem, 1.5vh, 1.25rem);
+    }
+    .studio-left-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .studio-statement {
+      font-size: clamp(0.86rem, 1.2vw, 0.98rem);
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0;
+    }
+    .studio-talk-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.65rem;
+      background: #FFFFFF;
+      color: #0E071A;
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 0.55rem 1.35rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      width: fit-content;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    }
+    .studio-talk-pill:hover {
+      background: #F4F1FA;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+    }
+    .talk-pill-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #EB4B28;
+      box-shadow: 0 0 8px #EB4B28;
+      animation: waPulse 1.8s infinite;
+    }
+
+    /* Right: Disciplines List with subtle divider lines & ↗ arrows */
+    .studio-right-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .studio-discipline-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(0.82rem, 1.1vw, 0.94rem);
+      font-weight: 700;
+      text-decoration: none;
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    .console-portal-pill:hover {
-      background: #7C3AED;
-      border-color: #A855F7;
-      color: #FFFFFF;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    .studio-discipline-row:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .portal-arrow {
-      color: #C084FC;
-      transition: transform 0.2s ease;
-    }
-    .console-portal-pill:hover .portal-arrow {
-      transform: translateX(2px);
+    .studio-discipline-row:hover {
       color: #FFFFFF;
+      padding-left: 0.35rem;
+      border-bottom-color: rgba(251, 191, 36, 0.4);
+    }
+    .disc-arrow {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.45);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .studio-discipline-row:hover .disc-arrow {
+      color: #FBBF24;
+      transform: translate(2px, -2px);
     }
 
     /* ==========================================================================
@@ -1382,7 +1595,6 @@
       .services-grid-8 { grid-template-columns: repeat(2, 1fr); }
       .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
       .pillars-strip { grid-template-columns: repeat(3, 1fr); }
-      .console-stats-grid { grid-template-columns: repeat(2, 1fr); }
       .about-layout { grid-template-columns: 1fr; gap: 1.25rem; }
       .contact-container-grid { gap: 1.25rem; }
       .cinema-nav-menu { display: none; }
@@ -1406,28 +1618,44 @@
       /* Page inner padding */
       .cinema-page { padding: 0.65rem 0.4rem 1.25rem; }
 
-      /* Hero section — prevent any horizontal overflow */
-      .hero-h1 { font-size: clamp(1.55rem, 6vw, 2.4rem); overflow-wrap: break-word; word-break: break-word; }
-      .hero-statement { font-size: clamp(0.88rem, 3.5vw, 1rem); }
-      .hero-subtext { font-size: clamp(0.8rem, 3vw, 0.9rem); }
-      .hero-tagline-rotator { font-size: 0.7rem; padding: 0.28rem 0.75rem; }
-
-      /* Console box mobile-specific */
-      .hero-studio-console { padding: 1rem 0.85rem; border-radius: 1rem; }
-      .console-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .console-brand-badge { flex-wrap: wrap; font-size: 0.72rem; }
-      .console-status-pill { font-size: 0.64rem; padding: 0.2rem 0.6rem; }
-
-      /* Stats: 2 columns on mobile for better use of space */
-      .console-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-      .console-stat-card { padding: 0.75rem 0.5rem; border-radius: 0.8rem; }
-      .console-stat-card .stat-number { font-size: clamp(1.15rem, 5vw, 1.5rem); }
-      .console-stat-card .stat-label { font-size: 0.68rem; }
-      .console-stat-card .stat-sub { font-size: 0.6rem; }
-
-      /* Portal pills: compact on mobile */
-      .console-portals-strip { gap: 0.45rem; padding-top: 0.6rem; }
-      .console-portal-pill { padding: 0.3rem 0.75rem; font-size: 0.7rem; gap: 0.3rem; }
+      /* Hero canvas responsive layout */
+      .hero-studio-canvas {
+        padding: 1.2rem 1rem;
+        border-radius: 1.35rem;
+      }
+      .studio-canvas-topbar {
+        padding-bottom: 0.75rem;
+      }
+      .studio-headline-stage {
+        gap: 0.45rem;
+        padding: 0.85rem 0 1.35rem;
+      }
+      .studio-headline-text {
+        font-size: clamp(2rem, 7.5vw, 3.2rem);
+      }
+      .hero-cards-fan {
+        width: 85px;
+        height: 115px;
+        margin: 0 0.35rem;
+      }
+      .fan-card {
+        width: 70px;
+        height: 100px;
+        border-radius: 9px;
+      }
+      .fan-card-1 { transform: rotate(-20deg) translateX(-18px) translateY(4px); }
+      .fan-card-2 { transform: rotate(-10deg) translateX(-9px) translateY(2px); }
+      .fan-card-3 { transform: rotate(0deg); }
+      .fan-card-4 { transform: rotate(10deg) translateX(9px) translateY(2px); }
+      .fan-card-5 { transform: rotate(20deg) translateX(18px) translateY(4px); }
+      .studio-canvas-bottom {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .studio-statement {
+        font-size: 0.82rem;
+        max-width: 100%;
+      }
 
       /* Grids */
       .services-grid-8, .portfolio-grid { grid-template-columns: 1fr; }
@@ -1445,19 +1673,21 @@
     /* Extra small phones: 480px and below */
     @media (max-width: 480px) {
       .cinema-page { padding: 0.5rem 0.35rem 1rem; }
-      .hero-studio-console { padding: 0.85rem 0.75rem; border-radius: 0.85rem; margin: 0 0.25rem; }
-      .hero-h1 { font-size: clamp(1.35rem, 7vw, 2rem); }
-      .console-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .hero-studio-canvas { padding: 1rem 0.75rem; border-radius: 1.15rem; }
+      .studio-headline-text { font-size: clamp(1.75rem, 8vw, 2.4rem); }
+      .hero-cards-fan { width: 72px; height: 96px; margin: 0 0.15rem; }
+      .fan-card { width: 58px; height: 82px; border-radius: 8px; }
+      .studio-brand-name { font-size: 0.84rem; }
+      .studio-live-badge { font-size: 0.6rem; padding: 0.2rem 0.55rem; }
+      .studio-discipline-row { padding: 0.6rem 0.15rem; font-size: 0.8rem; }
       .cinema-page-counter { font-size: 0.75rem; padding: 0.18rem 0.45rem; }
       .cinema-nav-btn { padding: 0.4rem 0.9rem; font-size: 0.76rem; }
-      .hero-cta-group .btn { font-size: 0.82rem; padding: 0.55rem 1.25rem; }
     }
 
-    /* Very small phones: 360px and below — go to 1-col stats */
+    /* Very small phones: 360px and below */
     @media (max-width: 360px) {
-      .console-stats-grid { grid-template-columns: 1fr; }
-      .console-portals-strip { flex-direction: column; align-items: stretch; }
-      .console-portal-pill { justify-content: center; }
+      .studio-headline-stage { flex-wrap: wrap; justify-content: center; }
+      .hero-cards-fan { order: 2; margin: 0.4rem 0; }
     }
   </style>
 </head>
@@ -1521,101 +1751,117 @@
       <!-- ======================================================================
            PAGE 01: HOME
            ====================================================================== -->
+      <!-- ======================================================================
+           PAGE 01: HOME (EDITORIAL LUXURY DESIGN STUDIO - REFERENCE FORMAT)
+           ====================================================================== -->
       <section class="cinema-page active" id="page-home" data-page-index="0" data-page-name="Home">
-        <div class="container" style="text-align: center;">
+        <div class="container" style="text-align: center; width: 100%; max-width: 1080px;">
           <!-- Live Tagline Rotator -->
           <div class="hero-tagline-rotator stagger-el">
             <span class="tagline-dot"></span>
             <span id="rotatingTagline">GIVE YOUR BRAND A VISUAL IDENTITY</span>
           </div>
 
-          <h1 class="hero-h1 stagger-el">
-            <span class="gradient-text">DESIGN THAT MAKES YOUR BRAND STAND OUT.</span>
-          </h1>
-
-          <p class="hero-statement stagger-el">
-            We create modern, purposeful, and impactful visuals that turn ideas into memorable brand experiences.
-          </p>
-
-          <p class="hero-subtext stagger-el">
-            <strong>SLR GRAPHICS</strong> is a creative graphic design studio focused on building strong, professional, and memorable visual identities. We create designs that help businesses, brands, creators, and individuals communicate their ideas with clarity and style.
-          </p>
-
-          <!-- Primary CTA only (Explore Our Portfolio removed as requested) -->
-          <div class="hero-cta-group stagger-el">
-            <a onclick="goToCinemaPage(3)" class="btn btn-primary">
-              <span>START A PROJECT</span>
-              <span>→</span>
-            </a>
-          </div>
-
-          <!-- Studio Master Showcase Console (New Luxury Box Design) -->
-          <div class="hero-studio-console stagger-el">
-            <div class="console-header">
-              <div class="console-brand-badge">
-                <span class="console-logo-icon">✦</span>
-                <span class="console-brand-text">SLR GRAPHICS STUDIO</span>
-                <span class="console-divider">|</span>
-                <span class="console-sub-badge">VISUAL IDENTITY SUITE</span>
+          <!-- Masterpiece Hero Studio Canvas (Inspired by Reference Design) -->
+          <div class="hero-studio-canvas stagger-el">
+            <!-- Canvas Top Meta Bar -->
+            <div class="studio-canvas-topbar">
+              <div class="studio-brand-mark">
+                <span class="studio-mark-dot"></span>
+                <span class="studio-brand-name">SLR GRAPHICS</span>
               </div>
-              <div class="console-status-pill">
-                <span class="status-indicator-dot"></span>
-                <span>ONLINE & READY FOR COMMISSIONS</span>
+              <div class="studio-canvas-nav-links">
+                <span class="studio-live-badge">✦ BESPOKE BRAND IDENTITY STUDIO</span>
               </div>
             </div>
 
-            <div class="console-stats-grid">
-              <div class="console-stat-card">
-                <div class="console-stat-icon">🎨</div>
-                <div class="stat-number" id="stat-identities">150+</div>
-                <div class="stat-label">Visual Identities</div>
-                <div class="stat-sub">Crafted for Global Brands</div>
+            <!-- Giant Centerpiece Title + Fanned 3D Cards -->
+            <div class="studio-headline-stage">
+              <span class="studio-headline-text">Design</span>
+              
+              <!-- 5-Card Fanned Portfolio Deck -->
+              <div class="hero-cards-fan" onclick="goToCinemaPage(2)" title="Explore Our Portfolio">
+                <!-- Card 1 -->
+                <div class="fan-card fan-card-1">
+                  <div class="card-inner card-bg-1">
+                    <span class="card-tag">AURA</span>
+                    <div class="card-symbol">✦</div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="fan-card fan-card-2">
+                  <div class="card-inner card-bg-2">
+                    <span class="card-tag">ZENITH</span>
+                    <div class="card-symbol">◈</div>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="fan-card fan-card-3">
+                  <div class="card-inner card-bg-3">
+                    <span class="card-tag">NOVA</span>
+                    <div class="card-symbol">⚡</div>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="fan-card fan-card-4">
+                  <div class="card-inner card-bg-4">
+                    <span class="card-tag">SOLARIS</span>
+                    <div class="card-symbol">☼</div>
+                  </div>
+                </div>
+
+                <!-- Card 5 (Front & Center Featured Artwork) -->
+                <div class="fan-card fan-card-5">
+                  <div class="card-inner card-bg-featured">
+                    <div class="card-featured-art">
+                      <div class="card-glow-core"></div>
+                      <div class="card-art-figure"></div>
+                      <div class="card-embers"></div>
+                    </div>
+                    <div class="card-featured-footer">
+                      <span class="card-tag-gold">PULSE</span>
+                      <span class="card-explore-hint">VIEW ↗</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="console-stat-card">
-                <div class="console-stat-icon">⚡</div>
-                <div class="stat-number" id="stat-custom">100%</div>
-                <div class="stat-label">Custom Tailored</div>
-                <div class="stat-sub">Zero Recycled Templates</div>
-              </div>
-
-              <div class="console-stat-card">
-                <div class="console-stat-icon">⏱</div>
-                <div class="stat-number">24–48h</div>
-                <div class="stat-label">Fast Turnaround</div>
-                <div class="stat-sub">First Design Concepts</div>
-              </div>
-
-              <div class="console-stat-card">
-                <div class="console-stat-icon">★</div>
-                <div class="stat-number">5.0 ★</div>
-                <div class="stat-label">Client Trust</div>
-                <div class="stat-sub">Top Rated Graphic Quality</div>
-              </div>
+              <span class="studio-headline-text">Studio</span>
             </div>
 
-            <!-- Quick Portals to Jump to Any Page (No numbering) -->
-            <div class="console-portals-strip">
-              <a onclick="goToCinemaPage(1)" class="console-portal-pill">
-                <span class="portal-icon">🎨</span>
-                <span>Services</span>
-                <span class="portal-arrow">→</span>
-              </a>
-              <a onclick="goToCinemaPage(2)" class="console-portal-pill">
-                <span class="portal-icon">✨</span>
-                <span>Portfolio</span>
-                <span class="portal-arrow">→</span>
-              </a>
-              <a onclick="goToCinemaPage(3)" class="console-portal-pill">
-                <span class="portal-icon">💬</span>
-                <span>Contact</span>
-                <span class="portal-arrow">→</span>
-              </a>
-              <a onclick="goToCinemaPage(4)" class="console-portal-pill">
-                <span class="portal-icon">📖</span>
-                <span>About Us</span>
-                <span class="portal-arrow">→</span>
-              </a>
+            <!-- Canvas Bottom Row: Left Info + Right Disciplines -->
+            <div class="studio-canvas-bottom">
+              <!-- Left: Brief Statement & "Start a Project" CTA Pill -->
+              <div class="studio-left-block">
+                <p class="studio-statement">
+                  We blend creativity with technical expertise to craft experiences that captivate audiences and communicate your brand message.
+                </p>
+                <div class="studio-cta-wrapper">
+                  <a onclick="goToCinemaPage(3)" class="studio-talk-pill">
+                    <span>Start a Project</span>
+                    <span class="talk-pill-circle"></span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Disciplines Links with ↗ Arrows -->
+              <div class="studio-right-block">
+                <a onclick="goToCinemaPage(1)" class="studio-discipline-row">
+                  <span>Creative direction</span>
+                  <span class="disc-arrow">↗</span>
+                </a>
+                <a onclick="goToCinemaPage(1)" class="studio-discipline-row">
+                  <span>Brand identity & systems</span>
+                  <span class="disc-arrow">↗</span>
+                </a>
+                <a onclick="goToCinemaPage(1)" class="studio-discipline-row">
+                  <span>Digital, social & web design</span>
+                  <span class="disc-arrow">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
