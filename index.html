@@ -188,10 +188,32 @@
     }
 
     .btn-primary {
+      position: relative;
+      overflow: hidden;
       background: linear-gradient(135deg, #1B1035 0%, #7C3AED 100%);
       color: var(--text-white);
       box-shadow: 0 6px 25px rgba(27, 16, 53, 0.28);
       border-color: rgba(27, 16, 53, 0.2);
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      transition: all 0.75s ease;
+      pointer-events: none;
+    }
+    .btn-primary:hover::after {
+      left: 130%;
     }
     .btn-primary:hover {
       background: linear-gradient(135deg, #7C3AED 0%, #1B1035 100%);
@@ -868,6 +890,72 @@
       box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
     }
 
+    /* ==========================================================================
+       MOTION & MICRO-INTERACTIONS ENGINE
+       ========================================================================== */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3.5px;
+      width: 0%;
+      background: linear-gradient(90deg, #1B1035 0%, #7C3AED 45%, #A855F7 80%, #38BDF8 100%);
+      z-index: 10000;
+      transition: width 0.08s ease-out;
+      box-shadow: 0 0 10px rgba(124, 58, 237, 0.7);
+      pointer-events: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-stagger.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0.04s; }
+    .reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.10s; }
+    .reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.16s; }
+    .reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.22s; }
+    .reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.28s; }
+    .reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.34s; }
+    .reveal-stagger.revealed > *:nth-child(7) { transition-delay: 0.40s; }
+    .reveal-stagger.revealed > *:nth-child(8) { transition-delay: 0.46s; }
+
+    /* 3D Tilt Card & Cursor Glare */
+    .tilt-card {
+      transform-style: preserve-3d;
+      will-change: transform;
+      position: relative;
+    }
+    .tilt-glare {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle 280px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.35) 0%, transparent 75%);
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    .tilt-card:hover .tilt-glare {
+      opacity: 1;
+    }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -879,16 +967,16 @@
       border: 1px solid rgba(124, 58, 237, 0.16);
       border-radius: 1.75rem;
       overflow: hidden;
-      transition: var(--transition-smooth);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
       box-shadow: var(--shadow-card);
       cursor: pointer;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
     .portfolio-card:hover {
-      transform: translateY(-8px);
       border-color: var(--accent-violet);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 20px 45px -10px rgba(124, 58, 237, 0.22);
     }
 
     .project-stage {
@@ -899,17 +987,718 @@
       justify-content: center;
       overflow: hidden;
       background: #FAF8FF;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
     }
 
-    .project-card-img {
+    /* ==========================================================================
+       BESPOKE VECTOR STUDIO MOCKUPS (CRISP, NON-AI, ANIMATED)
+       ========================================================================== */
+    .stage-mockup {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      user-select: none;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .portfolio-card:hover .project-card-img {
-      transform: scale(1.06);
+    .portfolio-card:hover .stage-mockup {
+      transform: scale(1.03);
+    }
+
+    /* 1. MOCKUP: AURA BOTANICAL SKINCARE */
+    .mockup-aura {
+      background: radial-gradient(circle at 65% 35%, #F5EEFF 0%, #FFFFFF 65%, #FAF7FF 100%);
+    }
+    .aura-bg-orb {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
+      top: 15%;
+      right: 20%;
+      filter: blur(20px);
+      pointer-events: none;
+    }
+    .aura-bottle-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-card:hover .aura-bottle-wrap {
+      transform: translateY(-4px);
+    }
+    .aura-dropper-bulb {
+      width: 22px;
+      height: 18px;
+      background: #1B1035;
+      border-radius: 8px 8px 3px 3px;
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    }
+    .aura-dropper-collar {
+      width: 32px;
+      height: 10px;
+      background: linear-gradient(90deg, #B8860B, #FFD700, #B8860B);
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      margin-bottom: 2px;
+    }
+    .aura-bottle-body {
+      width: 105px;
+      height: 145px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(243, 232, 255, 0.75) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      border-radius: 12px 12px 18px 18px;
+      box-shadow: 0 16px 35px -8px rgba(124, 58, 237, 0.18), inset 0 0 15px rgba(255, 255, 255, 0.8);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+    .aura-bottle-highlight {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 5px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 4px;
+      filter: blur(1px);
+    }
+    .aura-bottle-label {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      border-radius: 8px;
+      padding: 0.65rem 0.5rem;
+      text-align: center;
+      width: 85%;
+      box-shadow: 0 4px 12px rgba(27, 16, 53, 0.05);
+    }
+    .aura-label-monogram {
+      font-size: 0.85rem;
+      color: #7C3AED;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .aura-label-brand {
+      font-family: var(--font-cinzel), serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #1B1035;
+      letter-spacing: 0.15em;
+      display: block;
+    }
+    .aura-label-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: #7C3AED;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      display: block;
+    }
+    .aura-label-rule {
+      width: 24px;
+      height: 1px;
+      background: #7C3AED;
+      margin: 0.3rem auto;
+      opacity: 0.4;
+    }
+    .aura-label-desc {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      color: #736491;
+      display: block;
+      letter-spacing: 0.08em;
+    }
+    .aura-swatches {
+      position: absolute;
+      bottom: 0.85rem;
+      left: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      z-index: 2;
+    }
+    .swatch-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      border-radius: 4px;
+      padding: 0.2rem 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: #1B1035;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+    .swatch-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .mockup-corner-tag {
+      position: absolute;
+      bottom: 0.85rem;
+      right: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 3;
+    }
+
+    /* 2. MOCKUP: ZENITH PRIVATE CAPITAL */
+    .mockup-zenith {
+      background: #110822;
+      position: relative;
+    }
+    .zenith-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.18) 0%, transparent 70%),
+                        linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 20px 20px, 20px 20px;
+      pointer-events: none;
+    }
+    .zenith-card {
+      width: 270px;
+      height: 155px;
+      background: linear-gradient(135deg, #1E1238 0%, #120924 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.55);
+      border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.12);
+      position: relative;
+      overflow: hidden;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-card:hover .zenith-card {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(212, 175, 55, 0.85);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 28px rgba(212, 175, 55, 0.25);
+    }
+    .zenith-card-sheen {
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: linear-gradient(
+        45deg,
+        transparent 45%,
+        rgba(255, 215, 0, 0.18) 50%,
+        transparent 55%
+      );
+      animation: goldSheen 5s infinite;
+      pointer-events: none;
+    }
+    @keyframes goldSheen {
+      0% { transform: translate(-30%, -30%); }
+      25%, 100% { transform: translate(30%, 30%); }
+    }
+    .zenith-crest-wrap {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 0.5rem;
+    }
+    .zenith-crest-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.4));
+    }
+    .zenith-title {
+      font-family: var(--font-cinzel), serif;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: #D4AF37;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+    .zenith-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #E2D3B3;
+      text-align: center;
+      opacity: 0.85;
+    }
+    .zenith-rule {
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+      margin: 0.45rem auto;
+    }
+    .zenith-cities {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.25em;
+      color: #A99B85;
+      text-align: center;
+    }
+
+    /* 3. MOCKUP: NOVA STREAM MUSIC APP */
+    .mockup-nova {
+      background: #0B051D;
+      position: relative;
+    }
+    .nova-ambient-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 40%, rgba(124, 58, 237, 0.3) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 60%, rgba(6, 182, 212, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .nova-player-card {
+      width: 280px;
+      background: rgba(25, 14, 48, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(124, 58, 237, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+    .nova-player-header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+      padding-bottom: 0.5rem;
+    }
+    .nova-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #06B6D4;
+      box-shadow: 0 0 8px #06B6D4;
+      animation: waPulse 1.6s infinite;
+    }
+    .nova-live-text {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #D8B4FE;
+      flex-grow: 1;
+    }
+    .nova-hq-pill {
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
+      font-weight: 700;
+      background: rgba(6, 182, 212, 0.2);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #38BDF8;
+      padding: 0.15rem 0.45rem;
+      border-radius: 9999px;
+    }
+    .nova-player-body {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 0.85rem;
+    }
+    .nova-vinyl-disc {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #7C3AED 0%, #0F0826 65%, #000000 100%);
+      border: 1.5px solid rgba(168, 85, 247, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: vinylSpin 6s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes vinylSpin {
+      100% { transform: rotate(360deg); }
+    }
+    .nova-vinyl-ring {
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+    }
+    .nova-vinyl-core {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #A855F7;
+      border: 2px solid #FFFFFF;
+    }
+    .nova-track-info {
+      flex-grow: 1;
+      overflow: hidden;
+    }
+    .nova-track-title {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-bottom: 0.15rem;
+    }
+    .nova-track-artist {
+      font-size: 0.64rem;
+      color: #C084FC;
+      margin-bottom: 0.45rem;
+    }
+    .nova-eq-visualizer {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 24px;
+    }
+    .eq-bar {
+      width: 3.5px;
+      background: linear-gradient(180deg, #38BDF8 0%, #A855F7 100%);
+      border-radius: 2px;
+      animation: eqBounce 1.2s ease-in-out infinite alternate;
+    }
+    .bar-1 { height: 16px; animation-delay: 0.05s; }
+    .bar-2 { height: 22px; animation-delay: 0.2s; }
+    .bar-3 { height: 10px; animation-delay: 0.4s; }
+    .bar-4 { height: 24px; animation-delay: 0.15s; }
+    .bar-5 { height: 14px; animation-delay: 0.35s; }
+    .bar-6 { height: 19px; animation-delay: 0.25s; }
+    .bar-7 { height: 8px;  animation-delay: 0.45s; }
+    .bar-8 { height: 21px; animation-delay: 0.1s; }
+    .bar-9 { height: 13px; animation-delay: 0.3s; }
+    .bar-10 { height: 23px; animation-delay: 0.5s; }
+    .bar-11 { height: 11px; animation-delay: 0.22s; }
+    .bar-12 { height: 18px; animation-delay: 0.38s; }
+
+    @keyframes eqBounce {
+      0% { height: 4px; }
+      100% { height: 24px; }
+    }
+    .nova-scrubber {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 2px;
+      position: relative;
+    }
+    .nova-scrubber-progress {
+      width: 65%;
+      height: 100%;
+      background: linear-gradient(90deg, #7C3AED, #38BDF8);
+      border-radius: 2px;
+      position: relative;
+    }
+    .nova-scrubber-thumb {
+      position: absolute;
+      right: -3px;
+      top: -3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 0 8px #38BDF8;
+    }
+
+    /* 4. MOCKUP: SOLARIS COFFEE ARTISANS */
+    .mockup-solaris {
+      background: #F6EFE5;
+      position: relative;
+    }
+    .solaris-bg-kraft {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .solaris-pouch {
+      width: 175px;
+      height: 210px;
+      background: #EFE4D2;
+      border: 1.5px solid #DFCDBD;
+      border-radius: 8px 8px 14px 14px;
+      box-shadow: 0 14px 35px rgba(110, 75, 40, 0.12);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.85rem;
+      z-index: 2;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-card:hover .solaris-pouch {
+      transform: translateY(-4px);
+    }
+    .solaris-pouch-top {
+      width: 100%;
+      height: 14px;
+      border-bottom: 2px dashed #C8B29C;
+      margin-bottom: 0.65rem;
+    }
+    .solaris-pouch-label {
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      border-radius: 8px;
+      padding: 0.85rem 0.65rem;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+    .solaris-sun-mark {
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 0.35rem;
+    }
+    .solaris-sun-svg {
+      width: 100%;
+      height: 100%;
+      animation: spinSlow 24s linear infinite;
+    }
+    @keyframes spinSlow {
+      100% { transform: rotate(360deg); }
+    }
+    .solaris-brand-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #1B1035;
+      letter-spacing: 0.12em;
+    }
+    .solaris-brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
+      font-weight: 700;
+      color: #F59E0B;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.35rem;
+    }
+    .solaris-origin {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: #4A3E65;
+      margin-bottom: 0.45rem;
+      border-top: 1px solid #F3E8FF;
+      border-bottom: 1px solid #F3E8FF;
+      padding: 0.2rem 0;
+    }
+    .solaris-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-bottom: 0.45rem;
+    }
+    .solaris-tag {
+      font-family: var(--font-mono);
+      font-size: 0.46rem;
+      font-weight: 700;
+      background: #FAF5FF;
+      color: #7C3AED;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      border: 1px solid rgba(124, 58, 237, 0.15);
+    }
+    .solaris-spec {
+      font-family: var(--font-mono);
+      font-size: 0.48rem;
+      color: #736491;
+    }
+
+    /* 5. MOCKUP: APEX ATHLETICS & PERFORMANCE */
+    .mockup-apex {
+      background: #0E071D;
+      position: relative;
+    }
+    .apex-carbon-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(45deg, rgba(124, 58, 237, 0.08) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(124, 58, 237, 0.08) 25%, transparent 25%);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+    .apex-speed-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(115deg, transparent 40%, rgba(168, 85, 247, 0.12) 50%, transparent 60%);
+      pointer-events: none;
+    }
+    .apex-emblem-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .apex-falcon-svg {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 0.65rem;
+      filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.6));
+      animation: falconPulse 3s ease-in-out infinite alternate;
+    }
+    @keyframes falconPulse {
+      0% { transform: scale(0.98); filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.4)); }
+      100% { transform: scale(1.04); filter: drop-shadow(0 0 22px rgba(192, 132, 252, 0.8)); }
+    }
+    .apex-brand-name {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: #FFFFFF;
+      text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+    }
+    .apex-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      color: #C084FC;
+      margin-bottom: 0.85rem;
+      font-weight: 700;
+    }
+    .apex-specs-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      font-weight: 700;
+      color: #FAF5FF;
+      background: rgba(27, 16, 53, 0.85);
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      letter-spacing: 0.1em;
+    }
+
+    /* 6. MOCKUP: KINETIC PULSE SOUND FEST (6TH / LAST PROJECT!) */
+    .mockup-pulse {
+      background: #080314;
+      position: relative;
+    }
+    .pulse-laser-beams {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.25) 0%, transparent 45%),
+        linear-gradient(135deg, rgba(124, 58, 237, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 24px 24px;
+      pointer-events: none;
+    }
+    .pulse-poster-content {
+      width: 290px;
+      background: rgba(18, 9, 36, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: 12px;
+      padding: 1.15rem;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(124, 58, 237, 0.25);
+    }
+    .pulse-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.54rem;
+      font-weight: 700;
+      color: #A855F7;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+    .pulse-bpm-pill {
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #4ADE80;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+    .pulse-fest-title {
+      font-family: var(--font-cinzel), serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      color: #FFFFFF;
+      text-shadow: 0 0 14px rgba(168, 85, 247, 0.8);
+      line-height: 1.1;
+    }
+    .pulse-fest-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #C084FC;
+      margin-bottom: 0.75rem;
+    }
+    .pulse-waveform-container {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pulse-wave-svg {
+      width: 100%;
+      height: 100%;
+    }
+    .pulse-wave-path {
+      animation: soundWaveAnim 3s ease-in-out infinite alternate;
+    }
+    .wave-back {
+      animation-delay: -1.5s;
+    }
+    @keyframes soundWaveAnim {
+      0% { transform: scaleY(0.7) translateY(2px); }
+      100% { transform: scaleY(1.35) translateY(-2px); }
+    }
+    .pulse-bottom-lineup {
+      font-family: var(--font-mono);
+      font-size: 0.54rem;
+      font-weight: 700;
+      color: #FAF5FF;
+      border-top: 1px solid rgba(168, 85, 247, 0.25);
+      padding-top: 0.45rem;
+      letter-spacing: 0.08em;
     }
 
     .stage-badge {
@@ -1404,9 +2193,23 @@
       font-weight: 700;
       font-size: 0.92rem;
       text-decoration: none;
-      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
       transition: var(--transition-smooth);
       border: 2px solid #FFFFFF;
+      animation: waFloat 4s ease-in-out infinite;
+    }
+    .floating-whatsapp::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      border: 2px solid rgba(37, 211, 102, 0.65);
+      animation: waPulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+      pointer-events: none;
+    }
+    @keyframes waFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
     .floating-whatsapp:hover {
       transform: translateY(-4px) scale(1.03);
@@ -1736,8 +2539,8 @@
         font-size: 0.8rem;
       }
       .project-stage {
-        height: 200px;
-        padding: 1.25rem;
+        height: 250px;
+        padding: 0;
       }
       .form-group-row, .estimate-services-grid {
         grid-template-columns: 1fr;
@@ -1811,6 +2614,9 @@
 </head>
 
 <body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div id="scrollProgressBar" class="scroll-progress-bar"></div>
+
   <!-- Clean Ambient Background Mesh -->
   <div class="ambient-bg"></div>
   <div class="grid-lines"></div>
@@ -1864,24 +2670,24 @@
     <section id="home" class="hero-section">
       <div class="container">
         <!-- Live Tagline Rotator -->
-        <div class="hero-tagline-rotator">
+        <div class="hero-tagline-rotator reveal">
           <span class="tagline-dot"></span>
           <span id="rotatingTagline">GIVE YOUR BRAND A VISUAL IDENTITY</span>
         </div>
 
-        <h1 class="hero-h1">
+        <h1 class="hero-h1 reveal">
           <span class="gradient-text">DESIGN THAT MAKES YOUR BRAND STAND OUT.</span>
         </h1>
 
-        <p class="hero-statement">
+        <p class="hero-statement reveal">
           We create modern, purposeful, and impactful visuals that turn ideas into memorable brand experiences.
         </p>
 
-        <p class="hero-subtext">
+        <p class="hero-subtext reveal">
           <strong>SLR GRAPHICS</strong> is a creative graphic design studio focused on building strong, professional, and memorable visual identities. We create designs that help businesses, brands, creators, and individuals communicate their ideas with clarity and style.
         </p>
 
-        <div class="hero-cta-group">
+        <div class="hero-cta-group reveal">
           <a href="#contact" class="btn btn-primary">
             <span>START A PROJECT</span>
             <span>→</span>
@@ -1889,7 +2695,7 @@
         </div>
 
         <!-- Studio Master Showcase Artboard -->
-        <div class="hero-artboard">
+        <div class="hero-artboard tilt-card reveal">
           <div class="artboard-topbar">
             <div class="window-dots">
               <div class="window-dot dot-red"></div>
@@ -1902,13 +2708,13 @@
 
           <div class="artboard-content">
             <div class="artboard-stat">
-              <div class="stat-number">150+</div>
+              <div class="stat-number" id="stat-identities">150+</div>
               <div class="stat-label">Visual Identities</div>
               <div class="stat-sub">Crafted for Global Brands</div>
             </div>
 
             <div class="artboard-stat">
-              <div class="stat-number">100%</div>
+              <div class="stat-number" id="stat-custom">100%</div>
               <div class="stat-label">Custom Tailored</div>
               <div class="stat-sub">Zero Recycled Templates</div>
             </div>
@@ -1954,7 +2760,7 @@
          ========================================================================== -->
     <section id="services" style="background:#FAF8FF;">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="section-eyebrow">OUR SERVICES</div>
           <h2 class="section-title">WHAT WE DO</h2>
           <p class="section-desc">
@@ -1962,9 +2768,9 @@
           </p>
         </div>
 
-        <div class="services-grid-8">
+        <div class="services-grid-8 reveal-stagger">
           <!-- 1. Brand Identity -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">01 / SERVICE</div>
               <div class="service-icon-box">🎨</div>
@@ -1984,7 +2790,7 @@
           </div>
 
           <!-- 2. Marketing Collateral -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">02 / SERVICE</div>
               <div class="service-icon-box">📑</div>
@@ -2004,7 +2810,7 @@
           </div>
 
           <!-- 3. Advertising Creatives -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">03 / SERVICE</div>
               <div class="service-icon-box">📢</div>
@@ -2024,7 +2830,7 @@
           </div>
 
           <!-- 4. Digital & Social Media Design -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">04 / SERVICE</div>
               <div class="service-icon-box">📱</div>
@@ -2044,7 +2850,7 @@
           </div>
 
           <!-- 5. Print & Packaging Design -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">05 / SERVICE</div>
               <div class="service-icon-box">📦</div>
@@ -2064,7 +2870,7 @@
           </div>
 
           <!-- 6. UI & UX DESIGN AND DEVELOPMENT -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">06 / SERVICE</div>
               <div class="service-icon-box">💻</div>
@@ -2084,7 +2890,7 @@
           </div>
 
           <!-- 7. WEBSITE HANDLING -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">07 / SERVICE</div>
               <div class="service-icon-box">⚙️</div>
@@ -2104,7 +2910,7 @@
           </div>
 
           <!-- 8. SEO -->
-          <div class="service-card-8">
+          <div class="service-card-8 tilt-card">
             <div>
               <div class="service-num">08 / SERVICE</div>
               <div class="service-icon-box">🚀</div>
@@ -2131,7 +2937,7 @@
          ========================================================================== -->
     <section id="portfolio">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="section-eyebrow">PORTFOLIO</div>
           <h2 class="section-title">DESIGN THAT SPEAKS FOR ITSELF.</h2>
           <p class="section-desc">
@@ -2140,7 +2946,7 @@
         </div>
 
         <!-- Filter tabs -->
-        <div class="portfolio-tabs">
+        <div class="portfolio-tabs reveal">
           <button class="tab-pill active" onclick="filterWork('all')">All Work</button>
           <button class="tab-pill" onclick="filterWork('branding')">Brand Identity</button>
           <button class="tab-pill" onclick="filterWork('social')">Social Media</button>
@@ -2148,12 +2954,34 @@
           <button class="tab-pill" onclick="filterWork('print')">Print Design</button>
         </div>
 
-        <div class="portfolio-grid" id="portfolioContainer">
+        <div class="portfolio-grid reveal-stagger" id="portfolioContainer">
           <!-- Item 1: Aura Skincare -->
-          <div class="portfolio-card" data-category="branding" onclick="openProjectModal('aura')">
+          <div class="portfolio-card tilt-card" data-category="branding" onclick="openProjectModal('aura')">
             <div class="project-stage">
               <span class="stage-badge">BRAND IDENTITY</span>
-              <img src="assets/project-aura.jpg" alt="Aura Botanical Skincare Brand Identity & Launch Post" class="project-card-img" />
+              <div class="stage-mockup mockup-aura">
+                <div class="aura-bg-orb"></div>
+                <div class="aura-bottle-wrap">
+                  <div class="aura-dropper-bulb"></div>
+                  <div class="aura-dropper-collar"></div>
+                  <div class="aura-bottle-body">
+                    <div class="aura-bottle-highlight"></div>
+                    <div class="aura-bottle-label">
+                      <span class="aura-label-monogram">✦</span>
+                      <span class="aura-label-brand">AURA</span>
+                      <span class="aura-label-sub">BOTANICALS</span>
+                      <div class="aura-label-rule"></div>
+                      <span class="aura-label-desc">N° 01 SERUM • 30ML</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="aura-swatches">
+                  <div class="swatch-chip"><span class="swatch-color" style="background:#1B1035;"></span><span>PANTONE 268 C</span></div>
+                  <div class="swatch-chip"><span class="swatch-color" style="background:#7C3AED;"></span><span>VIOLET VIBE</span></div>
+                  <div class="swatch-chip"><span class="swatch-color" style="background:#E9D5FF;"></span><span>LAVENDER MIST</span></div>
+                </div>
+                <div class="mockup-corner-tag" style="background:rgba(255,255,255,0.85); color:#1B1035; border:1px solid rgba(124,58,237,0.2);">STUDIO IDENTITY SUITE</div>
+              </div>
             </div>
             <div class="project-details">
               <div>
@@ -2169,10 +2997,29 @@
           </div>
 
           <!-- Item 2: Zenith Wealth -->
-          <div class="portfolio-card" data-category="print" onclick="openProjectModal('zenith')">
+          <div class="portfolio-card tilt-card" data-category="print" onclick="openProjectModal('zenith')">
             <div class="project-stage">
               <span class="stage-badge">PRINT & STATIONERY</span>
-              <img src="assets/project-zenith.jpg" alt="Zenith Private Capital Corporate Stationery & Print Suite" class="project-card-img" />
+              <div class="stage-mockup mockup-zenith">
+                <div class="zenith-bg-pattern"></div>
+                <div class="zenith-card">
+                  <div class="zenith-card-sheen"></div>
+                  <div class="zenith-crest-wrap">
+                    <svg class="zenith-crest-svg" viewBox="0 0 60 60" fill="none">
+                      <circle cx="30" cy="30" r="28" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="2 2"/>
+                      <circle cx="30" cy="30" r="23" stroke="#D4AF37" stroke-width="0.8"/>
+                      <path d="M22 20H38L22 40H38" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="30" cy="14" r="1.5" fill="#D4AF37"/>
+                      <circle cx="30" cy="46" r="1.5" fill="#D4AF37"/>
+                    </svg>
+                  </div>
+                  <div class="zenith-title">ZENITH PRIVATE CAPITAL</div>
+                  <div class="zenith-subtitle">WEALTH MANAGEMENT & ADVISORY</div>
+                  <div class="zenith-rule"></div>
+                  <div class="zenith-cities">GENEVA • LONDON • ZÜRICH</div>
+                </div>
+                <div class="mockup-corner-tag" style="background:rgba(27,16,53,0.85); color:#D4AF37; border:1px solid rgba(212,175,55,0.4);">HOT FOIL STAMP // 600 GSM</div>
+              </div>
             </div>
             <div class="project-details">
               <div>
@@ -2188,10 +3035,47 @@
           </div>
 
           <!-- Item 3: Nova Stream -->
-          <div class="portfolio-card" data-category="social" onclick="openProjectModal('nova')">
+          <div class="portfolio-card tilt-card" data-category="social" onclick="openProjectModal('nova')">
             <div class="project-stage">
               <span class="stage-badge">SOCIAL MEDIA ADS</span>
-              <img src="assets/project-nova.jpg" alt="Nova Stream Mobile App Instagram Carousel Post & Ad Suite" class="project-card-img" />
+              <div class="stage-mockup mockup-nova">
+                <div class="nova-ambient-glow"></div>
+                <div class="nova-player-card">
+                  <div class="nova-player-header">
+                    <span class="nova-live-dot"></span>
+                    <span class="nova-live-text">SPATIAL AUDIO NOW PLAYING</span>
+                    <span class="nova-hq-pill">96kHz HQ</span>
+                  </div>
+                  <div class="nova-player-body">
+                    <div class="nova-vinyl-disc">
+                      <div class="nova-vinyl-ring"></div>
+                      <div class="nova-vinyl-core"></div>
+                    </div>
+                    <div class="nova-track-info">
+                      <div class="nova-track-title">Midnight Echoes</div>
+                      <div class="nova-track-artist">Nova Audio Labs • Electronic</div>
+                      <div class="nova-eq-visualizer">
+                        <span class="eq-bar bar-1"></span>
+                        <span class="eq-bar bar-2"></span>
+                        <span class="eq-bar bar-3"></span>
+                        <span class="eq-bar bar-4"></span>
+                        <span class="eq-bar bar-5"></span>
+                        <span class="eq-bar bar-6"></span>
+                        <span class="eq-bar bar-7"></span>
+                        <span class="eq-bar bar-8"></span>
+                        <span class="eq-bar bar-9"></span>
+                        <span class="eq-bar bar-10"></span>
+                        <span class="eq-bar bar-11"></span>
+                        <span class="eq-bar bar-12"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nova-scrubber">
+                    <div class="nova-scrubber-progress"><span class="nova-scrubber-thumb"></span></div>
+                  </div>
+                </div>
+                <div class="mockup-corner-tag" style="background:rgba(27,16,53,0.85); color:#38BDF8; border:1px solid rgba(56,189,248,0.4);">LIVE AUDIO MOTION // ADS</div>
+              </div>
             </div>
             <div class="project-details">
               <div>
@@ -2207,10 +3091,33 @@
           </div>
 
           <!-- Item 4: Solaris Coffee -->
-          <div class="portfolio-card" data-category="print" onclick="openProjectModal('solaris')">
+          <div class="portfolio-card tilt-card" data-category="print" onclick="openProjectModal('solaris')">
             <div class="project-stage">
               <span class="stage-badge">PACKAGING & MENU</span>
-              <img src="assets/project-solaris.jpg" alt="Solaris Coffee Artisans Packaging & Cafe Branding Post" class="project-card-img" />
+              <div class="stage-mockup mockup-solaris">
+                <div class="solaris-bg-kraft"></div>
+                <div class="solaris-pouch">
+                  <div class="solaris-pouch-top"></div>
+                  <div class="solaris-pouch-label">
+                    <div class="solaris-sun-mark">
+                      <svg viewBox="0 0 44 44" fill="none" class="solaris-sun-svg">
+                        <circle cx="22" cy="22" r="10" stroke="#F59E0B" stroke-width="2.5" fill="rgba(245, 158, 11, 0.1)"/>
+                        <path d="M22 2V8M22 36V42M2 22H8M36 22H42M7.8 7.8L12 12M32 32L36.2 36.2M7.8 36.2L12 32M32 12L36.2 7.8" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="solaris-brand-title">SOLARIS</div>
+                    <div class="solaris-brand-sub">COFFEE ARTISANS</div>
+                    <div class="solaris-origin">ETHIOPIA YIRGACHEFFE</div>
+                    <div class="solaris-tags">
+                      <span class="solaris-tag">JASMINE</span>
+                      <span class="solaris-tag">BERGAMOT</span>
+                      <span class="solaris-tag">CITRUS</span>
+                    </div>
+                    <div class="solaris-spec">250G • WHOLE BEAN • ELEV. 2,100M</div>
+                  </div>
+                </div>
+                <div class="mockup-corner-tag" style="background:rgba(255,255,255,0.85); color:#F59E0B; border:1px solid rgba(245,158,11,0.3);">ARTISANAL POUCH // SPECIALTY</div>
+              </div>
             </div>
             <div class="project-details">
               <div>
@@ -2226,10 +3133,35 @@
           </div>
 
           <!-- Item 5: Apex Dynamics -->
-          <div class="portfolio-card" data-category="branding" onclick="openProjectModal('apex')">
+          <div class="portfolio-card tilt-card" data-category="branding" onclick="openProjectModal('apex')">
             <div class="project-stage">
               <span class="stage-badge">BRAND & APPAREL</span>
-              <img src="assets/project-apex.jpg" alt="Apex Athletics Sportswear Apparel & Social Campaign Post" class="project-card-img" />
+              <div class="stage-mockup mockup-apex">
+                <div class="apex-carbon-grid"></div>
+                <div class="apex-speed-lines"></div>
+                <div class="apex-emblem-wrap">
+                  <svg class="apex-falcon-svg" viewBox="0 0 80 80" fill="none">
+                    <polygon points="40,8 68,26 58,68 40,78 22,68 12,26" stroke="#7C3AED" stroke-width="2" fill="rgba(124, 58, 237, 0.15)"/>
+                    <path d="M40 18L56 34L40 60L24 34Z" fill="url(#apexGrad)" stroke="#C084FC" stroke-width="1.8"/>
+                    <defs>
+                      <linearGradient id="apexGrad" x1="24" y1="18" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#A855F7"/>
+                        <stop offset="1" stop-color="#1B1035"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class="apex-brand-name">APEX ATHLETICS</div>
+                  <div class="apex-tagline">AERODYNAMIC PERFORMANCE APPAREL</div>
+                </div>
+                <div class="apex-specs-strip">
+                  <span>AEROKNIT™ 240GSM</span>
+                  <span>•</span>
+                  <span>ZERO DRAG</span>
+                  <span>•</span>
+                  <span>EST. 2026</span>
+                </div>
+                <div class="mockup-corner-tag" style="background:rgba(27,16,53,0.85); color:#C084FC; border:1px solid rgba(192,132,252,0.4);">TECHNICAL APPAREL SUITE</div>
+              </div>
             </div>
             <div class="project-details">
               <div>
@@ -2245,10 +3177,37 @@
           </div>
 
           <!-- Item 6: Kinetic Pulse Festival -->
-          <div class="portfolio-card" data-category="poster" onclick="openProjectModal('pulse')">
+          <div class="portfolio-card tilt-card" data-category="poster" onclick="openProjectModal('pulse')">
             <div class="project-stage">
               <span class="stage-badge">POSTER & PROMO</span>
-              <img src="assets/project-pulse.jpg" alt="Kinetic Pulse Festival Promotional Post & Poster Design" class="project-card-img" />
+              <div class="stage-mockup mockup-pulse">
+                <div class="pulse-laser-beams"></div>
+                <div class="pulse-poster-content">
+                  <div class="pulse-top-meta">
+                    <span>TOKYO // BERLIN // LONDON</span>
+                    <span class="pulse-bpm-pill">140–175 BPM</span>
+                  </div>
+                  <div class="pulse-fest-title">KINETIC PULSE</div>
+                  <div class="pulse-fest-sub">SOUND & LIGHT FESTIVAL // 2026</div>
+                  <div class="pulse-waveform-container">
+                    <svg class="pulse-wave-svg" viewBox="0 0 300 60" preserveAspectRatio="none">
+                      <path class="pulse-wave-path wave-back" d="M0,30 Q35,5 70,30 T140,30 T210,30 T280,30 T350,30" fill="none" stroke="rgba(168, 85, 247, 0.45)" stroke-width="2"/>
+                      <path class="pulse-wave-path wave-front" d="M0,30 Q35,55 70,30 T140,30 T210,30 T280,30 T350,30" fill="none" stroke="url(#pulseWaveGrad)" stroke-width="3"/>
+                      <defs>
+                        <linearGradient id="pulseWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#A855F7"/>
+                          <stop offset="50%" stop-color="#22C55E"/>
+                          <stop offset="100%" stop-color="#38BDF8"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="pulse-bottom-lineup">
+                    <span>48 HEADLINERS • 3 STAGES • 72H CONTINUOUS AUDIO</span>
+                  </div>
+                </div>
+                <div class="mockup-corner-tag" style="background:rgba(8,3,20,0.85); color:#22C55E; border:1px solid rgba(34,197,94,0.4);">SWISS GRID // KEY VISUAL</div>
+              </div>
             </div>
             <div class="project-details">
               <div>
@@ -2287,7 +3246,7 @@
       <div class="container">
         <div class="contact-container-grid">
           <!-- Contact Info Column -->
-          <div class="contact-info-panel">
+          <div class="contact-info-panel reveal">
             <div class="section-eyebrow">CONTACT</div>
             <h3>HAVE A PROJECT IN MIND?</h3>
             <p>
@@ -2343,7 +3302,7 @@
           </div>
 
           <!-- Project Inquiry Form + Interactive Estimator -->
-          <div class="contact-form-card">
+          <div class="contact-form-card reveal">
             <div class="form-header-title">START A PROJECT</div>
             <div class="form-header-sub">Fill out your details below to get a tailored proposal for your brand.</div>
 
@@ -2486,7 +3445,7 @@
     <section id="about" style="background:#FAF8FF;">
       <div class="container">
         <div class="about-layout">
-          <div class="about-text">
+          <div class="about-text reveal">
             <div class="section-eyebrow">ABOUT US</div>
             <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
             <p class="about-lead">
@@ -2503,7 +3462,7 @@
           </div>
 
           <!-- Approach Card: UNDERSTAND → CREATE → REFINE → DELIVER -->
-          <div class="approach-card">
+          <div class="approach-card tilt-card reveal">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
               <span style="font-family:var(--font-cinzel), var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.15em;">OUR APPROACH</span>
               <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted);">HOW WE WORK</span>
@@ -2551,28 +3510,28 @@
         </div>
 
         <!-- 5 Core Pillars: Why SLR Graphics -->
-        <div class="pillars-strip">
-          <div class="pillar-item">
+        <div class="pillars-strip reveal-stagger">
+          <div class="pillar-item tilt-card">
             <div style="font-size:1.8rem;">💡</div>
             <h5>CREATIVE THINKING</h5>
             <p>We turn ideas into visually meaningful designs.</p>
           </div>
-          <div class="pillar-item">
+          <div class="pillar-item tilt-card">
             <div style="font-size:1.8rem;">💎</div>
             <h5>PROFESSIONAL QUALITY</h5>
             <p>Every design is created with attention to detail and consistency.</p>
           </div>
-          <div class="pillar-item">
+          <div class="pillar-item tilt-card">
             <div style="font-size:1.8rem;">🎯</div>
             <h5>CUSTOM SOLUTIONS</h5>
             <p>We create designs based on your brand, audience, and goals.</p>
           </div>
-          <div class="pillar-item">
+          <div class="pillar-item tilt-card">
             <div style="font-size:1.8rem;">🛡️</div>
             <h5>CONSISTENT VISUALS</h5>
             <p>We help maintain a strong and recognizable identity across platforms.</p>
           </div>
-          <div class="pillar-item">
+          <div class="pillar-item tilt-card">
             <div style="font-size:1.8rem;">🤝</div>
             <h5>CLIENT-FOCUSED PROCESS</h5>
             <p>Your ideas and requirements remain at the center of every project.</p>
@@ -2809,8 +3768,8 @@
       const content = document.getElementById('modalContent');
 
       content.innerHTML = `
-        <div style="margin-bottom:1.5rem; border-radius:1rem; overflow:hidden; border:1px solid rgba(124,58,237,0.22); max-height:420px; box-shadow:0 8px 30px rgba(27,16,53,0.12);">
-          <img src="${data.image}" alt="${data.title}" style="width:100%; height:100%; max-height:420px; object-fit:cover; display:block;" />
+        <div style="margin-bottom:1.5rem; border-radius:1rem; overflow:hidden; border:1px solid rgba(124,58,237,0.22); height:300px; box-shadow:0 8px 30px rgba(27,16,53,0.12); position:relative;">
+          ${getModalMockupHtml(key)}
         </div>
         <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--accent-violet); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem; font-weight:700;">
           ${data.category}
@@ -2995,6 +3954,304 @@ ${brief}
         sendViaWhatsApp();
       }, 400);
     }
+
+    // 11. Modal Mockup Generator (Vector-Sharp, Zero AI Artifacts)
+    function getModalMockupHtml(key) {
+      switch(key) {
+        case 'aura':
+          return `
+            <div class="stage-mockup mockup-aura">
+              <div class="aura-bg-orb"></div>
+              <div class="aura-bottle-wrap">
+                <div class="aura-dropper-bulb"></div>
+                <div class="aura-dropper-collar"></div>
+                <div class="aura-bottle-body">
+                  <div class="aura-bottle-highlight"></div>
+                  <div class="aura-bottle-label">
+                    <span class="aura-label-monogram">✦</span>
+                    <span class="aura-label-brand">AURA</span>
+                    <span class="aura-label-sub">BOTANICALS</span>
+                    <div class="aura-label-rule"></div>
+                    <span class="aura-label-desc">N° 01 SERUM • 30ML</span>
+                  </div>
+                </div>
+              </div>
+              <div class="aura-swatches">
+                <div class="swatch-chip"><span class="swatch-color" style="background:#1B1035;"></span><span>PANTONE 268 C</span></div>
+                <div class="swatch-chip"><span class="swatch-color" style="background:#7C3AED;"></span><span>VIOLET VIBE</span></div>
+                <div class="swatch-chip"><span class="swatch-color" style="background:#E9D5FF;"></span><span>LAVENDER MIST</span></div>
+              </div>
+              <div class="mockup-corner-tag" style="background:rgba(255,255,255,0.85); color:#1B1035; border:1px solid rgba(124,58,237,0.2);">STUDIO IDENTITY SUITE</div>
+            </div>`;
+        case 'zenith':
+          return `
+            <div class="stage-mockup mockup-zenith">
+              <div class="zenith-bg-pattern"></div>
+              <div class="zenith-card">
+                <div class="zenith-card-sheen"></div>
+                <div class="zenith-crest-wrap">
+                  <svg class="zenith-crest-svg" viewBox="0 0 60 60" fill="none">
+                    <circle cx="30" cy="30" r="28" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="2 2"/>
+                    <circle cx="30" cy="30" r="23" stroke="#D4AF37" stroke-width="0.8"/>
+                    <path d="M22 20H38L22 40H38" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="30" cy="14" r="1.5" fill="#D4AF37"/>
+                    <circle cx="30" cy="46" r="1.5" fill="#D4AF37"/>
+                  </svg>
+                </div>
+                <div class="zenith-title">ZENITH PRIVATE CAPITAL</div>
+                <div class="zenith-subtitle">WEALTH MANAGEMENT & ADVISORY</div>
+                <div class="zenith-rule"></div>
+                <div class="zenith-cities">GENEVA • LONDON • ZÜRICH</div>
+              </div>
+              <div class="mockup-corner-tag" style="background:rgba(27,16,53,0.85); color:#D4AF37; border:1px solid rgba(212,175,55,0.4);">HOT FOIL STAMP // 600 GSM</div>
+            </div>`;
+        case 'nova':
+          return `
+            <div class="stage-mockup mockup-nova">
+              <div class="nova-ambient-glow"></div>
+              <div class="nova-player-card">
+                <div class="nova-player-header">
+                  <span class="nova-live-dot"></span>
+                  <span class="nova-live-text">SPATIAL AUDIO NOW PLAYING</span>
+                  <span class="nova-hq-pill">96kHz HQ</span>
+                </div>
+                <div class="nova-player-body">
+                  <div class="nova-vinyl-disc">
+                    <div class="nova-vinyl-ring"></div>
+                    <div class="nova-vinyl-core"></div>
+                  </div>
+                  <div class="nova-track-info">
+                    <div class="nova-track-title">Midnight Echoes</div>
+                    <div class="nova-track-artist">Nova Audio Labs • Electronic</div>
+                    <div class="nova-eq-visualizer">
+                      <span class="eq-bar bar-1"></span>
+                      <span class="eq-bar bar-2"></span>
+                      <span class="eq-bar bar-3"></span>
+                      <span class="eq-bar bar-4"></span>
+                      <span class="eq-bar bar-5"></span>
+                      <span class="eq-bar bar-6"></span>
+                      <span class="eq-bar bar-7"></span>
+                      <span class="eq-bar bar-8"></span>
+                      <span class="eq-bar bar-9"></span>
+                      <span class="eq-bar bar-10"></span>
+                      <span class="eq-bar bar-11"></span>
+                      <span class="eq-bar bar-12"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="nova-scrubber">
+                  <div class="nova-scrubber-progress"><span class="nova-scrubber-thumb"></span></div>
+                </div>
+              </div>
+              <div class="mockup-corner-tag" style="background:rgba(27,16,53,0.85); color:#38BDF8; border:1px solid rgba(56,189,248,0.4);">LIVE AUDIO MOTION // ADS</div>
+            </div>`;
+        case 'solaris':
+          return `
+            <div class="stage-mockup mockup-solaris">
+              <div class="solaris-bg-kraft"></div>
+              <div class="solaris-pouch">
+                <div class="solaris-pouch-top"></div>
+                <div class="solaris-pouch-label">
+                  <div class="solaris-sun-mark">
+                    <svg viewBox="0 0 44 44" fill="none" class="solaris-sun-svg">
+                      <circle cx="22" cy="22" r="10" stroke="#F59E0B" stroke-width="2.5" fill="rgba(245, 158, 11, 0.1)"/>
+                      <path d="M22 2V8M22 36V42M2 22H8M36 22H42M7.8 7.8L12 12M32 32L36.2 36.2M7.8 36.2L12 32M32 12L36.2 7.8" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="solaris-brand-title">SOLARIS</div>
+                  <div class="solaris-brand-sub">COFFEE ARTISANS</div>
+                  <div class="solaris-origin">ETHIOPIA YIRGACHEFFE</div>
+                  <div class="solaris-tags">
+                    <span class="solaris-tag">JASMINE</span>
+                    <span class="solaris-tag">BERGAMOT</span>
+                    <span class="solaris-tag">CITRUS</span>
+                  </div>
+                  <div class="solaris-spec">250G • WHOLE BEAN • ELEV. 2,100M</div>
+                </div>
+              </div>
+              <div class="mockup-corner-tag" style="background:rgba(255,255,255,0.85); color:#F59E0B; border:1px solid rgba(245,158,11,0.3);">ARTISANAL POUCH // SPECIALTY</div>
+            </div>`;
+        case 'apex':
+          return `
+            <div class="stage-mockup mockup-apex">
+              <div class="apex-carbon-grid"></div>
+              <div class="apex-speed-lines"></div>
+              <div class="apex-emblem-wrap">
+                <svg class="apex-falcon-svg" viewBox="0 0 80 80" fill="none">
+                  <polygon points="40,8 68,26 58,68 40,78 22,68 12,26" stroke="#7C3AED" stroke-width="2" fill="rgba(124, 58, 237, 0.15)"/>
+                  <path d="M40 18L56 34L40 60L24 34Z" fill="url(#apexGradModal)" stroke="#C084FC" stroke-width="1.8"/>
+                  <defs>
+                    <linearGradient id="apexGradModal" x1="24" y1="18" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#A855F7"/>
+                      <stop offset="1" stop-color="#1B1035"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="apex-brand-name">APEX ATHLETICS</div>
+                <div class="apex-tagline">AERODYNAMIC PERFORMANCE APPAREL</div>
+              </div>
+              <div class="apex-specs-strip">
+                <span>AEROKNIT™ 240GSM</span>
+                <span>•</span>
+                <span>ZERO DRAG</span>
+                <span>•</span>
+                <span>EST. 2026</span>
+              </div>
+              <div class="mockup-corner-tag" style="background:rgba(27,16,53,0.85); color:#C084FC; border:1px solid rgba(192,132,252,0.4);">TECHNICAL APPAREL SUITE</div>
+            </div>`;
+        case 'pulse':
+          return `
+            <div class="stage-mockup mockup-pulse">
+              <div class="pulse-laser-beams"></div>
+              <div class="pulse-poster-content">
+                <div class="pulse-top-meta">
+                  <span>TOKYO // BERLIN // LONDON</span>
+                  <span class="pulse-bpm-pill">140–175 BPM</span>
+                </div>
+                <div class="pulse-fest-title">KINETIC PULSE</div>
+                <div class="pulse-fest-sub">SOUND & LIGHT FESTIVAL // 2026</div>
+                <div class="pulse-waveform-container">
+                  <svg class="pulse-wave-svg" viewBox="0 0 300 60" preserveAspectRatio="none">
+                    <path class="pulse-wave-path wave-back" d="M0,30 Q35,5 70,30 T140,30 T210,30 T280,30 T350,30" fill="none" stroke="rgba(168, 85, 247, 0.45)" stroke-width="2"/>
+                    <path class="pulse-wave-path wave-front" d="M0,30 Q35,55 70,30 T140,30 T210,30 T280,30 T350,30" fill="none" stroke="url(#pulseWaveGradModal)" stroke-width="3"/>
+                    <defs>
+                      <linearGradient id="pulseWaveGradModal" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#A855F7"/>
+                        <stop offset="50%" stop-color="#22C55E"/>
+                        <stop offset="100%" stop-color="#38BDF8"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="pulse-bottom-lineup">
+                  <span>48 HEADLINERS • 3 STAGES • 72H CONTINUOUS AUDIO</span>
+                </div>
+              </div>
+              <div class="mockup-corner-tag" style="background:rgba(8,3,20,0.85); color:#22C55E; border:1px solid rgba(34,197,94,0.4);">SWISS GRID // KEY VISUAL</div>
+            </div>`;
+        default:
+          return '';
+      }
+    }
+
+    // 12. Scroll Reading Progress Indicator
+    function initScrollProgress() {
+      const bar = document.getElementById('scrollProgressBar');
+      if (!bar) return;
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (height > 0) {
+          const scrolled = (winScroll / height) * 100;
+          bar.style.width = scrolled + '%';
+        }
+      }, { passive: true });
+    }
+
+    // 13. Staggered Scroll Reveal System
+    function initScrollReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+    }
+
+    // 14. 3D Tilt Card Physics & Spotlight Reflection
+    function initTiltCards() {
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        tiltCards.forEach(card => {
+          if (!card.querySelector('.tilt-glare')) {
+            const glare = document.createElement('div');
+            glare.className = 'tilt-glare';
+            card.appendChild(glare);
+          }
+
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          });
+        });
+      }
+    }
+
+    // 15. Animated Number Counters in Hero Artboard
+    function initCounterAnimations() {
+      const artboard = document.querySelector('.hero-artboard');
+      if (!artboard) return;
+
+      const countUpObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateNumbers();
+            countUpObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      countUpObserver.observe(artboard);
+
+      function animateNumbers() {
+        const stats = [
+          { id: 'stat-identities', target: 150, suffix: '+', duration: 1600 },
+          { id: 'stat-custom', target: 100, suffix: '%', duration: 1600 }
+        ];
+
+        stats.forEach(stat => {
+          const el = document.getElementById(stat.id);
+          if (!el) return;
+          const startTime = performance.now();
+
+          function update(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / stat.duration, 1);
+            const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.floor(ease * stat.target);
+            el.textContent = current + stat.suffix;
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = stat.target + stat.suffix;
+            }
+          }
+          requestAnimationFrame(update);
+        });
+      }
+    }
+
+    // Initialize all motion and interaction systems
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollProgress();
+      initScrollReveal();
+      initTiltCards();
+      initCounterAnimations();
+    });
+
+    // Also run immediately in case DOMContentLoaded has already fired
+    initScrollProgress();
+    initScrollReveal();
+    initTiltCards();
+    initCounterAnimations();
   </script>
 </body>
 </html>
