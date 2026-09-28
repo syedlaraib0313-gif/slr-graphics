@@ -203,18 +203,6 @@
       box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
       color: var(--text-white);
     }
-    .btn-secondary {
-      background: #FFFFFF;
-      color: var(--text-dark);
-      border: 1px solid rgba(124, 58, 237, 0.22);
-      box-shadow: 0 3px 12px rgba(27, 16, 53, 0.04);
-    }
-    .btn-secondary:hover {
-      background: rgba(124, 58, 237, 0.05);
-      border-color: var(--accent-violet);
-      transform: translateY(-2px);
-      color: var(--accent-violet);
-    }
 
     /* Container for content */
     .container {
@@ -285,7 +273,7 @@
       object-fit: contain;
     }
 
-    /* Top Navigation Tabs */
+    /* Top Navigation Tabs (Zero Numbering) */
     .cinema-nav-menu {
       display: flex;
       align-items: center;
@@ -301,12 +289,11 @@
       color: var(--text-body);
       font-size: 0.84rem;
       font-weight: 700;
-      padding: 0.42rem 1rem;
+      padding: 0.42rem 1.05rem;
       border-radius: 9999px;
       transition: var(--transition-smooth);
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
       cursor: pointer;
     }
     .cinema-nav-link:hover {
@@ -317,15 +304,6 @@
       background: #1B1035;
       color: #FFFFFF;
       box-shadow: 0 3px 10px rgba(27, 16, 53, 0.18);
-    }
-    .cinema-nav-link.active .nav-num {
-      color: #C084FC;
-    }
-    .nav-num {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent-violet);
-      font-weight: 700;
     }
 
     .mobile-menu-btn {
@@ -349,10 +327,7 @@
       height: calc(100vh - var(--header-h) - var(--bottom-bar-h));
     }
 
-    /* Individual Cinematic Pages: 
-       CRITICAL FIX: Use display: flex; flex-direction: column; align-items: center; justify-content: flex-start!
-       Never use justify-content: center when content can exceed screen height!
-    */
+    /* Individual Cinematic Pages */
     .cinema-page {
       position: absolute;
       inset: 0;
@@ -458,7 +433,7 @@
       line-height: 1.55;
     }
 
-    /* 3. Bottom Cinema Control Bar (Matching the Pin motion controls) */
+    /* 3. Bottom Cinema Control Bar */
     .cinema-bottom-bar {
       height: var(--bottom-bar-h);
       background: rgba(255, 255, 255, 0.95);
@@ -479,10 +454,10 @@
     }
     .cinema-page-counter {
       font-family: var(--font-mono);
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       font-weight: 800;
       color: #1B1035;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       background: rgba(124, 58, 237, 0.08);
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
@@ -538,7 +513,7 @@
     }
 
     /* ==========================================================================
-       PAGE 1: HOME SECTION STYLES (REFINED FIT FOR PC & MOBILE)
+       PAGE 1: HOME SECTION STYLES (REFINED LUXURY STUDIO CONSOLE)
        ========================================================================== */
     .hero-tagline-rotator {
       display: inline-flex;
@@ -589,59 +564,76 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
       margin-bottom: 1.5rem;
     }
 
-    /* Home Showcase Artboard */
-    .hero-artboard {
-      max-width: 900px;
+    /* ==========================================================================
+       NEW LUXURY STUDIO CONSOLE (REDESIGNED FIRST PAGE BOX)
+       ========================================================================== */
+    .hero-studio-console {
+      max-width: 920px;
       margin: 0 auto;
-      background: #FFFFFF;
-      border: 1px solid rgba(124, 58, 237, 0.2);
-      border-top: 3.5px solid #1B1035;
-      border-radius: 1.25rem;
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 12px 35px -8px rgba(27, 16, 53, 0.07);
+      background: linear-gradient(145deg, #1B1035 0%, #130926 100%);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: 1.5rem;
+      padding: clamp(1.15rem, 2.2vh, 1.6rem);
+      box-shadow: 0 20px 45px -10px rgba(27, 16, 53, 0.35),
+                  0 0 25px rgba(124, 58, 237, 0.12);
       position: relative;
+      overflow: hidden;
     }
-    .artboard-topbar {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+    .hero-studio-console::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), #FFFFFF, rgba(168, 85, 247, 0.8), transparent);
+    }
+    .console-header {
+      display: flex;
       align-items: center;
-      padding-bottom: 0.75rem;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 0.85rem;
       margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.18);
+      flex-wrap: wrap;
     }
-    .window-dots {
-      display: flex;
-      gap: 5px;
-    }
-    .window-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-    }
-    .dot-red { background: #FF5F56; }
-    .dot-yellow { background: #FFBD2E; }
-    .dot-green { background: #27C93F; }
-    .artboard-title {
-      text-align: center;
-      color: #1B1035;
-      font-weight: 700;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.1em;
-    }
-    .artboard-status {
+    .console-brand-badge {
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.08em;
+    }
+    .console-logo-icon {
+      color: #A855F7;
+      font-size: 0.9rem;
+    }
+    .console-divider {
+      color: rgba(168, 85, 247, 0.4);
+    }
+    .console-sub-badge {
+      color: #C084FC;
+      font-size: 0.7rem;
+    }
+    .console-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #4ADE80;
       font-family: var(--font-mono);
       font-size: 0.68rem;
-      color: var(--accent-violet);
       font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
     }
     .status-indicator-dot {
       width: 6px;
@@ -649,61 +641,68 @@
       border-radius: 50%;
       background: #22C55E;
       box-shadow: 0 0 8px #22C55E;
+      animation: waPulse 1.8s infinite;
     }
-    .artboard-content {
+    .console-stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
     }
-    .artboard-stat {
-      background: var(--bg-subtle);
-      border: 1px solid rgba(124, 58, 237, 0.12);
-      border-radius: 0.85rem;
-      padding: 0.85rem 0.65rem;
+    .console-stat-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 1rem;
+      padding: 0.95rem 0.65rem;
       text-align: center;
       transition: var(--transition-smooth);
+      position: relative;
     }
-    .artboard-stat:hover {
-      border-color: var(--accent-violet);
-      background: #FFFFFF;
+    .console-stat-card:hover {
+      background: rgba(124, 58, 237, 0.14);
+      border-color: #A855F7;
       transform: translateY(-2px);
     }
-    .stat-number {
+    .console-stat-icon {
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+    .console-stat-card .stat-number {
       font-size: clamp(1.4rem, 2.2vw, 1.85rem);
       font-weight: 900;
-      color: var(--text-dark);
+      color: #FFFFFF;
       font-family: var(--font-cinzel), var(--font-mono);
       line-height: 1.1;
       margin-bottom: 0.2rem;
+      text-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
     }
-    .stat-label {
-      font-size: 0.78rem;
+    .console-stat-card .stat-label {
+      font-size: 0.76rem;
       font-weight: 700;
-      color: var(--accent-violet);
-      margin-bottom: 0.1rem;
+      color: #C084FC;
+      margin-bottom: 0.15rem;
     }
-    .stat-sub {
-      font-size: 0.68rem;
-      color: var(--text-muted);
+    .console-stat-card .stat-sub {
+      font-size: 0.65rem;
+      color: rgba(250, 248, 255, 0.65);
     }
-
-    /* Quick Access Portal Pills on Home */
-    .home-portals-strip {
+    .console-portals-strip {
       display: flex;
       justify-content: center;
       gap: 0.65rem;
-      margin-top: 1.15rem;
       flex-wrap: wrap;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(168, 85, 247, 0.15);
     }
-    .home-portal-pill {
-      background: #FFFFFF;
-      border: 1px solid rgba(124, 58, 237, 0.2);
-      padding: 0.4rem 0.95rem;
+    .console-portal-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      padding: 0.38rem 0.95rem;
       border-radius: 9999px;
       font-family: var(--font-mono);
       font-size: 0.76rem;
       font-weight: 700;
-      color: var(--text-dark);
+      color: #FAF8FF;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -711,11 +710,20 @@
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    .home-portal-pill:hover {
-      background: #1B1035;
+    .console-portal-pill:hover {
+      background: #7C3AED;
+      border-color: #A855F7;
       color: #FFFFFF;
-      border-color: #1B1035;
       transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    }
+    .portal-arrow {
+      color: #C084FC;
+      transition: transform 0.2s ease;
+    }
+    .console-portal-pill:hover .portal-arrow {
+      transform: translateX(2px);
+      color: #FFFFFF;
     }
 
     /* ==========================================================================
@@ -751,6 +759,7 @@
       color: var(--accent-violet);
       font-weight: 700;
       margin-bottom: 0.35rem;
+      letter-spacing: 0.08em;
     }
     .service-icon-box {
       font-size: 1.5rem;
@@ -1341,7 +1350,7 @@
     }
     .mobile-nav.open { display: block; }
     .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-    .mobile-nav a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.95rem; display: block; padding: 0.35rem 0; }
+    .mobile-nav a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.95rem; display: block; padding: 0.35rem 0; cursor: pointer; }
 
     /* ==========================================================================
        RESPONSIVE BREAKPOINTS (SMART PHONE & TABLET & LAPTOP PERFECTION)
@@ -1350,7 +1359,7 @@
       .services-grid-8 { grid-template-columns: repeat(2, 1fr); }
       .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
       .pillars-strip { grid-template-columns: repeat(3, 1fr); }
-      .artboard-content { grid-template-columns: repeat(2, 1fr); }
+      .console-stats-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-container-grid, .about-layout { grid-template-columns: 1fr; gap: 1.25rem; }
       .cinema-nav-menu { display: none; }
       .mobile-menu-btn { display: block; }
@@ -1363,10 +1372,9 @@
       .cinema-progress-track { width: 90px; }
       .cinema-page-title { display: none; }
       .cinema-page { padding: 0.75rem 0.5rem 1.5rem; }
-      .hero-artboard { padding: 1rem; }
-      .artboard-topbar { grid-template-columns: 1fr; text-align: center; gap: 0.35rem; }
-      .window-dots { display: none; }
-      .artboard-status { justify-content: center; }
+      .hero-studio-console { padding: 1.15rem 1rem; border-radius: 1.15rem; }
+      .console-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .console-stats-grid { grid-template-columns: 1fr; gap: 0.65rem; }
       .services-grid-8, .portfolio-grid { grid-template-columns: 1fr; }
       .pillars-strip { grid-template-columns: 1fr; }
       .form-group-row, .estimate-services-grid { grid-template-columns: 1fr; }
@@ -1402,14 +1410,14 @@
           <img src="assets/logo-purple.png" alt="SLR GRAPHICS" class="header-logo-image" />
         </a>
 
-        <!-- Desktop Navigation Tabs (All pages accessed from home!) -->
+        <!-- Desktop Navigation Tabs (No numbering) -->
         <nav aria-label="Main Navigation">
           <ul class="cinema-nav-menu">
-            <li><a onclick="goToCinemaPage(0)" class="cinema-nav-link active" id="nav-item-0"><span class="nav-num">01</span> Home</a></li>
-            <li><a onclick="goToCinemaPage(1)" class="cinema-nav-link" id="nav-item-1"><span class="nav-num">02</span> Our Services</a></li>
-            <li><a onclick="goToCinemaPage(2)" class="cinema-nav-link" id="nav-item-2"><span class="nav-num">03</span> Portfolio</a></li>
-            <li><a onclick="goToCinemaPage(3)" class="cinema-nav-link" id="nav-item-3"><span class="nav-num">04</span> Contact</a></li>
-            <li><a onclick="goToCinemaPage(4)" class="cinema-nav-link" id="nav-item-4"><span class="nav-num">05</span> About Us</a></li>
+            <li><a onclick="goToCinemaPage(0)" class="cinema-nav-link active" id="nav-item-0">Home</a></li>
+            <li><a onclick="goToCinemaPage(1)" class="cinema-nav-link" id="nav-item-1">Our Services</a></li>
+            <li><a onclick="goToCinemaPage(2)" class="cinema-nav-link" id="nav-item-2">Portfolio</a></li>
+            <li><a onclick="goToCinemaPage(3)" class="cinema-nav-link" id="nav-item-3">Contact</a></li>
+            <li><a onclick="goToCinemaPage(4)" class="cinema-nav-link" id="nav-item-4">About Us</a></li>
           </ul>
         </nav>
 
@@ -1419,14 +1427,14 @@
       </div>
     </header>
 
-    <!-- Mobile Dropdown Navigation -->
+    <!-- Mobile Dropdown Navigation (No numbering) -->
     <div class="mobile-nav" id="mobileNav">
       <ul>
-        <li><a onclick="goToCinemaPage(0); toggleMobileNav();">01 — Home</a></li>
-        <li><a onclick="goToCinemaPage(1); toggleMobileNav();">02 — Our Services</a></li>
-        <li><a onclick="goToCinemaPage(2); toggleMobileNav();">03 — Portfolio</a></li>
-        <li><a onclick="goToCinemaPage(3); toggleMobileNav();">04 — Contact</a></li>
-        <li><a onclick="goToCinemaPage(4); toggleMobileNav();">05 — About Us</a></li>
+        <li><a onclick="goToCinemaPage(0); toggleMobileNav();">Home</a></li>
+        <li><a onclick="goToCinemaPage(1); toggleMobileNav();">Our Services</a></li>
+        <li><a onclick="goToCinemaPage(2); toggleMobileNav();">Portfolio</a></li>
+        <li><a onclick="goToCinemaPage(3); toggleMobileNav();">Contact</a></li>
+        <li><a onclick="goToCinemaPage(4); toggleMobileNav();">About Us</a></li>
       </ul>
     </div>
 
@@ -1456,60 +1464,81 @@
             <strong>SLR GRAPHICS</strong> is a creative graphic design studio focused on building strong, professional, and memorable visual identities. We create designs that help businesses, brands, creators, and individuals communicate their ideas with clarity and style.
           </p>
 
+          <!-- Primary CTA only (Explore Our Portfolio removed as requested) -->
           <div class="hero-cta-group stagger-el">
             <a onclick="goToCinemaPage(3)" class="btn btn-primary">
               <span>START A PROJECT</span>
               <span>→</span>
             </a>
-            <a onclick="goToCinemaPage(2)" class="btn btn-secondary">
-              <span>EXPLORE PORTFOLIO</span>
-            </a>
           </div>
 
-          <!-- Studio Master Showcase Artboard -->
-          <div class="hero-artboard stagger-el">
-            <div class="artboard-topbar">
-              <div class="window-dots">
-                <div class="window-dot dot-red"></div>
-                <div class="window-dot dot-yellow"></div>
-                <div class="window-dot dot-green"></div>
+          <!-- Studio Master Showcase Console (New Luxury Box Design) -->
+          <div class="hero-studio-console stagger-el">
+            <div class="console-header">
+              <div class="console-brand-badge">
+                <span class="console-logo-icon">✦</span>
+                <span class="console-brand-text">SLR GRAPHICS STUDIO</span>
+                <span class="console-divider">|</span>
+                <span class="console-sub-badge">VISUAL IDENTITY SUITE</span>
               </div>
-              <div class="artboard-title">SLR GRAPHICS STUDIO // VISUAL IDENTITY SUITE</div>
-              <div class="artboard-status"><span class="status-indicator-dot"></span> ONLINE & READY FOR COMMISSIONS</div>
+              <div class="console-status-pill">
+                <span class="status-indicator-dot"></span>
+                <span>ONLINE & READY FOR COMMISSIONS</span>
+              </div>
             </div>
 
-            <div class="artboard-content">
-              <div class="artboard-stat">
+            <div class="console-stats-grid">
+              <div class="console-stat-card">
+                <div class="console-stat-icon">🎨</div>
                 <div class="stat-number" id="stat-identities">150+</div>
                 <div class="stat-label">Visual Identities</div>
                 <div class="stat-sub">Crafted for Global Brands</div>
               </div>
 
-              <div class="artboard-stat">
+              <div class="console-stat-card">
+                <div class="console-stat-icon">⚡</div>
                 <div class="stat-number" id="stat-custom">100%</div>
                 <div class="stat-label">Custom Tailored</div>
                 <div class="stat-sub">Zero Recycled Templates</div>
               </div>
 
-              <div class="artboard-stat">
+              <div class="console-stat-card">
+                <div class="console-stat-icon">⏱</div>
                 <div class="stat-number">24–48h</div>
                 <div class="stat-label">Fast Turnaround</div>
                 <div class="stat-sub">First Design Concepts</div>
               </div>
 
-              <div class="artboard-stat">
+              <div class="console-stat-card">
+                <div class="console-stat-icon">★</div>
                 <div class="stat-number">5.0 ★</div>
                 <div class="stat-label">Client Trust</div>
                 <div class="stat-sub">Top Rated Graphic Quality</div>
               </div>
             </div>
 
-            <!-- Quick Portals to Jump to Any Page -->
-            <div class="home-portals-strip">
-              <a onclick="goToCinemaPage(1)" class="home-portal-pill"><span>🎨</span> 02 / Services →</a>
-              <a onclick="goToCinemaPage(2)" class="home-portal-pill"><span>✨</span> 03 / Portfolio →</a>
-              <a onclick="goToCinemaPage(3)" class="home-portal-pill"><span>💬</span> 04 / Contact →</a>
-              <a onclick="goToCinemaPage(4)" class="home-portal-pill"><span>📖</span> 05 / About →</a>
+            <!-- Quick Portals to Jump to Any Page (No numbering) -->
+            <div class="console-portals-strip">
+              <a onclick="goToCinemaPage(1)" class="console-portal-pill">
+                <span class="portal-icon">🎨</span>
+                <span>Services</span>
+                <span class="portal-arrow">→</span>
+              </a>
+              <a onclick="goToCinemaPage(2)" class="console-portal-pill">
+                <span class="portal-icon">✨</span>
+                <span>Portfolio</span>
+                <span class="portal-arrow">→</span>
+              </a>
+              <a onclick="goToCinemaPage(3)" class="console-portal-pill">
+                <span class="portal-icon">💬</span>
+                <span>Contact</span>
+                <span class="portal-arrow">→</span>
+              </a>
+              <a onclick="goToCinemaPage(4)" class="console-portal-pill">
+                <span class="portal-icon">📖</span>
+                <span>About Us</span>
+                <span class="portal-arrow">→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1521,7 +1550,7 @@
       <section class="cinema-page" id="page-services" data-page-index="1" data-page-name="Our Services">
         <div class="container">
           <div class="page-header stagger-el">
-            <div class="section-eyebrow">02 / 05 — DISCIPLINES & SOLUTIONS</div>
+            <div class="section-eyebrow">DISCIPLINES & SOLUTIONS</div>
             <h2 class="section-title">WHAT WE DO</h2>
             <p class="section-desc">
               Complete creative design and digital development solutions crafted to establish, elevate, and scale your brand across every touchpoint.
@@ -1532,7 +1561,7 @@
             <!-- 1. Brand Identity -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">01 / SERVICE</div>
+                <div class="service-num">BRAND IDENTITY</div>
                 <div class="service-icon-box">🎨</div>
                 <h3 class="service-heading">Brand Identity</h3>
                 <p class="service-description">Logos, colors, typography, brand guidelines. Build a recognizable and consistent visual identity that defines your brand character.</p>
@@ -1550,7 +1579,7 @@
             <!-- 2. Marketing Collateral -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">02 / SERVICE</div>
+                <div class="service-num">MARKETING COLLATERAL</div>
                 <div class="service-icon-box">📑</div>
                 <h3 class="service-heading">Marketing Collateral</h3>
                 <p class="service-description">Brochures, flyers, business cards, company profiles. Professional business collateral designed to leave an unforgettable impression.</p>
@@ -1568,7 +1597,7 @@
             <!-- 3. Advertising Creatives -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">03 / SERVICE</div>
+                <div class="service-num">ADVERTISING CREATIVES</div>
                 <div class="service-icon-box">📢</div>
                 <h3 class="service-heading">Advertising Creatives</h3>
                 <p class="service-description">Ad designs, promotional posters, campaigns, banners. High-converting creative assets crafted to stop the scroll and boost conversions.</p>
@@ -1586,7 +1615,7 @@
             <!-- 4. Digital & Social Media Design -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">04 / SERVICE</div>
+                <div class="service-num">DIGITAL & SOCIAL</div>
                 <div class="service-icon-box">📱</div>
                 <h3 class="service-heading">Digital & Social Media</h3>
                 <p class="service-description">Instagram, Facebook, YouTube, website graphics. Engaging posts, reels covers, thumbnails, and carousel templates.</p>
@@ -1604,7 +1633,7 @@
             <!-- 5. Print & Packaging Design -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">05 / SERVICE</div>
+                <div class="service-num">PRINT & PACKAGING</div>
                 <div class="service-icon-box">📦</div>
                 <h3 class="service-heading">Print & Packaging</h3>
                 <p class="service-description">Packaging, labels, menus, stationery, print materials. Tangible print-ready packaging with custom dielines and 300 DPI CMYK color.</p>
@@ -1622,7 +1651,7 @@
             <!-- 6. UI & UX DESIGN AND DEVELOPMENT -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">06 / SERVICE</div>
+                <div class="service-num">UI & UX SOLUTIONS</div>
                 <div class="service-icon-box">💻</div>
                 <h3 class="service-heading">UI & UX Design/Dev</h3>
                 <p class="service-description">Modern website and mobile app user interfaces, interactive wireframes, seamless user journeys, and clean frontend code development.</p>
@@ -1640,7 +1669,7 @@
             <!-- 7. WEBSITE HANDLING -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">07 / SERVICE</div>
+                <div class="service-num">WEBSITE HANDLING</div>
                 <div class="service-icon-box">⚙️</div>
                 <h3 class="service-heading">Website Handling</h3>
                 <p class="service-description">Comprehensive website maintenance, speed optimization, content updates, security patches, domain management, and dependable hosting.</p>
@@ -1658,7 +1687,7 @@
             <!-- 8. SEO -->
             <div class="service-card-8">
               <div>
-                <div class="service-num">08 / SERVICE</div>
+                <div class="service-num">SEARCH OPTIMIZATION</div>
                 <div class="service-icon-box">🚀</div>
                 <h3 class="service-heading">SEO</h3>
                 <p class="service-description">Search Engine Optimization, on-page visual asset optimization, structured meta tags, speed improvements, and Google rankings.</p>
@@ -1682,7 +1711,7 @@
       <section class="cinema-page" id="page-portfolio" data-page-index="2" data-page-name="Portfolio">
         <div class="container">
           <div class="page-header stagger-el">
-            <div class="section-eyebrow">03 / 05 — SELECTED WORKS</div>
+            <div class="section-eyebrow">SELECTED WORKS</div>
             <h2 class="section-title">DESIGN THAT SPEAKS FOR ITSELF.</h2>
             <p class="section-desc">
               Explore our 6 selected studio projects across branding, social media, packaging, apparel, and promotional design.
@@ -1691,7 +1720,7 @@
 
           <!-- Category filter tabs -->
           <div class="portfolio-tabs stagger-el">
-            <button class="tab-pill active" onclick="filterWork('all')">All Work (6)</button>
+            <button class="tab-pill active" onclick="filterWork('all')">All Work</button>
             <button class="tab-pill" onclick="filterWork('branding')">Brand Identity</button>
             <button class="tab-pill" onclick="filterWork('social')">Social Media</button>
             <button class="tab-pill" onclick="filterWork('poster')">Posters & Ads</button>
@@ -1931,7 +1960,7 @@
       <section class="cinema-page" id="page-contact" data-page-index="3" data-page-name="Contact">
         <div class="container">
           <div class="page-header stagger-el">
-            <div class="section-eyebrow">04 / 05 — GET IN TOUCH</div>
+            <div class="section-eyebrow">GET IN TOUCH</div>
             <h2 class="section-title">HAVE A PROJECT IN MIND?</h2>
             <p class="section-desc">
               Let's discuss your idea and create visuals that represent your brand professionally. Reach out directly or send an instant project enquiry.
@@ -2024,14 +2053,14 @@
                   <div class="form-field">
                     <label class="form-label" for="serviceSelect">Service Needed *</label>
                     <select class="form-control" id="serviceSelect" required onchange="updateEstimatorPreview()">
-                      <option value="Brand Identity">01 — Brand Identity</option>
-                      <option value="Marketing Collateral">02 — Marketing Collateral</option>
-                      <option value="Advertising Creatives">03 — Advertising Creatives</option>
-                      <option value="Digital & Social Media Design">04 — Digital & Social Media Design</option>
-                      <option value="Print & Packaging Design">05 — Print & Packaging Design</option>
-                      <option value="UI & UX DESIGN AND DEVELOPMENT">06 — UI & UX Design/Dev</option>
-                      <option value="WEBSITE HANDLING">07 — Website Handling</option>
-                      <option value="SEO">08 — SEO Optimization</option>
+                      <option value="Brand Identity">Brand Identity</option>
+                      <option value="Marketing Collateral">Marketing Collateral</option>
+                      <option value="Advertising Creatives">Advertising Creatives</option>
+                      <option value="Digital & Social Media Design">Digital & Social Media Design</option>
+                      <option value="Print & Packaging Design">Print & Packaging Design</option>
+                      <option value="UI & UX DESIGN AND DEVELOPMENT">UI & UX Design/Dev</option>
+                      <option value="WEBSITE HANDLING">Website Handling</option>
+                      <option value="SEO">SEO Optimization</option>
                     </select>
                   </div>
                   <div class="form-field">
@@ -2098,7 +2127,7 @@
         <div class="container">
           <div class="about-layout stagger-el">
             <div class="about-text">
-              <div class="section-eyebrow">05 / 05 — STUDIO PHILOSOPHY</div>
+              <div class="section-eyebrow">STUDIO PHILOSOPHY</div>
               <h2 class="section-title">CREATIVE IDEAS. STRONG VISUALS.</h2>
               <p class="about-lead">
                 At SLR GRAPHICS, we believe great design is more than just good-looking visuals. It's about creating a consistent identity that people recognize and remember.
@@ -2109,7 +2138,6 @@
 
               <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
                 <a onclick="goToCinemaPage(3)" class="btn btn-primary">Start a Project →</a>
-                <a onclick="goToCinemaPage(2)" class="btn btn-secondary">Explore Our Portfolio</a>
               </div>
             </div>
 
@@ -2194,11 +2222,11 @@
 
     </main>
 
-    <!-- 3. Bottom Cinema Control Bar (Slide counter, Progress line, Next/Prev buttons) -->
+    <!-- 3. Bottom Cinema Control Bar -->
     <footer class="cinema-bottom-bar">
       <div class="cinema-page-meta">
-        <span class="cinema-page-counter" id="cinemaPageCounter">01 / 05</span>
-        <span class="cinema-page-title" id="cinemaPageTitle">HOME // VISUAL IDENTITY SUITE</span>
+        <span class="cinema-page-counter" id="cinemaPageCounter">HOME</span>
+        <span class="cinema-page-title" id="cinemaPageTitle">VISUAL IDENTITY SUITE</span>
       </div>
 
       <div class="cinema-progress-track">
@@ -2260,11 +2288,11 @@
 
     // 2. Cinema Viewport System (All pages accessed from home, zero scroll)
     const cinemaPages = [
-      { id: 'page-home', title: 'HOME // VISUAL IDENTITY SUITE', bgText: 'SLR GRAPHICS' },
-      { id: 'page-services', title: 'OUR SERVICES // 8 CORE DISCIPLINES', bgText: 'WHAT WE DO' },
-      { id: 'page-portfolio', title: 'PORTFOLIO // 6 CURATED SHOWCASES', bgText: 'SELECTED WORK' },
-      { id: 'page-contact', title: 'CONTACT // START A COMMISSION', bgText: 'LET\'S TALK' },
-      { id: 'page-about', title: 'ABOUT US // STUDIO PHILOSOPHY', bgText: 'ABOUT SLR' }
+      { id: 'page-home', label: 'HOME', title: 'VISUAL IDENTITY SUITE', bgText: 'SLR GRAPHICS' },
+      { id: 'page-services', label: 'SERVICES', title: '8 CORE DISCIPLINES', bgText: 'WHAT WE DO' },
+      { id: 'page-portfolio', label: 'PORTFOLIO', title: 'CURATED SHOWCASES', bgText: 'SELECTED WORK' },
+      { id: 'page-contact', label: 'CONTACT', title: 'START A COMMISSION', bgText: 'LET\'S TALK' },
+      { id: 'page-about', label: 'ABOUT US', title: 'STUDIO PHILOSOPHY', bgText: 'ABOUT SLR' }
     ];
     let currentCinemaIndex = 0;
     let isCinemaTransitioning = false;
@@ -2315,7 +2343,7 @@
       const nextBtn = document.getElementById('btnNextPage');
       const bgText = document.getElementById('cinemaBgText');
 
-      if (counterEl) counterEl.textContent = `0${currentCinemaIndex + 1} / 05`;
+      if (counterEl) counterEl.textContent = cinemaPages[currentCinemaIndex].label;
       if (titleEl) titleEl.textContent = cinemaPages[currentCinemaIndex].title;
       const pct = `${((currentCinemaIndex + 1) / cinemaPages.length) * 100}%`;
       if (progressFill) progressFill.style.width = pct;
