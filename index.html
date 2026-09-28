@@ -1138,12 +1138,13 @@
        PAGE 4: CONTACT SECTION STYLES (EXACT WHATSAPP TEMPLATE & DIRECT INFO)
        ========================================================================== */
     .contact-container-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      display: flex;
+      flex-direction: column;
       gap: 1.5rem;
-      max-width: 1080px;
+      max-width: 820px;
+      width: 100%;
       margin: 0 auto;
-      align-items: start;
+      align-items: stretch;
     }
     .contact-info-panel {
       background: #FFFFFF;
@@ -1163,8 +1164,8 @@
       line-height: 1.5;
     }
     .contact-channels {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 0.65rem;
     }
     .channel-box {
@@ -1292,7 +1293,7 @@
     }
     .pillar-item p { font-size: 0.7rem; color: var(--text-muted); line-height: 1.4; }
 
-    /* Floating WhatsApp widget */
+    /* Floating WhatsApp widget (Movable / Draggable) */
     .floating-whatsapp {
       position: fixed;
       bottom: calc(var(--bottom-bar-h) + 1.25rem);
@@ -1311,6 +1312,17 @@
       box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
       border: 2px solid #FFFFFF;
       animation: waFloat 4s ease-in-out infinite;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+    }
+    .floating-whatsapp:active,
+    .floating-whatsapp.is-dragging {
+      cursor: grabbing !important;
+      animation: none !important;
+      box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6);
+      transform: scale(1.05);
     }
     .floating-whatsapp::before {
       content: '';
@@ -1371,7 +1383,8 @@
       .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
       .pillars-strip { grid-template-columns: repeat(3, 1fr); }
       .console-stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-container-grid, .about-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+      .about-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+      .contact-container-grid { gap: 1.25rem; }
       .cinema-nav-menu { display: none; }
       .mobile-menu-btn { display: block; }
       .desktop-cta-btn { display: none; }
@@ -2032,60 +2045,7 @@
           </div>
 
           <div class="contact-container-grid stagger-el">
-            <!-- Left: Direct Contact Information -->
-            <div class="contact-info-panel">
-              <div class="section-eyebrow">DIRECT CONTACT</div>
-              <h3>LET'S BUILD YOUR IDENTITY.</h3>
-              <p>Reach out directly via email, phone, WhatsApp, or through our project inquiry form. We typically reply within 24–48 hours.</p>
-
-              <div class="contact-channels">
-                <!-- Email -->
-                <div class="channel-box">
-                  <div class="channel-left">
-                    <span class="channel-icon">✉️</span>
-                    <div>
-                      <div class="channel-label">EMAIL</div>
-                      <a href="mailto:slrgraphics.contact@email.com" class="channel-link">slrgraphics.contact@email.com</a>
-                    </div>
-                  </div>
-                  <button class="copy-pill-btn" onclick="copyEmail('slrgraphics.contact@email.com')">Copy</button>
-                </div>
-
-                <!-- Phone -->
-                <div class="channel-box">
-                  <div class="channel-left">
-                    <span class="channel-icon">📞</span>
-                    <div>
-                      <div class="channel-label">PHONE & WHATSAPP</div>
-                      <a href="tel:+917004953962" class="channel-link">+91 7004953962</a>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/917004953962" target="_blank" class="copy-pill-btn" style="text-decoration:none;">WhatsApp</a>
-                </div>
-
-                <!-- Instagram Handle Only (Written Instagram removed) -->
-                <div class="channel-box">
-                  <div class="channel-left">
-                    <span class="channel-icon">📸</span>
-                    <div>
-                      <div class="channel-label">OFFICIAL HANDLE</div>
-                      <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="channel-link">@slr_graphics</a>
-                    </div>
-                  </div>
-                  <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="copy-pill-btn" style="text-decoration:none;">Follow</a>
-                </div>
-              </div>
-
-              <!-- Direct WhatsApp Pill -->
-              <div>
-                <a href="https://wa.me/917004953962" target="_blank" class="direct-contact-wa-pill">
-                  <span>💬</span>
-                  <span>WhatsApp Direct (+91 7004953962)</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Right: Project Enquiry Form (Strict Template Preserved) -->
+            <!-- TOP: Project Enquiry Form (Start a Project) -->
             <div class="contact-form-card">
               <div class="form-header-title">START A PROJECT</div>
               <div class="form-header-sub">Fill out your details below to generate your formatted WhatsApp enquiry.</div>
@@ -2180,6 +2140,59 @@
                 <div id="formSuccessMessage" style="display:none; margin-top:0.85rem; background:rgba(124,58,237,0.08); border:1px solid #7C3AED; border-radius:8px; padding:0.75rem; font-size:0.84rem; text-align:center;"></div>
               </form>
             </div>
+            <!-- BOTTOM: Direct Contact Information -->
+            <div class="contact-info-panel">
+              <div class="section-eyebrow">DIRECT CONTACT</div>
+              <h3>LET'S BUILD YOUR IDENTITY.</h3>
+              <p>Reach out directly via email, phone, WhatsApp, or through our project inquiry form. We typically reply within 24–48 hours.</p>
+
+              <div class="contact-channels">
+                <!-- Email -->
+                <div class="channel-box">
+                  <div class="channel-left">
+                    <span class="channel-icon">✉️</span>
+                    <div>
+                      <div class="channel-label">EMAIL</div>
+                      <a href="mailto:slrgraphics.contact@email.com" class="channel-link">slrgraphics.contact@email.com</a>
+                    </div>
+                  </div>
+                  <button class="copy-pill-btn" onclick="copyEmail('slrgraphics.contact@email.com')">Copy</button>
+                </div>
+
+                <!-- Phone -->
+                <div class="channel-box">
+                  <div class="channel-left">
+                    <span class="channel-icon">📞</span>
+                    <div>
+                      <div class="channel-label">PHONE & WHATSAPP</div>
+                      <a href="tel:+917004953962" class="channel-link">+91 7004953962</a>
+                    </div>
+                  </div>
+                  <a href="https://wa.me/917004953962" target="_blank" class="copy-pill-btn" style="text-decoration:none;">WhatsApp</a>
+                </div>
+
+                <!-- Instagram Handle Only (Written Instagram removed) -->
+                <div class="channel-box">
+                  <div class="channel-left">
+                    <span class="channel-icon">📸</span>
+                    <div>
+                      <div class="channel-label">OFFICIAL HANDLE</div>
+                      <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="channel-link">@slr_graphics</a>
+                    </div>
+                  </div>
+                  <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="copy-pill-btn" style="text-decoration:none;">Follow</a>
+                </div>
+              </div>
+
+              <!-- Direct WhatsApp Pill -->
+              <div>
+                <a href="https://wa.me/917004953962" target="_blank" class="direct-contact-wa-pill">
+                  <span>💬</span>
+                  <span>WhatsApp Direct (+91 7004953962)</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -2304,11 +2317,13 @@
     </footer>
   </div>
 
-  <!-- Floating WhatsApp (+91 7004953962) -->
+  <!-- Floating WhatsApp (+91 7004953962) - Movable / Draggable -->
   <a href="https://wa.me/917004953962?text=Hello%20SLR%20GRAPHICS,%20I'd%20like%20to%20discuss%20a%20design%20project!" 
      target="_blank" 
      rel="noopener" 
-     class="floating-whatsapp" 
+     class="floating-whatsapp"
+     id="floatingWhatsApp" 
+     title="Drag to move anywhere"
      aria-label="Direct WhatsApp Message">
     <svg style="width:18px; height:18px; fill:#FFFFFF;" viewBox="0 0 24 24">
       <path d="M12.031 2C6.495 2 2 6.494 2 12.029c0 1.768.459 3.492 1.332 5.006L2 22l5.127-1.346a10.007 10.007 0 004.904 1.282h.004c5.534 0 10.029-4.494 10.029-10.029C22.064 6.494 17.568 2 12.031 2zm5.864 14.214c-.244.686-1.42 1.259-1.956 1.341-.518.078-1.196.111-1.929-.124-.442-.142-1.011-.334-1.742-.65-3.08-1.336-5.086-4.444-5.24-4.65-.154-.205-1.25-1.666-1.25-3.178 0-1.512.793-2.257 1.074-2.563.282-.307.615-.384.82-.384.205 0 .41.002.589.011.189.01.442-.072.692.528.256.615.871 2.127.948 2.28.077.154.128.334.025.539-.102.205-.154.333-.307.512-.154.18-.323.4-.462.538-.154.154-.315.323-.135.632.18.307.8 1.319 1.716 2.135 1.178 1.049 2.17 1.374 2.477 1.528.307.154.487.128.666-.077.18-.205.769-.897.974-1.205.205-.307.41-.256.692-.154.282.102 1.794.846 2.101 1.001.307.154.512.23.589.359.077.128.077.743-.167 1.429z"/>
@@ -2445,12 +2460,207 @@
       if (currentCinemaIndex < cinemaPages.length - 1) goToCinemaPage(currentCinemaIndex + 1);
     }
 
-    // Keyboard Arrow Controls
+    // =========================================================================
+    // CINEMA NAVIGATION: WHEEL SCROLL, LEFT/RIGHT SCROLL & TOUCH SWIPE
+    // =========================================================================
+
+    // 1. Keyboard Arrow & Page Controls
     window.addEventListener('keydown', (e) => {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
-      if (e.key === 'ArrowRight') nextCinemaPage();
-      else if (e.key === 'ArrowLeft') prevCinemaPage();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextCinemaPage();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevCinemaPage();
+      }
     });
+
+    // 2. Wheel Scroll Navigation (Both Vertical Wheel & Horizontal Scroll / Trackpad)
+    let wheelCooldown = false;
+    window.addEventListener('wheel', (e) => {
+      // Don't hijack if user is inside form inputs or lightbox is open
+      if (e.target.closest('input, textarea, select')) return;
+      if (document.getElementById('portfolioModal')?.classList.contains('active')) return;
+      if (isCinemaTransitioning || wheelCooldown) return;
+
+      const absX = Math.abs(e.deltaX);
+      const absY = Math.abs(e.deltaY);
+
+      // Filter out micro-scrolls
+      if (Math.max(absX, absY) < 18) return;
+
+      const activePage = document.querySelector('.cinema-page.active');
+
+      // Horizontal Scroll / Tilt / Trackpad Swipe Left-Right
+      if (absX > absY) {
+        wheelCooldown = true;
+        setTimeout(() => { wheelCooldown = false; }, 480);
+        if (e.deltaX > 0) nextCinemaPage();
+        else prevCinemaPage();
+        return;
+      }
+
+      // Vertical Wheel Scroll
+      if (activePage) {
+        const hasOverflow = (activePage.scrollHeight - activePage.clientHeight) > 60;
+        if (hasOverflow) {
+          const atTop = activePage.scrollTop <= 20;
+          const atBottom = (activePage.scrollTop + activePage.clientHeight) >= (activePage.scrollHeight - 20);
+
+          if (e.deltaY > 0 && !atBottom) {
+            // Still scrolling down within page content
+            return;
+          }
+          if (e.deltaY < 0 && !atTop) {
+            // Still scrolling up within page content
+            return;
+          }
+        }
+      }
+
+      wheelCooldown = true;
+      setTimeout(() => { wheelCooldown = false; }, 480);
+      if (e.deltaY > 0) nextCinemaPage();
+      else prevCinemaPage();
+    }, { passive: true });
+
+    // 3. Touch Swipe Navigation (Mobile & Tablet)
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      if (e.target.closest('#floatingWhatsApp, input, textarea, select')) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      if (e.target.closest('#floatingWhatsApp, input, textarea, select')) return;
+      if (document.getElementById('portfolioModal')?.classList.contains('active')) return;
+      if (isCinemaTransitioning) return;
+
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+      const minSwipe = 45; // px
+
+      if (Math.max(absDx, absDy) < minSwipe) return;
+
+      const activePage = document.querySelector('.cinema-page.active');
+      const isHorizontal = absDx >= absDy;
+
+      if (isHorizontal) {
+        // Horizontal swipe ALWAYS navigates
+        if (dx < 0) nextCinemaPage(); // Swipe left -> Next
+        else prevCinemaPage();        // Swipe right -> Prev
+      } else {
+        // Vertical swipe navigates when at boundaries or no overflow
+        if (activePage) {
+          const hasOverflow = (activePage.scrollHeight - activePage.clientHeight) > 60;
+          if (hasOverflow) {
+            const atTop = activePage.scrollTop <= 20;
+            const atBottom = (activePage.scrollTop + activePage.clientHeight) >= (activePage.scrollHeight - 20);
+            if (dy < 0 && !atBottom) return;
+            if (dy > 0 && !atTop) return;
+          }
+        }
+        if (dy < 0) nextCinemaPage();
+        else prevCinemaPage();
+      }
+    }, { passive: true });
+
+    // =========================================================================
+    // MOVABLE / DRAGGABLE WHATSAPP POP-UP WIDGET (DESKTOP & MOBILE)
+    // =========================================================================
+    (function initDraggableWhatsApp() {
+      const waBtn = document.getElementById('floatingWhatsApp');
+      if (!waBtn) return;
+
+      let isDragging = false;
+      let hasMoved = false;
+      let startX = 0, startY = 0;
+      let initLeft = 0, initTop = 0;
+
+      function onStart(e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        isDragging = true;
+        hasMoved = false;
+
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        startX = clientX;
+        startY = clientY;
+
+        const rect = waBtn.getBoundingClientRect();
+        initLeft = rect.left;
+        initTop = rect.top;
+
+        // Switch to fixed left/top from bottom/right
+        waBtn.style.bottom = 'auto';
+        waBtn.style.right = 'auto';
+        waBtn.style.left = initLeft + 'px';
+        waBtn.style.top = initTop + 'px';
+        waBtn.classList.add('is-dragging');
+
+        if (waBtn.setPointerCapture && e.pointerId !== undefined) {
+          try { waBtn.setPointerCapture(e.pointerId); } catch(err) {}
+        }
+      }
+
+      function onMove(e) {
+        if (!isDragging) return;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const dx = clientX - startX;
+        const dy = clientY - startY;
+
+        if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+          hasMoved = true;
+        }
+
+        if (hasMoved) {
+          if (e.cancelable) e.preventDefault();
+          const btnW = waBtn.offsetWidth || 56;
+          const btnH = waBtn.offsetHeight || 56;
+          const maxLeft = window.innerWidth - btnW - 8;
+          const maxTop = window.innerHeight - btnH - 8;
+
+          const newLeft = Math.max(8, Math.min(initLeft + dx, maxLeft));
+          const newTop = Math.max(8, Math.min(initTop + dy, maxTop));
+
+          waBtn.style.left = newLeft + 'px';
+          waBtn.style.top = newTop + 'px';
+        }
+      }
+
+      function onEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        waBtn.classList.remove('is-dragging');
+
+        if (waBtn.releasePointerCapture && e.pointerId !== undefined) {
+          try { waBtn.releasePointerCapture(e.pointerId); } catch(err) {}
+        }
+
+        if (hasMoved) {
+          // Suppress link click after dragging
+          const preventClick = (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            waBtn.removeEventListener('click', preventClick, true);
+          };
+          waBtn.addEventListener('click', preventClick, true);
+        }
+      }
+
+      // Pointer events for unified desktop mouse & touchscreen support
+      waBtn.addEventListener('pointerdown', onStart);
+      window.addEventListener('pointermove', onMove, { passive: false });
+      window.addEventListener('pointerup', onEnd);
+      window.addEventListener('pointercancel', onEnd);
+    })();
 
     function toggleMobileNav() {
       document.getElementById('mobileNav')?.classList.toggle('open');
