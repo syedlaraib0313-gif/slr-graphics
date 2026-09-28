@@ -265,18 +265,38 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.35rem 0.85rem;
-      background: #FAF8FF;
-      border: 1px solid rgba(124, 58, 237, 0.2);
+      padding: 0.42rem 0.95rem;
+      background: #1B1035;
+      border: 1.5px solid rgba(124, 58, 237, 0.45);
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(27, 16, 53, 0.05);
+      box-shadow: 0 4px 16px rgba(27, 16, 53, 0.25);
       text-decoration: none;
       transition: var(--transition-smooth);
     }
     .brand-logo-link:hover {
-      background: #FFFFFF;
-      border-color: var(--accent-violet);
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15);
+      background: #251647;
+      border-color: var(--accent-bright);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .footer-logo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.42rem 0.95rem;
+      background: #1B1035;
+      border: 1.5px solid rgba(124, 58, 237, 0.45);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(27, 16, 53, 0.25);
+      margin-bottom: 0.85rem;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+    .footer-logo-link:hover {
+      background: #251647;
+      border-color: var(--accent-bright);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
       transform: translateY(-2px);
     }
 
@@ -1432,6 +1452,68 @@
       color: var(--accent-violet);
     }
 
+    /* Direct Contact Aligned Items in Footer */
+    .direct-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .direct-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-dark) !important;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+    .direct-contact-item:hover {
+      color: var(--accent-violet) !important;
+      transform: translateX(3px);
+    }
+    .direct-contact-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #FFFFFF;
+      border: 1px solid rgba(124, 58, 237, 0.22);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(27, 16, 53, 0.05);
+    }
+    .direct-contact-text {
+      word-break: break-all;
+    }
+    .direct-contact-wa-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.15rem;
+      background: #FFFFFF;
+      border: 1.5px solid #25D366;
+      border-radius: 9999px;
+      color: var(--text-dark) !important;
+      font-weight: 700;
+      font-size: 0.84rem;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
+      margin-top: 0.35rem;
+    }
+    .direct-contact-wa-pill:hover {
+      background: #25D366;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      transform: translateY(-2px);
+    }
+    .direct-contact-wa-pill:hover svg {
+      fill: #FFFFFF !important;
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(124, 58, 237, 0.12);
       padding-top: 2rem;
@@ -2229,7 +2311,7 @@
             <div style="margin-top:1.5rem;">
               <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="instagram-solo-card">
                 <span>📸</span>
-                <span>Follow <strong>@slr_graphics</strong> on Instagram</span>
+                <span>Follow <strong>@slr_graphics</strong></span>
                 <span>→</span>
               </a>
             </div>
@@ -2449,7 +2531,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="#home" style="display:inline-block; margin-bottom:0.75rem;">
+          <a href="#home" class="footer-logo-link" aria-label="SLR GRAPHICS Home">
             <img src="assets/logo-purple.png" alt="SLR GRAPHICS" style="height:44px; width:auto; object-fit:contain;" />
           </a>
           <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-violet); font-weight:700; text-transform:uppercase; letter-spacing:0.18em; margin-bottom:0.75rem;">
@@ -2487,25 +2569,31 @@
 
         <div>
           <div class="footer-heading">Direct Contact</div>
-          <ul class="footer-links">
+          <ul class="footer-links direct-contact-list">
             <li>
-              <a href="mailto:slrgraphics.contact@email.com" style="color:var(--text-dark); font-weight:700;">
-                ✉️ slrgraphics.contact@email.com
+              <a href="mailto:slrgraphics.contact@email.com" class="direct-contact-item">
+                <span class="direct-contact-icon">✉️</span>
+                <span class="direct-contact-text">slrgraphics.contact@email.com</span>
               </a>
             </li>
             <li>
-              <a href="tel:+917004953962" style="color:var(--text-dark); font-weight:700;">
-                📞 +91 7004953962
+              <a href="tel:+917004953962" class="direct-contact-item">
+                <span class="direct-contact-icon">📞</span>
+                <span class="direct-contact-text">+91 7004953962</span>
               </a>
             </li>
-            <li style="margin-top:0.5rem;">
-              <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" style="color:var(--accent-violet); font-weight:700;">
-                📸 Instagram: @slr_graphics
+            <li>
+              <a href="https://instagram.com/slr_graphics" target="_blank" rel="noopener" class="direct-contact-item">
+                <span class="direct-contact-icon">📸</span>
+                <span class="direct-contact-text">@slr_graphics</span>
               </a>
             </li>
-            <li style="margin-top:1rem;">
-              <a href="https://wa.me/917004953962" target="_blank" class="btn btn-outline" style="padding:0.45rem 1rem; font-size:0.82rem;">
-                WhatsApp Direct Link
+            <li style="margin-top:0.35rem;">
+              <a href="https://wa.me/917004953962" target="_blank" class="direct-contact-wa-pill">
+                <svg class="whatsapp-icon-svg" style="width:16px; height:16px; fill:#25D366;" viewBox="0 0 24 24">
+                  <path d="M12.031 2C6.495 2 2 6.494 2 12.029c0 1.768.459 3.492 1.332 5.006L2 22l5.127-1.346a10.007 10.007 0 004.904 1.282h.004c5.534 0 10.029-4.494 10.029-10.029C22.064 6.494 17.568 2 12.031 2zm5.864 14.214c-.244.686-1.42 1.259-1.956 1.341-.518.078-1.196.111-1.929-.124-.442-.142-1.011-.334-1.742-.65-3.08-1.336-5.086-4.444-5.24-4.65-.154-.205-1.25-1.666-1.25-3.178 0-1.512.793-2.257 1.074-2.563.282-.307.615-.384.82-.384.205 0 .41.002.589.011.189.01.442-.072.692.528.256.615.871 2.127.948 2.28.077.154.128.334.025.539-.102.205-.154.333-.307.512-.154.18-.323.4-.462.538-.154.154-.315.323-.135.632.18.307.8 1.319 1.716 2.135 1.178 1.049 2.17 1.374 2.477 1.528.307.154.487.128.666-.077.18-.205.769-.897.974-1.205.205-.307.41-.256.692-.154.282.102 1.794.846 2.101 1.001.307.154.512.23.589.359.077.128.077.743-.167 1.429z"/>
+                </svg>
+                <span>WhatsApp Direct</span>
               </a>
             </li>
           </ul>
