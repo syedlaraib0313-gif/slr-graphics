@@ -2354,30 +2354,42 @@
                   <input type="text" class="form-control" id="clientName" placeholder="e.g. Rahul Sharma" required />
                 </div>
                 <div class="form-field">
-                  <label class="form-label" for="clientPhone">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-control" id="clientPhone" placeholder="+91 7004953962" required />
+                  <label class="form-label" for="clientCompany">Company / Brand Name</label>
+                  <input type="text" class="form-control" id="clientCompany" placeholder="e.g. Apex Brands / Studio" />
                 </div>
               </div>
 
-              <div class="form-field">
-                <label class="form-label" for="clientEmail">Email Address *</label>
-                <input type="email" class="form-control" id="clientEmail" placeholder="e.g. contact@yourbrand.com" required />
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label class="form-label" for="clientEmail">Email Address *</label>
+                  <input type="email" class="form-control" id="clientEmail" placeholder="e.g. contact@yourbrand.com" required />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="clientWebsite">Website / Social URL</label>
+                  <input type="text" class="form-control" id="clientWebsite" placeholder="e.g. https://yourbrand.com or @handle" />
+                </div>
               </div>
 
-              <!-- Service Dropdown: All 8 Services -->
-              <div class="form-field">
-                <label class="form-label" for="serviceSelect">Service Needed *</label>
-                <select class="form-control" id="serviceSelect" required onchange="updateEstimatorPreview()">
-                  <option value="Brand Identity">01 — Brand Identity (Logos, colors, guidelines)</option>
-                  <option value="Marketing Collateral">02 — Marketing Collateral (Brochures, flyers, cards)</option>
-                  <option value="Advertising Creatives">03 — Advertising Creatives (Ads, posters, campaigns)</option>
-                  <option value="Digital & Social Media Design">04 — Digital & Social Media Design</option>
-                  <option value="Print & Packaging Design">05 — Print & Packaging Design</option>
-                  <option value="UI & UX DESIGN AND DEVELOPMENT">06 — UI & UX Design and Development</option>
-                  <option value="WEBSITE HANDLING">07 — Website Handling</option>
-                  <option value="SEO">08 — SEO (Search Engine Optimization)</option>
-                  <option value="Complete Design Package">09 — Complete Comprehensive Package</option>
-                </select>
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label class="form-label" for="clientPhone">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-control" id="clientPhone" placeholder="+91 7004953962" required />
+                </div>
+                <!-- Service Dropdown: All 8 Services -->
+                <div class="form-field">
+                  <label class="form-label" for="serviceSelect">Service Needed *</label>
+                  <select class="form-control" id="serviceSelect" required onchange="updateEstimatorPreview()">
+                    <option value="Brand Identity">01 — Brand Identity (Logos, colors, guidelines)</option>
+                    <option value="Marketing Collateral">02 — Marketing Collateral (Brochures, flyers, cards)</option>
+                    <option value="Advertising Creatives">03 — Advertising Creatives (Ads, posters, campaigns)</option>
+                    <option value="Digital & Social Media Design">04 — Digital & Social Media Design</option>
+                    <option value="Print & Packaging Design">05 — Print & Packaging Design</option>
+                    <option value="UI & UX DESIGN AND DEVELOPMENT">06 — UI & UX Design and Development</option>
+                    <option value="WEBSITE HANDLING">07 — Website Handling</option>
+                    <option value="SEO">08 — SEO (Search Engine Optimization)</option>
+                    <option value="Complete Design Package">09 — Complete Comprehensive Package</option>
+                  </select>
+                </div>
               </div>
 
               <!-- Interactive Project Scope Selector -->
@@ -2414,9 +2426,42 @@
                 </div>
               </div>
 
+              <div class="form-group-row">
+                <div class="form-field">
+                  <label class="form-label" for="clientTimeline">Estimated Timeline</label>
+                  <select class="form-control" id="clientTimeline">
+                    <option value="Urgent (1–3 Days)">Urgent (1–3 Days)</option>
+                    <option value="Standard (1–2 Weeks)" selected>Standard (1–2 Weeks)</option>
+                    <option value="Flexible (2–4 Weeks)">Flexible (2–4 Weeks)</option>
+                    <option value="Ongoing / Retainer">Ongoing / Monthly Retainer</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="clientBudget">Approx. Budget</label>
+                  <select class="form-control" id="clientBudget">
+                    <option value="Flexible / To be discussed" selected>Flexible / Discuss on Call</option>
+                    <option value="₹5,000 – ₹15,000">₹5,000 – ₹15,000</option>
+                    <option value="₹15,000 – ₹35,000">₹15,000 – ₹35,000</option>
+                    <option value="₹35,000 – ₹75,000+">₹35,000 – ₹75,000+</option>
+                    <option value="$250 – $1,000+ (USD)">$250 – $1,000+ (USD)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="clientSlot">Preferred Discussion Slot</label>
+                <select class="form-control" id="clientSlot">
+                  <option value="Anytime today" selected>Anytime Today</option>
+                  <option value="Morning (10:00 AM – 1:00 PM)">Morning (10:00 AM – 1:00 PM)</option>
+                  <option value="Afternoon (2:00 PM – 5:00 PM)">Afternoon (2:00 PM – 5:00 PM)</option>
+                  <option value="Evening (6:00 PM – 9:00 PM)">Evening (6:00 PM – 9:00 PM)</option>
+                  <option value="Weekend Slot">Weekend Slot</option>
+                </select>
+              </div>
+
               <div class="form-field">
                 <label class="form-label" for="projectBrief">Project Details & Vision</label>
-                <textarea class="form-control" id="projectBrief" rows="3" placeholder="Tell us about your brand, audience, and timeline..."></textarea>
+                <textarea class="form-control" id="projectBrief" rows="3" placeholder="Tell us about your brand, audience, and vision..."></textarea>
               </div>
 
               <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
@@ -2882,13 +2927,47 @@
       }, 2600);
     }
 
-    // 9. Send via WhatsApp directly
+    // 9. Send via WhatsApp directly in specified inquiry format
     function sendViaWhatsApp() {
-      const name = document.getElementById('clientName').value || "Client";
-      const service = document.getElementById('serviceSelect').value;
-      const brief = document.getElementById('projectBrief').value || "I would like to discuss design services.";
+      const name = document.getElementById('clientName')?.value.trim() || "";
+      const company = document.getElementById('clientCompany')?.value.trim() || "";
+      const email = document.getElementById('clientEmail')?.value.trim() || "";
+      const website = document.getElementById('clientWebsite')?.value.trim() || "";
       
-      const text = `Hello SLR GRAPHICS! My name is ${name}. I am interested in ${service}. Project Details: ${brief}`;
+      const serviceVal = document.getElementById('serviceSelect')?.value || "";
+      const checkedScopes = [];
+      if (document.getElementById('scopeBrand')?.checked) checkedScopes.push('Brand Identity');
+      if (document.getElementById('scopeCollateral')?.checked) checkedScopes.push('Marketing Collateral');
+      if (document.getElementById('scopeAds')?.checked) checkedScopes.push('Advertising Creatives');
+      if (document.getElementById('scopeSocial')?.checked) checkedScopes.push('Digital & Social Media');
+      if (document.getElementById('scopePrint')?.checked) checkedScopes.push('Print & Packaging');
+      if (document.getElementById('scopeUiUx')?.checked) checkedScopes.push('UI & UX Design/Dev');
+      if (document.getElementById('scopeWeb')?.checked) checkedScopes.push('Website Handling');
+      if (document.getElementById('scopeSeo')?.checked) checkedScopes.push('SEO Optimization');
+
+      const services = checkedScopes.length > 0 ? checkedScopes.join(', ') : serviceVal;
+      const timeline = document.getElementById('clientTimeline')?.value || "Standard (1–2 Weeks)";
+      const budget = document.getElementById('clientBudget')?.value || "Flexible / To be discussed";
+      const brief = document.getElementById('projectBrief')?.value.trim() || "";
+      const slot = document.getElementById('clientSlot')?.value || "Anytime today";
+
+      const text = `🔔 *New Mobile Enquiry – ${name || 'SLR GRAPHICS'}*
+━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+🏢 *Company:* ${company}
+📧 *Email:* ${email}
+🌐 *Website:* ${website}
+━━━━━━━━━━━━━━━━━━
+🎨 *Services:* ${services}
+⏱ *Timeline:* ${timeline}
+💰 *Budget:* ${budget}
+━━━━━━━━━━━━━━━━━━
+📝 *Brief:*
+${brief}
+
+━━━━━━━━━━━━━━━━━━
+📅 *Preferred Slot:* ${slot}`;
+
       const url = `https://wa.me/917004953962?text=${encodeURIComponent(text)}`;
       window.open(url, '_blank');
     }
@@ -2896,27 +2975,25 @@
     // 10. Form Submission
     function handleInquirySubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('clientName').value;
-      const service = document.getElementById('serviceSelect').value;
-      const phone = document.getElementById('clientPhone').value;
-      const email = document.getElementById('clientEmail').value;
-      const brief = document.getElementById('projectBrief').value;
+      const name = document.getElementById('clientName')?.value.trim() || "Client";
+      const service = document.getElementById('serviceSelect')?.value || "Design Services";
       
       const successMsg = document.getElementById('formSuccessMessage');
       successMsg.style.display = 'block';
       successMsg.innerHTML = `
-        ✨ Thank you, <strong>${name}</strong>! Your inquiry for <strong>${service}</strong> has been transmitted successfully.<br>
-        We will reach out to you via WhatsApp (<strong>${phone}</strong>) or Email (<strong>${email}</strong>) within 2-4 hours.
+        <div style="font-weight:800; font-size:1.05rem; margin-bottom:0.4rem; color:#1B1035;">✨ Thank you, ${name}!</div>
+        <p style="margin-bottom:0.85rem; color:var(--text-body); font-size:0.92rem;">
+          Your inquiry for <strong>${service}</strong> has been generated and is redirecting to WhatsApp.
+        </p>
+        <button type="button" class="btn btn-primary" onclick="sendViaWhatsApp()" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.7rem 1.6rem; background:linear-gradient(135deg, #25D366, #128C7E); border:none; color:#FFFFFF; font-weight:700; border-radius:9999px;">
+          <span>💬 Open WhatsApp Now</span>
+        </button>
       `;
 
+      // Redirect directly to WhatsApp with the formatted inquiry
       setTimeout(() => {
-        if (confirm("Inquiry recorded! Would you also like to open WhatsApp to connect directly with SLR GRAPHICS right now?")) {
-          sendViaWhatsApp();
-        }
-      }, 800);
-
-      document.getElementById('projectContactForm').reset();
-      calculateScope();
+        sendViaWhatsApp();
+      }, 400);
     }
   </script>
 </body>
