@@ -577,375 +577,395 @@
     }
 
     /* ==========================================================================
-       EDITORIAL LUXURY STUDIO CANVAS (INSPIRED BY REFERENCE DESIGN)
+       PAGE 1: HERO STUDIO FRAME (AWARD-WINNING EDITORIAL FORMAT)
        ========================================================================== */
-    .hero-studio-canvas {
-      max-width: 1040px;
+    .hero-studio-frame {
+      max-width: 1140px;
       width: 100%;
       margin: 0 auto;
-      background: radial-gradient(circle at 65% 15%, rgba(235, 75, 40, 0.32) 0%, transparent 50%),
-                  radial-gradient(circle at 92% 35%, rgba(245, 158, 11, 0.22) 0%, transparent 45%),
-                  radial-gradient(circle at 15% 75%, rgba(124, 58, 237, 0.22) 0%, transparent 50%),
-                  #0E071A;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 1.75rem;
-      padding: clamp(1.25rem, 2.5vh, 2rem) clamp(1.25rem, 3vw, 2.5rem);
-      box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.55),
-                  0 0 35px rgba(235, 75, 40, 0.12),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      background: radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.28) 0%, transparent 48%),
+                  radial-gradient(circle at 15% 85%, rgba(124, 58, 237, 0.2) 0%, transparent 45%),
+                  linear-gradient(150deg, #180D30 0%, #0E071D 100%);
+      border: 1px solid rgba(168, 85, 247, 0.32);
+      border-radius: clamp(1.25rem, 2.8vw, 2.25rem);
+      padding: clamp(1.4rem, 3vh, 2.5rem) clamp(1.25rem, 3vw, 2.75rem);
+      box-shadow: 0 25px 60px -15px rgba(14, 7, 29, 0.6),
+                  0 0 35px rgba(124, 58, 237, 0.12),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.12);
       position: relative;
       overflow: hidden;
-      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: clamp(1.25rem, 2.5vh, 2.25rem);
     }
-    .hero-studio-canvas::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(90deg, transparent, transparent 170px, rgba(255, 255, 255, 0.035) 170px, rgba(255, 255, 255, 0.035) 171px);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .hero-studio-canvas::before {
+    .hero-studio-frame::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 15%;
-      right: 15%;
-      height: 1.5px;
-      background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.8), #FFFFFF, rgba(235, 75, 40, 0.8), transparent);
-      z-index: 2;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), #FFFFFF, rgba(168, 85, 247, 0.8), transparent);
     }
 
-    /* Canvas Topbar (Reference Header inside frame) */
-    .studio-canvas-topbar {
+    /* Top bar inside frame */
+    .studio-frame-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      position: relative;
-      z-index: 3;
-      padding-bottom: clamp(0.75rem, 1.8vh, 1.25rem);
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(168, 85, 247, 0.18);
+      flex-wrap: wrap;
     }
-    .studio-brand-mark {
-      display: flex;
+    .studio-brand-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
-    }
-    .studio-mark-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #EB4B28;
-      box-shadow: 0 0 10px #EB4B28;
-      animation: waPulse 2s infinite;
-    }
-    .studio-brand-name {
-      font-family: var(--font-cinzel), var(--font-mono);
-      font-size: 0.95rem;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
       font-weight: 800;
       color: #FFFFFF;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.08em;
     }
-    .studio-live-badge {
+    .studio-sparkle { color: #A855F7; font-size: 0.9rem; }
+    .studio-tag-divider { color: rgba(168, 85, 247, 0.4); }
+    .studio-tag-sub { color: #C084FC; font-size: 0.7rem; }
+    .studio-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #4ADE80;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.7);
-      letter-spacing: 0.12em;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 0.3rem 0.85rem;
+      padding: 0.24rem 0.75rem;
       border-radius: 9999px;
+      letter-spacing: 0.04em;
     }
 
-    /* Giant Centerpiece Stage: "Design [CARDS DECK] Studio" */
-    .studio-headline-stage {
+    /* Giant Center Headline: Design [Deck] Studio */
+    .hero-giant-headline {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(0.4rem, 1.6vw, 1.2rem);
-      padding: clamp(1rem, 2.5vh, 2.2rem) 0 clamp(1.2rem, 3vh, 2.5rem);
-      position: relative;
-      z-index: 3;
-    }
-    .studio-headline-text {
-      font-family: var(--font-body);
-      font-size: clamp(2.4rem, 6.2vw, 5.2rem);
-      font-weight: 800;
-      color: #FFFFFF;
-      line-height: 1;
-      letter-spacing: -0.035em;
-      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      flex-wrap: nowrap;
+      gap: clamp(0.5rem, 1.8vw, 1.75rem);
+      margin: clamp(0.5rem, 1.5vh, 1.25rem) 0;
       user-select: none;
     }
+    .hero-word {
+      font-family: var(--font-body), var(--font-display), sans-serif;
+      font-size: clamp(2.4rem, 6.2vw, 5.4rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
 
-    /* Interactive 5-Card Fanned Portfolio Deck */
-    .hero-cards-fan {
+    /* Fanned Cards Showcase Deck */
+    .hero-cards-deck {
       position: relative;
-      width: clamp(105px, 13vw, 150px);
-      height: clamp(135px, 17vw, 185px);
+      width: clamp(140px, 16vw, 190px);
+      height: clamp(110px, 14vw, 155px);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      perspective: 1200px;
+      perspective: 900px;
+      margin: 0 clamp(0.4rem, 1.2vw, 1.2rem);
       flex-shrink: 0;
-      margin: 0 clamp(0.2rem, 1vw, 0.75rem);
     }
-    .fan-card {
+    .deck-card {
       position: absolute;
-      width: clamp(85px, 10.5vw, 120px);
-      height: clamp(125px, 15.5vw, 170px);
+      width: clamp(75px, 8.5vw, 108px);
+      height: clamp(105px, 12vw, 150px);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.15);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-      transform-origin: 50% 115%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.12);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center bottom;
+      background: #180D30;
     }
-    /* Fan rotation angles */
-    .fan-card-1 {
-      transform: rotate(-24deg) translateX(-26px) translateY(8px);
+    .deck-card-1 {
+      transform: rotate(-22deg) translateX(-42px) translateY(8px);
       z-index: 1;
     }
-    .fan-card-2 {
-      transform: rotate(-12deg) translateX(-13px) translateY(4px);
+    .deck-card-2 {
+      transform: rotate(-11deg) translateX(-21px) translateY(2px);
       z-index: 2;
     }
-    .fan-card-3 {
-      transform: rotate(0deg) translateY(0);
+    .deck-card-3 {
+      transform: rotate(0deg) translateX(0px) translateY(-5px);
       z-index: 3;
     }
-    .fan-card-4 {
-      transform: rotate(12deg) translateX(13px) translateY(4px);
+    .deck-card-4 {
+      transform: rotate(11deg) translateX(21px) translateY(2px);
       z-index: 4;
     }
-    .fan-card-5 {
-      transform: rotate(24deg) translateX(26px) translateY(8px);
+    .deck-card-5 {
+      transform: rotate(22deg) translateX(42px) translateY(8px);
       z-index: 5;
     }
 
-    /* Hover Fan Spreading Animation */
-    .hero-cards-fan:hover .fan-card-1 {
-      transform: rotate(-36deg) translateX(-42px) translateY(14px) scale(1.04);
+    /* Deck hover states */
+    .hero-cards-deck:hover .deck-card-1 {
+      transform: rotate(-30deg) translateX(-58px) translateY(12px);
     }
-    .hero-cards-fan:hover .fan-card-2 {
-      transform: rotate(-18deg) translateX(-21px) translateY(6px) scale(1.04);
+    .hero-cards-deck:hover .deck-card-2 {
+      transform: rotate(-15deg) translateX(-28px) translateY(4px);
     }
-    .hero-cards-fan:hover .fan-card-3 {
-      transform: rotate(0deg) translateY(-10px) scale(1.08);
-      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 58, 237, 0.3);
+    .hero-cards-deck:hover .deck-card-3 {
+      transform: rotate(0deg) translateX(0px) translateY(-14px) scale(1.04);
     }
-    .hero-cards-fan:hover .fan-card-4 {
-      transform: rotate(18deg) translateX(21px) translateY(6px) scale(1.04);
+    .hero-cards-deck:hover .deck-card-4 {
+      transform: rotate(15deg) translateX(28px) translateY(4px);
     }
-    .hero-cards-fan:hover .fan-card-5 {
-      transform: rotate(36deg) translateX(42px) translateY(14px) scale(1.04);
+    .hero-cards-deck:hover .deck-card-5 {
+      transform: rotate(30deg) translateX(58px) translateY(12px);
     }
 
-    /* Inner card visuals */
+    /* Individual Card Hover */
+    .deck-card:hover {
+      transform: rotate(0deg) translateY(-24px) scale(1.15) !important;
+      z-index: 20 !important;
+      box-shadow: 0 20px 45px rgba(124, 58, 237, 0.5), 0 0 0 2px #A855F7;
+    }
+
+    /* Card Visuals (Micro-Studio Artboards) */
     .card-inner {
       width: 100%;
       height: 100%;
+      padding: 0.45rem 0.4rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 0.65rem 0.55rem;
       position: relative;
     }
-    .card-tag {
-      font-family: var(--font-mono);
-      font-size: 0.55rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      opacity: 0.85;
-    }
-    .card-symbol {
-      align-self: center;
-      font-size: 1.3rem;
-      margin: auto 0;
-    }
-
-    /* Card Themes */
-    .card-bg-1 {
-      background: linear-gradient(145deg, #1C2438, #0B111E);
-      color: #93C5FD;
-      border: 1px solid rgba(147, 197, 253, 0.3);
-    }
-    .card-bg-2 {
-      background: linear-gradient(145deg, #2D1438, #11071A);
-      color: #F472B6;
-      border: 1px solid rgba(244, 114, 182, 0.3);
-    }
-    .card-bg-3 {
-      background: linear-gradient(145deg, #182E38, #08161D);
-      color: #38BDF8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .card-bg-4 {
-      background: linear-gradient(145deg, #2A1F14, #120A04);
-      color: #FBBF24;
-      border: 1px solid rgba(251, 191, 36, 0.3);
-    }
-
-    /* Card 5 (Front Featured - Embers & Silhouette evoking reference image) */
-    .card-bg-featured {
-      background: radial-gradient(circle at 60% 30%, rgba(245, 158, 11, 0.45) 0%, transparent 60%),
-                  radial-gradient(circle at 20% 70%, rgba(235, 75, 40, 0.45) 0%, transparent 70%),
-                  #130906;
-      border: 1px solid rgba(251, 191, 36, 0.5);
-      color: #FFFFFF;
-      overflow: hidden;
-    }
-    .card-featured-art {
+    .card-inner::before {
+      content: '';
       position: absolute;
       inset: 0;
-      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, transparent 60%);
+      pointer-events: none;
     }
-    .card-glow-core {
-      position: absolute;
-      top: 20%;
-      left: 30%;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(251, 191, 36, 0.8) 0%, rgba(235, 75, 40, 0.4) 60%, transparent 100%);
-      filter: blur(8px);
-    }
-    .card-art-figure {
-      position: absolute;
-      bottom: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 42px;
-      height: 65px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, #000000 90%);
-      clip-path: polygon(50% 0%, 80% 25%, 70% 65%, 90% 100%, 10% 100%, 30% 65%, 20% 25%);
-      box-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
-    }
-    .card-embers {
-      position: absolute;
-      inset: 0;
-      background-image: 
-        radial-gradient(1.5px 1.5px at 20% 30%, #FBBF24 50%, transparent),
-        radial-gradient(2px 2px at 70% 40%, #F59E0B 50%, transparent),
-        radial-gradient(1px 1px at 40% 70%, #EB4B28 50%, transparent),
-        radial-gradient(1.5px 1.5px at 80% 80%, #FBBF24 50%, transparent);
-      animation: waPulse 2.5s infinite alternate;
-    }
-    .card-featured-footer {
-      position: relative;
-      z-index: 2;
+    .card-mini-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: auto;
-      border-top: 1px solid rgba(251, 191, 36, 0.25);
-      padding-top: 0.25rem;
-    }
-    .card-tag-gold {
-      font-family: var(--font-mono);
-      font-size: 0.58rem;
-      font-weight: 800;
-      color: #FBBF24;
-      letter-spacing: 0.12em;
-    }
-    .card-explore-hint {
       font-family: var(--font-mono);
       font-size: 0.52rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+    .card-mini-center {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-mini-bottom {
+      font-family: var(--font-mono);
+      font-size: 0.48rem;
       font-weight: 700;
-      color: #FFFFFF;
-      background: rgba(251, 191, 36, 0.25);
-      padding: 0.12rem 0.35rem;
-      border-radius: 4px;
+      letter-spacing: 0.1em;
+      opacity: 0.75;
+      text-align: center;
     }
 
-    /* Canvas Bottom: 2 Columns (Statement + Button on Left, Disciplines on Right) */
-    .studio-canvas-bottom {
+    /* Card 1: Aura (Velvet Plum & Rose Gold) */
+    .aura-card {
+      background: linear-gradient(145deg, #2D1438, #180922);
+      color: #FBCFE8;
+      border: 1px solid rgba(251, 207, 232, 0.25);
+    }
+    .card-emblem {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid #FBCFE8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-cinzel);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #FBCFE8;
+      box-shadow: 0 0 12px rgba(251, 207, 232, 0.4);
+    }
+
+    /* Card 2: Zenith (Obsidian & Metallic Gold) */
+    .zenith-card {
+      background: linear-gradient(145deg, #1C1917, #0C0A09);
+      color: #FDE047;
+      border: 1px solid rgba(253, 224, 71, 0.3);
+    }
+    .card-emblem-gold {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #EAB308, #CA8A04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-cinzel);
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: #0C0A09;
+      box-shadow: 0 0 14px rgba(234, 179, 8, 0.4);
+    }
+
+    /* Card 3: Nova (Cyberpunk Neon Cyan & Magenta) */
+    .nova-card {
+      background: linear-gradient(145deg, #091E3A, #060E1D);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    .card-emblem-neon {
+      font-size: 1.3rem;
+      color: #38BDF8;
+      text-shadow: 0 0 10px #38BDF8, 0 0 18px #E879F9;
+      animation: waPulse 1.8s infinite;
+    }
+
+    /* Card 4: Solaris (Warm Sunburst Amber) */
+    .solaris-card {
+      background: linear-gradient(145deg, #2D1807, #170B02);
+      color: #FB923C;
+      border: 1px solid rgba(251, 146, 60, 0.3);
+    }
+    .card-emblem-sun {
+      font-size: 1.35rem;
+      color: #FB923C;
+      text-shadow: 0 0 14px #FB923C;
+    }
+
+    /* Card 5: Kinetic Pulse (Front Card - Electric Violet Wave Glow) */
+    .kinetic-card {
+      background: radial-gradient(circle at 50% 40%, #7C3AED 0%, #1E0E3D 70%, #0F0620 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(168, 85, 247, 0.5);
+      box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.3);
+    }
+    .card-mini-waves {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 24px;
+    }
+    .card-mini-waves i {
+      width: 3px;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, #FFFFFF, #C084FC);
+      box-shadow: 0 0 6px #A855F7;
+      animation: miniWave 1.4s ease-in-out infinite alternate;
+    }
+    .card-mini-waves i:nth-child(1) { height: 8px; animation-delay: 0.1s; }
+    .card-mini-waves i:nth-child(2) { height: 16px; animation-delay: 0.3s; }
+    .card-mini-waves i:nth-child(3) { height: 22px; animation-delay: 0.5s; }
+    .card-mini-waves i:nth-child(4) { height: 14px; animation-delay: 0.2s; }
+    .card-mini-waves i:nth-child(5) { height: 10px; animation-delay: 0.4s; }
+    @keyframes miniWave { 0% { transform: scaleY(0.6); } 100% { transform: scaleY(1.3); } }
+
+    /* Bottom Row 2-Column Split (Statement + Disciplines) */
+    .hero-bottom-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(1.5rem, 3.5vw, 3rem);
+      gap: clamp(1.25rem, 3vw, 2.5rem);
       align-items: end;
-      position: relative;
-      z-index: 3;
-      padding-top: clamp(0.75rem, 1.5vh, 1.25rem);
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(168, 85, 247, 0.18);
     }
-    .studio-left-block {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .hero-bottom-left {
+      text-align: left;
     }
-    .studio-statement {
-      font-size: clamp(0.86rem, 1.2vw, 0.98rem);
-      color: rgba(255, 255, 255, 0.72);
+    .hero-studio-statement {
+      font-size: clamp(0.85rem, 1.15vw, 0.98rem);
+      color: rgba(250, 248, 255, 0.78);
       line-height: 1.6;
-      max-width: 480px;
-      margin: 0;
+      max-width: 440px;
+      margin-bottom: 1.15rem;
     }
-    .studio-talk-pill {
+    .btn-studio-talk {
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
       background: #FFFFFF;
-      color: #0E071A;
-      font-family: var(--font-body);
-      font-size: 0.84rem;
+      color: #1B1035;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
       font-weight: 800;
-      padding: 0.55rem 1.35rem;
+      letter-spacing: 0.04em;
+      padding: 0.58rem 1.35rem;
       border-radius: 9999px;
       text-decoration: none;
-      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       transition: var(--transition-smooth);
-      width: fit-content;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
-    .studio-talk-pill:hover {
-      background: #F4F1FA;
+    .btn-studio-talk:hover {
+      background: #A855F7;
+      color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 28px rgba(124, 58, 237, 0.45);
     }
-    .talk-pill-circle {
-      width: 8px;
-      height: 8px;
+    .talk-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: #EB4B28;
-      box-shadow: 0 0 8px #EB4B28;
-      animation: waPulse 1.8s infinite;
+      background: #7C3AED;
+      transition: background 0.25s ease;
+    }
+    .btn-studio-talk:hover .talk-dot {
+      background: #FFFFFF;
     }
 
-    /* Right: Disciplines List with subtle divider lines & ↗ arrows */
-    .studio-right-block {
+    /* Right column: Disciplines List */
+    .hero-bottom-right {
       display: flex;
       flex-direction: column;
     }
-    .studio-discipline-row {
+    .studio-disciplines-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .discipline-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 0.25rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.85);
-      font-size: clamp(0.82rem, 1.1vw, 0.94rem);
-      font-weight: 700;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
       text-decoration: none;
-      cursor: pointer;
+      color: rgba(250, 248, 255, 0.85);
+      font-family: var(--font-mono);
+      font-size: clamp(0.78rem, 1vw, 0.88rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
       transition: var(--transition-smooth);
+      cursor: pointer;
     }
-    .studio-discipline-row:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .discipline-item:last-child {
+      border-bottom: none;
     }
-    .studio-discipline-row:hover {
+    .discipline-item:hover {
       color: #FFFFFF;
       padding-left: 0.35rem;
-      border-bottom-color: rgba(251, 191, 36, 0.4);
+      border-bottom-color: #A855F7;
     }
-    .disc-arrow {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.45);
-      transition: transform 0.2s ease, color 0.2s ease;
+    .discipline-arrow {
+      color: #A855F7;
+      font-size: 0.95rem;
+      transition: transform 0.25s ease;
     }
-    .studio-discipline-row:hover .disc-arrow {
-      color: #FBBF24;
-      transform: translate(2px, -2px);
+    .discipline-item:hover .discipline-arrow {
+      transform: translate(3px, -3px);
+      color: #FFFFFF;
     }
 
     /* ==========================================================================
@@ -1618,44 +1638,23 @@
       /* Page inner padding */
       .cinema-page { padding: 0.65rem 0.4rem 1.25rem; }
 
-      /* Hero canvas responsive layout */
-      .hero-studio-canvas {
-        padding: 1.2rem 1rem;
-        border-radius: 1.35rem;
-      }
-      .studio-canvas-topbar {
-        padding-bottom: 0.75rem;
-      }
-      .studio-headline-stage {
-        gap: 0.45rem;
-        padding: 0.85rem 0 1.35rem;
-      }
-      .studio-headline-text {
-        font-size: clamp(2rem, 7.5vw, 3.2rem);
-      }
-      .hero-cards-fan {
-        width: 85px;
-        height: 115px;
-        margin: 0 0.35rem;
-      }
-      .fan-card {
-        width: 70px;
-        height: 100px;
-        border-radius: 9px;
-      }
-      .fan-card-1 { transform: rotate(-20deg) translateX(-18px) translateY(4px); }
-      .fan-card-2 { transform: rotate(-10deg) translateX(-9px) translateY(2px); }
-      .fan-card-3 { transform: rotate(0deg); }
-      .fan-card-4 { transform: rotate(10deg) translateX(9px) translateY(2px); }
-      .fan-card-5 { transform: rotate(20deg) translateX(18px) translateY(4px); }
-      .studio-canvas-bottom {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-      .studio-statement {
-        font-size: 0.82rem;
-        max-width: 100%;
-      }
+      /* Studio Hero Frame Mobile */
+      .hero-studio-frame { padding: 1.25rem 1rem; border-radius: 1.25rem; gap: 1.25rem; }
+      .studio-frame-header { flex-direction: column; align-items: flex-start; gap: 0.45rem; }
+      .studio-brand-pill { flex-wrap: wrap; font-size: 0.72rem; }
+      
+      .hero-giant-headline { gap: 0.45rem; }
+      .hero-word { font-size: clamp(1.85rem, 7.5vw, 3rem); }
+      .hero-cards-deck { width: 125px; height: 96px; margin: 0 0.25rem; }
+      .deck-card { width: 62px; height: 88px; border-radius: 8px; }
+      .deck-card-1 { transform: rotate(-18deg) translateX(-28px) translateY(4px); }
+      .deck-card-2 { transform: rotate(-9deg) translateX(-14px) translateY(1px); }
+      .deck-card-3 { transform: rotate(0deg) translateX(0px) translateY(-3px); }
+      .deck-card-4 { transform: rotate(9deg) translateX(14px) translateY(1px); }
+      .deck-card-5 { transform: rotate(18deg) translateX(28px) translateY(4px); }
+
+      .hero-bottom-grid { grid-template-columns: 1fr; gap: 1.15rem; }
+      .hero-studio-statement { max-width: 100%; font-size: 0.82rem; margin-bottom: 0.85rem; }
 
       /* Grids */
       .services-grid-8, .portfolio-grid { grid-template-columns: 1fr; }
@@ -1673,21 +1672,22 @@
     /* Extra small phones: 480px and below */
     @media (max-width: 480px) {
       .cinema-page { padding: 0.5rem 0.35rem 1rem; }
-      .hero-studio-canvas { padding: 1rem 0.75rem; border-radius: 1.15rem; }
-      .studio-headline-text { font-size: clamp(1.75rem, 8vw, 2.4rem); }
-      .hero-cards-fan { width: 72px; height: 96px; margin: 0 0.15rem; }
-      .fan-card { width: 58px; height: 82px; border-radius: 8px; }
-      .studio-brand-name { font-size: 0.84rem; }
-      .studio-live-badge { font-size: 0.6rem; padding: 0.2rem 0.55rem; }
-      .studio-discipline-row { padding: 0.6rem 0.15rem; font-size: 0.8rem; }
+      .hero-studio-frame { padding: 1rem 0.75rem; border-radius: 1rem; gap: 1rem; }
+      .hero-giant-headline { gap: 0.3rem; }
+      .hero-word { font-size: clamp(1.45rem, 7vw, 2.1rem); }
+      .hero-cards-deck { width: 105px; height: 80px; margin: 0 0.15rem; }
+      .deck-card { width: 50px; height: 72px; border-radius: 6px; }
+      .card-mini-top { font-size: 0.42rem; }
+      .card-mini-bottom { font-size: 0.4rem; }
+      .card-emblem, .card-emblem-gold { width: 18px; height: 18px; font-size: 0.62rem; }
       .cinema-page-counter { font-size: 0.75rem; padding: 0.18rem 0.45rem; }
       .cinema-nav-btn { padding: 0.4rem 0.9rem; font-size: 0.76rem; }
     }
 
     /* Very small phones: 360px and below */
     @media (max-width: 360px) {
-      .studio-headline-stage { flex-wrap: wrap; justify-content: center; }
-      .hero-cards-fan { order: 2; margin: 0.4rem 0; }
+      .hero-giant-headline { flex-direction: column; gap: 0.4rem; }
+      .hero-cards-deck { margin: 0.35rem 0; }
     }
   </style>
 </head>
@@ -1749,120 +1749,121 @@
     <main class="cinema-stage" id="cinemaStage">
       
       <!-- ======================================================================
-           PAGE 01: HOME
-           ====================================================================== -->
-      <!-- ======================================================================
-           PAGE 01: HOME (EDITORIAL LUXURY DESIGN STUDIO - REFERENCE FORMAT)
+           PAGE 01: HOME (AWARD-WINNING EDITORIAL STUDIO FORMAT)
            ====================================================================== -->
       <section class="cinema-page active" id="page-home" data-page-index="0" data-page-name="Home">
-        <div class="container" style="text-align: center; width: 100%; max-width: 1080px;">
-          <!-- Live Tagline Rotator -->
-          <div class="hero-tagline-rotator stagger-el">
-            <span class="tagline-dot"></span>
-            <span id="rotatingTagline">GIVE YOUR BRAND A VISUAL IDENTITY</span>
-          </div>
-
-          <!-- Masterpiece Hero Studio Canvas (Inspired by Reference Design) -->
-          <div class="hero-studio-canvas stagger-el">
-            <!-- Canvas Top Meta Bar -->
-            <div class="studio-canvas-topbar">
-              <div class="studio-brand-mark">
-                <span class="studio-mark-dot"></span>
-                <span class="studio-brand-name">SLR GRAPHICS</span>
+        <div class="container" style="width: 100%; display: flex; align-items: center; justify-content: center; min-height: 100%;">
+          
+          <div class="hero-studio-frame stagger-el">
+            <!-- Studio Frame Header -->
+            <div class="studio-frame-header">
+              <div class="studio-brand-pill">
+                <span class="studio-sparkle">✦</span>
+                <span>SLR GRAPHICS</span>
+                <span class="studio-tag-divider">|</span>
+                <span class="studio-tag-sub">INDEPENDENT DESIGN STUDIO</span>
               </div>
-              <div class="studio-canvas-nav-links">
-                <span class="studio-live-badge">✦ BESPOKE BRAND IDENTITY STUDIO</span>
+              <div class="studio-status-pill">
+                <span class="status-indicator-dot"></span>
+                <span>ONLINE &amp; READY FOR COMMISSIONS</span>
               </div>
             </div>
 
-            <!-- Giant Centerpiece Title + Fanned 3D Cards -->
-            <div class="studio-headline-stage">
-              <span class="studio-headline-text">Design</span>
+            <!-- Central Giant Headline: Design [Deck] Studio -->
+            <div class="hero-giant-headline">
+              <span class="hero-word">Design</span>
               
-              <!-- 5-Card Fanned Portfolio Deck -->
-              <div class="hero-cards-fan" onclick="goToCinemaPage(2)" title="Explore Our Portfolio">
-                <!-- Card 1 -->
-                <div class="fan-card fan-card-1">
-                  <div class="card-inner card-bg-1">
-                    <span class="card-tag">AURA</span>
-                    <div class="card-symbol">✦</div>
+              <!-- Interactive Fanned Cards Deck (Click to explore Portfolio) -->
+              <div class="hero-cards-deck" onclick="goToCinemaPage(2)" title="Explore Portfolio">
+                <!-- Card 1: Aura Skincare -->
+                <div class="deck-card deck-card-1" onclick="event.stopPropagation(); openProjectModal('aura')" title="Aura Skincare • Click to View Details">
+                  <div class="card-inner aura-card">
+                    <div class="card-mini-top"><span>AURA</span><span>01</span></div>
+                    <div class="card-mini-center"><span class="card-emblem">A</span></div>
+                    <div class="card-mini-bottom"><span>BRANDING</span></div>
                   </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="fan-card fan-card-2">
-                  <div class="card-inner card-bg-2">
-                    <span class="card-tag">ZENITH</span>
-                    <div class="card-symbol">◈</div>
+                <!-- Card 2: Zenith Wealth -->
+                <div class="deck-card deck-card-2" onclick="event.stopPropagation(); openProjectModal('zenith')" title="Zenith Wealth • Click to View Details">
+                  <div class="card-inner zenith-card">
+                    <div class="card-mini-top"><span>ZENITH</span><span>02</span></div>
+                    <div class="card-mini-center"><span class="card-emblem-gold">Z</span></div>
+                    <div class="card-mini-bottom"><span>IDENTITY</span></div>
                   </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="fan-card fan-card-3">
-                  <div class="card-inner card-bg-3">
-                    <span class="card-tag">NOVA</span>
-                    <div class="card-symbol">⚡</div>
+                <!-- Card 3: Nova Stream -->
+                <div class="deck-card deck-card-3" onclick="event.stopPropagation(); openProjectModal('nova')" title="Nova Stream • Click to View Details">
+                  <div class="card-inner nova-card">
+                    <div class="card-mini-top"><span>NOVA</span><span>03</span></div>
+                    <div class="card-mini-center"><span class="card-emblem-neon">✦</span></div>
+                    <div class="card-mini-bottom"><span>DIGITAL</span></div>
                   </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="fan-card fan-card-4">
-                  <div class="card-inner card-bg-4">
-                    <span class="card-tag">SOLARIS</span>
-                    <div class="card-symbol">☼</div>
+                <!-- Card 4: Solaris Coffee -->
+                <div class="deck-card deck-card-4" onclick="event.stopPropagation(); openProjectModal('solaris')" title="Solaris Coffee • Click to View Details">
+                  <div class="card-inner solaris-card">
+                    <div class="card-mini-top"><span>SOLARIS</span><span>04</span></div>
+                    <div class="card-mini-center"><span class="card-emblem-sun">☀</span></div>
+                    <div class="card-mini-bottom"><span>PACKAGING</span></div>
                   </div>
                 </div>
 
-                <!-- Card 5 (Front & Center Featured Artwork) -->
-                <div class="fan-card fan-card-5">
-                  <div class="card-inner card-bg-featured">
-                    <div class="card-featured-art">
-                      <div class="card-glow-core"></div>
-                      <div class="card-art-figure"></div>
-                      <div class="card-embers"></div>
+                <!-- Card 5: Kinetic Pulse (Front Card) -->
+                <div class="deck-card deck-card-5" onclick="event.stopPropagation(); openProjectModal('kinetic')" title="Kinetic Pulse • Click to View Details">
+                  <div class="card-inner kinetic-card">
+                    <div class="card-mini-top"><span>PULSE</span><span>05</span></div>
+                    <div class="card-mini-center">
+                      <div class="card-mini-waves">
+                        <i></i><i></i><i></i><i></i><i></i>
+                      </div>
                     </div>
-                    <div class="card-featured-footer">
-                      <span class="card-tag-gold">PULSE</span>
-                      <span class="card-explore-hint">VIEW ↗</span>
-                    </div>
+                    <div class="card-mini-bottom"><span>CREATIVE</span></div>
                   </div>
                 </div>
               </div>
 
-              <span class="studio-headline-text">Studio</span>
+              <span class="hero-word">Studio</span>
             </div>
 
-            <!-- Canvas Bottom Row: Left Info + Right Disciplines -->
-            <div class="studio-canvas-bottom">
-              <!-- Left: Brief Statement & "Start a Project" CTA Pill -->
-              <div class="studio-left-block">
-                <p class="studio-statement">
-                  We blend creativity with technical expertise to craft experiences that captivate audiences and communicate your brand message.
+            <!-- Studio Frame Bottom Split (Statement + Disciplines) -->
+            <div class="hero-bottom-grid">
+              <!-- Left: Studio Statement + Start Project CTA -->
+              <div class="hero-bottom-left">
+                <p class="hero-studio-statement">
+                  We blend purposeful creativity with bespoke visual craft to build strong, memorable identities that captivate audiences and elevate your brand.
                 </p>
-                <div class="studio-cta-wrapper">
-                  <a onclick="goToCinemaPage(3)" class="studio-talk-pill">
-                    <span>Start a Project</span>
-                    <span class="talk-pill-circle"></span>
+                <a onclick="goToCinemaPage(3)" class="btn-studio-talk">
+                  <span>Start a Project</span>
+                  <span class="talk-dot"></span>
+                </a>
+              </div>
+
+              <!-- Right: Disciplines Strip with Arrows -->
+              <div class="hero-bottom-right">
+                <div class="studio-disciplines-list">
+                  <a onclick="goToCinemaPage(1)" class="discipline-item">
+                    <span class="discipline-name">Brand Identity</span>
+                    <span class="discipline-arrow">↗</span>
+                  </a>
+                  <a onclick="goToCinemaPage(1)" class="discipline-item">
+                    <span class="discipline-name">Marketing Collateral</span>
+                    <span class="discipline-arrow">↗</span>
+                  </a>
+                  <a onclick="goToCinemaPage(1)" class="discipline-item">
+                    <span class="discipline-name">Print &amp; Packaging</span>
+                    <span class="discipline-arrow">↗</span>
+                  </a>
+                  <a onclick="goToCinemaPage(2)" class="discipline-item">
+                    <span class="discipline-name">Selected Works</span>
+                    <span class="discipline-arrow">↗</span>
                   </a>
                 </div>
               </div>
-
-              <!-- Right: Disciplines Links with ↗ Arrows -->
-              <div class="studio-right-block">
-                <a onclick="goToCinemaPage(1)" class="studio-discipline-row">
-                  <span>Creative direction</span>
-                  <span class="disc-arrow">↗</span>
-                </a>
-                <a onclick="goToCinemaPage(1)" class="studio-discipline-row">
-                  <span>Brand identity & systems</span>
-                  <span class="disc-arrow">↗</span>
-                </a>
-                <a onclick="goToCinemaPage(1)" class="studio-discipline-row">
-                  <span>Digital, social & web design</span>
-                  <span class="disc-arrow">↗</span>
-                </a>
-              </div>
             </div>
+
           </div>
         </div>
       </section>
