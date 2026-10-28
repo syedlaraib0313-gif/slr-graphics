@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLR GRAPHICS : Give Your Brand a Visual Identity</title>
+  <meta name="description" content="SLR GRAPHICS is a creative graphic design studio providing complete visual design solutions for businesses, brands, creators, and individuals.">
+  <meta name="keywords" content="graphic design studio, brand identity, visual communication, packaging design, UI UX design, marketing collateral, advertising creatives">
+  <meta name="author" content="SLR GRAPHICS">
+
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SLR GRAPHICS : Give Your Brand a Visual Identity">
+  <meta property="og:description" content="Creative design solutions built to make your brand look professional, memorable, and impactful.">
+  <meta property="og:site_name" content="SLR GRAPHICS">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SLR GRAPHICS : Give Your Brand a Visual Identity">
+  <meta name="twitter:description" content="Creative design solutions built to make your brand look professional, memorable, and impactful.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts: Space Grotesk + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Primary Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       STICKY NAVIGATION BAR
+       ====================================================================== -->
+  <header class="site-nav" id="siteNav">
+    <div class="container nav-wrapper">
+      
+      <!-- Brand Logo & Monogram -->
+      <a href="#home" class="brand-link" aria-label="SLR GRAPHICS Home">
+        <div class="brand-symbol-box" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 64 64" fill="none">
+            <rect width="64" height="64" fill="#180828"/>
+            <path d="M16 22 H32 V28 H22 V34 H32 V44 H16 V38 H26 V34 H16 Z" fill="#E0C9A6"/>
+            <path d="M36 22 H42 V38 H48 V44 H36 Z" fill="#7C3AED"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">SLR GRAPHICS</span>
+          <span class="brand-badge">STUDIO</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Theme Toggle & CTA) -->
+      <div class="nav-actions">
+        <!-- Editorial Theme Switcher -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle between Editorial Sand and Dark Purple palette">
+          <span class="theme-indicator-swatch" aria-hidden="true"></span>
+          <span id="themeModeLabel">THEME: SAND</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm">START A PROJECT</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileNavToggle" class="mobile-nav-toggle" type="button" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+      <li><a href="#services" class="mobile-nav-link">Services</a></li>
+      <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div>
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">START A PROJECT</a>
+      <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 16px;">
+        SLR GRAPHICS : CREATIVE DESIGN STUDIO
+      </p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ====================================================================
+         SECTION 1: HOME / HERO SECTION
+         Exact Hero Text & CTA specifications
+         ==================================================================== -->
+    <section class="section hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <div class="studio-status-pill">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>CREATIVE DESIGN STUDIO</span>
+            </div>
+
+            <div class="hero-brand-name">SLR GRAPHICS</div>
+
+            <h1 class="hero-tagline">
+              GIVE YOUR BRAND A VISUAL IDENTITY
+            </h1>
+
+            <p class="hero-supporting">
+              Creative design solutions built to make your brand look professional, memorable, and impactful.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">START A PROJECT</a>
+            </div>
+          </div>
+
+          <!-- Hero Architectural Visual Art Composition -->
+          <div class="hero-visual-card">
+            <div class="hero-art-container" aria-label="Original SLR Studio Symbol and Geometric Identity Composition">
+              <svg viewBox="0 0 320 320" width="100%" height="100%">
+                <rect width="320" height="320" fill="#180828"/>
+                <rect x="16" y="16" width="288" height="288" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="16" cy="16" r="3" fill="#E0C9A6"/>
+                <circle cx="304" cy="16" r="3" fill="#E0C9A6"/>
+                <circle cx="16" cy="304" r="3" fill="#E0C9A6"/>
+                <circle cx="304" cy="304" r="3" fill="#E0C9A6"/>
+                
+                <!-- Interlocking Geometric Identity Glyphs -->
+                <path d="M60 70 H220 V120 H120 V160 H220 V250 H60 V200 H160 V160 H60 Z" fill="#180828" stroke="#E0C9A6" stroke-width="2"/>
+                <path d="M180 110 H260 V250 H210 V160 H180 Z" fill="#7C3AED"/>
+                <polygon points="190,180 250,250 210,250 165,195" fill="#E0C9A6"/>
+                <circle cx="60" cy="70" r="4" fill="#7C3AED"/>
+                <circle cx="260" cy="250" r="4" fill="#E0C9A6"/>
+                <circle cx="160" cy="160" r="5" fill="#7C3AED"/>
+              </svg>
+            </div>
+            <div class="hero-spec-strip">
+              <span>SYSTEM: VECTOR SYMMETRY</span>
+              <span>GRID: 08-PT EDITORIAL</span>
+              <span>EST. 2024</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: SERVICES SECTION (WHAT WE DO)
+         8 Interactive Service Cards with Deliverables Modals
+         ==================================================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">CAPABILITIES</span>
+          <h2 class="section-title">WHAT WE DO</h2>
+          <p class="section-subtitle">
+            From building your brand identity to creating digital experiences, we deliver creative solutions designed to make your brand stand out.
+          </p>
+        </div>
+
+        <!-- 8 Interactive Service Cards populated dynamically -->
+        <div class="services-grid" id="servicesContainer">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: PORTFOLIO SECTION (SELECTED WORK)
+         Exactly 6 Project Cards arranged in 2 Columns and 3 Rows
+         ==================================================================== -->
+    <section class="section" id="portfolio" style="border-top: 1px solid var(--border-main);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">CURATED ARCHIVE</span>
+          <h2 class="section-title">SELECTED WORK</h2>
+          <p class="section-subtitle">
+            A collection of creative work designed to build identities, communicate ideas, and make brands stand out.
+          </p>
+        </div>
+
+        <!-- Portfolio Grid: 2 Columns x 3 Rows -->
+        <div class="portfolio-grid" id="portfolioContainer">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: ABOUT SECTION (BEHIND THE DESIGN)
+         Statement, description, and 3 interactive cards
+         ==================================================================== -->
+    <section class="section" id="about" style="border-top: 1px solid var(--border-main);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">STUDIO PROFILE</span>
+          <h2 class="section-title">BEHIND THE DESIGN</h2>
+        </div>
+
+        <div class="about-intro-box">
+          <h3 class="about-statement">
+            WE TURN IDEAS INTO VISUAL IDENTITIES.
+          </h3>
+          <p class="about-description">
+            SLR GRAPHICS is a creative design studio focused on helping businesses, brands, and individuals express their ideas through meaningful design. We combine creativity, strategy, and attention to detail to create visuals that communicate clearly, build recognition, and leave a lasting impression.
+          </p>
+        </div>
+
+        <!-- 3 Interactive About Cards -->
+        <div class="about-cards-grid">
+          
+          <article class="about-card" data-about-key="mission" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Our Mission details">
+            <div>
+              <span class="about-card-badge">PURPOSE</span>
+              <h4 class="about-card-title">Our Mission</h4>
+              <p class="about-card-text">
+                To deliver purposeful and impactful design solutions that help brands communicate with confidence.
+              </p>
+            </div>
+            <div class="about-card-footer">
+              <span>EXPLORE MISSION</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </article>
+
+          <article class="about-card" data-about-key="vision" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Our Vision details">
+            <div>
+              <span class="about-card-badge">ASPIRATION</span>
+              <h4 class="about-card-title">Our Vision</h4>
+              <p class="about-card-text">
+                To become a trusted creative partner for brands looking to build a distinctive and memorable visual presence.
+              </p>
+            </div>
+            <div class="about-card-footer">
+              <span>EXPLORE VISION</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </article>
+
+          <article class="about-card" data-about-key="approach" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Our Approach details">
+            <div>
+              <span class="about-card-badge">METHOD</span>
+              <h4 class="about-card-title">Our Approach</h4>
+              <p class="about-card-text">
+                We combine research, creative thinking, and careful execution to deliver designs aligned with each client's goals.
+              </p>
+            </div>
+            <div class="about-card-footer">
+              <span>EXPLORE APPROACH</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: WHY CHOOSE US
+         4 Benefits with clean modern layout
+         ==================================================================== -->
+    <section class="section" style="border-top: 1px solid var(--border-main);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">STUDIO ADVANTAGE</span>
+          <h2 class="section-title">WHY SLR GRAPHICS?</h2>
+          <p class="section-subtitle">
+            We operate with the agility of an independent design atelier and the strategic rigor of an international branding agency.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+
+          <div class="benefit-card">
+            <div class="benefit-index">01 / CONCEPT</div>
+            <h3 class="benefit-title">Creative Thinking</h3>
+            <p class="benefit-desc">
+              Original concepts tailored to each brand, rejecting generic templates in favor of distinct visual inquiry.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-index">02 / CRAFT</div>
+            <h3 class="benefit-title">Consistent Quality</h3>
+            <p class="benefit-desc">
+              Uncompromising attention to detail across every design asset, from micro-typography to large format production.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-index">03 / STRATEGY</div>
+            <h3 class="benefit-title">Brand-Focused Approach</h3>
+            <p class="benefit-desc">
+              Visuals aligned with business goals and identity, ensuring design investment generates measurable authority.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-index">04 / BREADTH</div>
+            <h3 class="benefit-title">Complete Design Solutions</h3>
+            <p class="benefit-desc">
+              Multiple creative services under one studio, maintaining perfect visual coherence across print and screen.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: OUR CREATIVE PROCESS
+         Horizontal timeline on desktop / Vertical on mobile
+         ==================================================================== -->
+    <section class="section" style="border-top: 1px solid var(--border-main);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">EXECUTION ROADMAP</span>
+          <h2 class="section-title">OUR CREATIVE PROCESS</h2>
+          <p class="section-subtitle">
+            A structured five-phase methodology that turns abstract ideas into high-impact visual systems.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+
+          <div class="process-step">
+            <span class="process-step-num">01</span>
+            <h3 class="process-step-name">Discover</h3>
+            <p class="process-step-text">
+              Understand the client's brand, audience, and objectives to establish clear strategic parameters.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step-num">02</span>
+            <h3 class="process-step-name">Strategize</h3>
+            <p class="process-step-text">
+              Develop the creative direction and visual approach through moodboards, typography, and tone boards.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step-num">03</span>
+            <h3 class="process-step-name">Design</h3>
+            <p class="process-step-text">
+              Transform ideas into professional visual concepts with precision vector drafting and layout discipline.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step-num">04</span>
+            <h3 class="process-step-name">Refine</h3>
+            <p class="process-step-text">
+              Improve the design through constructive feedback cycles to polish geometry, color, and hierarchy.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step-num">05</span>
+            <h3 class="process-step-name">Deliver</h3>
+            <p class="process-step-text">
+              Provide the final approved files in suitable formats, complete with guidelines and production specs.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: CONTACT SECTION (LET'S CREATE SOMETHING GREAT)
+         Validated contact form & editable studio placeholders
+         ==================================================================== -->
+    <section class="section" id="contact" style="border-top: 1px solid var(--border-main);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">COMMENCE A DIALOGUE</span>
+          <h2 class="section-title">LET'S CREATE SOMETHING GREAT</h2>
+          <p class="section-subtitle">
+            Have a project in mind? Let's discuss your ideas and create visuals that make your brand stand out.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+
+          <!-- Left Column: Studio Channels & Verified Placeholders -->
+          <div class="contact-meta-panel">
+            <div>
+              <span class="section-label">DIRECT DESK</span>
+              <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">
+                GET IN TOUCH
+              </h3>
+              <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.5;">
+                We are currently reviewing project briefs for new brand identity systems, packaging suites, and digital platforms.
+              </p>
+
+              <ul class="contact-channel-list">
+                <li class="contact-channel-item">
+                  <span class="contact-channel-label">STUDIO EMAIL</span>
+                  <a href="mailto:hello@slrgraphics.studio" class="contact-channel-value editable-email">
+                    hello@slrgraphics.studio
+                  </a>
+                  <span class="contact-channel-note">[Editable Placeholder: Replace in config.js]</span>
+                </li>
+
+                <li class="contact-channel-item">
+                  <span class="contact-channel-label">INSTAGRAM</span>
+                  <a href="https://instagram.com/slrgraphics.studio" target="_blank" rel="noopener noreferrer" class="contact-channel-value editable-instagram">
+                    @slrgraphics.studio
+                  </a>
+                  <span class="contact-channel-note">[Editable Placeholder: Replace in config.js]</span>
+                </li>
+
+                <li class="contact-channel-item">
+                  <span class="contact-channel-label">WHATSAPP DIRECT</span>
+                  <a href="https://wa.me/15550192834" target="_blank" rel="noopener noreferrer" class="contact-channel-value editable-whatsapp">
+                    +1 (555) 019-2834
+                  </a>
+                  <span class="contact-channel-note">[Editable Placeholder: Replace in config.js]</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-guarantee-box">
+              <h4 class="contact-guarantee-title">STUDIO PROTOCOL</h4>
+              <p class="contact-guarantee-text">
+                Every brief receives a tailored response from our creative directors within 24 to 48 hours. Non-disclosure agreements provided upon request.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Validated Contact Form -->
+          <div class="contact-form-panel">
+            <form id="contactForm" novalidate>
+              
+              <div class="form-group">
+                <label for="fullName" class="form-label">FULL NAME *</label>
+                <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Marcus Vane" required autocomplete="name">
+                <div id="fullName-error" class="form-error-msg"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="emailAddress" class="form-label">EMAIL ADDRESS *</label>
+                <input type="email" id="emailAddress" name="emailAddress" class="form-input" placeholder="e.g. marcus@company.com" required autocomplete="email">
+                <div id="emailAddress-error" class="form-error-msg"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="serviceRequired" class="form-label">SERVICE REQUIRED *</label>
+                <select id="serviceRequired" name="serviceRequired" class="form-select" required>
+                  <option value="" disabled selected>Select primary studio capability</option>
+                  <!-- Populated dynamically from SERVICES_DATA -->
+                </select>
+                <div id="serviceRequired-error" class="form-error-msg"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="projectBudget" class="form-label">PROJECT BUDGET (OPTIONAL)</label>
+                <select id="projectBudget" name="projectBudget" class="form-select">
+                  <option value="" selected>Select estimated investment tier</option>
+                  <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                  <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                  <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                  <option value="$25,000+">$25,000+ (Full Studio Retainer)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="projectDescription" class="form-label">PROJECT DESCRIPTION *</label>
+                <textarea id="projectDescription" name="projectDescription" class="form-textarea" placeholder="Outline your brand vision, core objectives, target milestones, and key deliverables..." required></textarea>
+                <div id="projectDescription-error" class="form-error-msg"></div>
+                <div class="form-helper">Provide as much context as possible to receive an exact scope estimate.</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                START YOUR PROJECT
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER (CLEAN DARK-PURPLE WITH VIOLET ACCENT)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand Info -->
+        <div>
+          <div class="footer-brand-title">SLR GRAPHICS</div>
+          <div class="footer-tagline">GIVE YOUR BRAND A VISUAL IDENTITY</div>
+          <p class="footer-description">
+            SLR GRAPHICS is a creative graphic design studio providing complete visual design solutions for businesses, brands, creators, and individuals.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Navigation -->
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-link-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services Links -->
+        <div>
+          <h4 class="footer-col-title">CORE SERVICES</h4>
+          <ul class="footer-link-list">
+            <li><a href="#services" class="footer-link">Brand Identity</a></li>
+            <li><a href="#services" class="footer-link">Marketing Collateral</a></li>
+            <li><a href="#services" class="footer-link">Advertising Creatives</a></li>
+            <li><a href="#services" class="footer-link">Digital &amp; Social Media</a></li>
+            <li><a href="#services" class="footer-link">Print &amp; Packaging</a></li>
+            <li><a href="#services" class="footer-link">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Connect -->
+        <div>
+          <h4 class="footer-col-title">CONNECT</h4>
+          <ul class="footer-link-list">
+            <li>
+              <a href="https://instagram.com/slrgraphics.studio" target="_blank" rel="noopener noreferrer" class="footer-link editable-instagram">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://behance.net/slrgraphics" target="_blank" rel="noopener noreferrer" class="footer-link">
+                Behance
+              </a>
+            </li>
+            <li>
+              <a href="https://dribbble.com/slrgraphics" target="_blank" rel="noopener noreferrer" class="footer-link">
+                Dribbble
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/slr-graphics" target="_blank" rel="noopener noreferrer" class="footer-link">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@slrgraphics.studio" class="footer-link editable-email">
+                hello@slrgraphics.studio
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar with Copyright & Legal Pages -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 SLR GRAPHICS. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <button type="button" class="footer-legal-link" onclick="openPrivacyPolicyModal()">Privacy Policy</button>
+          <span>|</span>
+          <button type="button" class="footer-legal-link" onclick="openTermsModal()">Terms &amp; Conditions</button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       ACCESSIBLE MODAL DIALOG COMPONENT
+       Used for Services, Portfolio Projects, About Details, Legal, and Form Confirmation
+       ====================================================================== -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      
+      <div class="modal-header">
+        <span id="modalCategory" class="modal-category-tag">SPECIFICATION</span>
+        <button id="modalCloseBtn" class="modal-close-btn" type="button" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <h3 id="modalTitle" class="modal-hero-title"></h3>
+        <p id="modalLead" class="modal-lead-text"></p>
+
+        <div id="modalImageBox" class="modal-image-box" style="display: none;">
+          <img id="modalImage" src="" alt="" loading="lazy">
+        </div>
+
+        <h4 id="modalSectionHeading" class="modal-section-heading">CORE DELIVERABLES</h4>
+        <ul id="modalDeliverablesList" class="modal-checklist"></ul>
+
+        <div id="modalExtraDetail"></div>
+
+        <div class="modal-footer-actions">
+          <button id="modalActionBtn" class="btn btn-primary" type="button">
+            CONTINUE
+          </button>
+          <button class="btn btn-outline btn-sm" type="button" onclick="document.getElementById('modalCloseBtn').click()">
+            CLOSE
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Configuration & Runtime Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
