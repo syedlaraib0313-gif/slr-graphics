@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
-  <rect width="800" height="560" fill="#140722"/>
+  <rect width="800" height="560" fill="#2B080C"/>
   <rect x="24" y="24" width="752" height="512" fill="none" stroke="#E0C9A6" stroke-width="1" stroke-opacity="0.3"/>
 
   <text x="48" y="60" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#E0C9A6" letter-spacing="3">CASE STUDY 04 / PACKAGING DESIGN</text>
-  <text x="752" y="60" text-anchor="end" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#7C3AED" letter-spacing="2">LUXURY APOTHECARY SUITE</text>
+  <text x="752" y="60" text-anchor="end" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#8B1E2D" letter-spacing="2">LUXURY APOTHECARY SUITE</text>
 
   <!-- Left: Amber Bottle Mockup -->
   <g transform="translate(64, 96)">
     <!-- Dropper Top -->
     <path d="M120 20 C120 10, 140 10, 140 20 L140 35 L120 35 Z" fill="#E0C9A6"/>
-    <rect x="110" y="35" width="40" height="20" fill="#2E1045" stroke="#7C3AED" stroke-width="1"/>
+    <rect x="110" y="35" width="40" height="20" fill="#4A141D" stroke="#8B1E2D" stroke-width="1"/>
     <rect x="105" y="55" width="50" height="8" fill="#E0C9A6"/>
     
     <!-- Bottle Shoulder & Body -->
@@ -17,61 +17,61 @@
     
     <!-- Minimalist Label Wrapped on Bottle -->
     <rect x="80" y="150" width="100" height="190" fill="#E0C9A6" rx="1"/>
-    <text x="130" y="180" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#140722" letter-spacing="3">VELA</text>
-    <text x="130" y="196" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="600" fill="#7C3AED" letter-spacing="2">ORGANIC BOTANICALS</text>
-    <line x1="95" y1="210" x2="165" y2="210" stroke="#140722" stroke-width="1"/>
-    <text x="130" y="235" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#140722">NIGHT RECOVERY</text>
+    <text x="130" y="180" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#2B080C" letter-spacing="3">VELA</text>
+    <text x="130" y="196" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="600" fill="#8B1E2D" letter-spacing="2">ORGANIC BOTANICALS</text>
+    <line x1="95" y1="210" x2="165" y2="210" stroke="#2B080C" stroke-width="1"/>
+    <text x="130" y="235" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#2B080C">NIGHT RECOVERY</text>
     <text x="130" y="250" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" fill="#4A453E">Squalane &amp; Blue Tansy</text>
-    <circle cx="130" cy="285" r="16" fill="none" stroke="#7C3AED" stroke-width="1"/>
-    <text x="130" y="289" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="700" fill="#7C3AED">04</text>
-    <text x="130" y="325" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" fill="#140722">50 ML / 1.7 FL OZ</text>
+    <circle cx="130" cy="285" r="16" fill="none" stroke="#8B1E2D" stroke-width="1"/>
+    <text x="130" y="289" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="700" fill="#8B1E2D">04</text>
+    <text x="130" y="325" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" fill="#2B080C">50 ML / 1.7 FL OZ</text>
   </g>
 
   <!-- Center-Right: Outer Box Packaging Mockup -->
   <g transform="translate(320, 96)">
     <!-- Box isometric 3D feel -->
     <!-- Front face -->
-    <rect x="0" y="40" width="180" height="365" fill="#E0C9A6" stroke="#140722" stroke-width="2"/>
-    <rect x="8" y="48" width="164" height="349" fill="none" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.6"/>
+    <rect x="0" y="40" width="180" height="365" fill="#E0C9A6" stroke="#2B080C" stroke-width="2"/>
+    <rect x="8" y="48" width="164" height="349" fill="none" stroke="#8B1E2D" stroke-width="1" stroke-opacity="0.6"/>
     
-    <text x="90" y="90" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#140722" letter-spacing="4">VELA</text>
-    <text x="90" y="110" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="2">ACTIVE CELLULAR SERUM</text>
+    <text x="90" y="90" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#2B080C" letter-spacing="4">VELA</text>
+    <text x="90" y="110" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#8B1E2D" letter-spacing="2">ACTIVE CELLULAR SERUM</text>
     
-    <rect x="25" y="130" width="130" height="150" fill="#140722"/>
+    <rect x="25" y="130" width="130" height="150" fill="#2B080C"/>
     <circle cx="90" cy="205" r="45" fill="none" stroke="#E0C9A6" stroke-width="1"/>
-    <circle cx="90" cy="205" r="35" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+    <circle cx="90" cy="205" r="35" fill="none" stroke="#8B1E2D" stroke-width="1.5"/>
     <text x="90" y="210" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#E0C9A6">04 / BOTANY</text>
     
-    <text x="90" y="320" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" fill="#140722">FORMULATED IN SWITZERLAND</text>
-    <text x="90" y="336" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#140722">RECYCLABLE AMBER FLINT</text>
+    <text x="90" y="320" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" fill="#2B080C">FORMULATED IN SWITZERLAND</text>
+    <text x="90" y="336" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#2B080C">RECYCLABLE AMBER FLINT</text>
   </g>
 
   <!-- Right: Dieline Blueprint Card -->
   <g transform="translate(530, 96)">
-    <rect width="220" height="405" fill="#0E0318" stroke="#7C3AED" stroke-width="1"/>
+    <rect width="220" height="405" fill="#1F060A" stroke="#8B1E2D" stroke-width="1"/>
     <text x="20" y="36" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#E0C9A6">DIELINE ARCHITECTURE</text>
-    <line x1="20" y1="48" x2="200" y2="48" stroke="#2B0E44" stroke-width="1"/>
+    <line x1="20" y1="48" x2="200" y2="48" stroke="#4A141D" stroke-width="1"/>
 
     <!-- Small Dieline schematic vector -->
     <g transform="translate(30, 70)">
-      <rect x="0" y="30" width="40" height="90" fill="none" stroke="#7C3AED" stroke-width="1"/>
+      <rect x="0" y="30" width="40" height="90" fill="none" stroke="#8B1E2D" stroke-width="1"/>
       <rect x="40" y="30" width="40" height="90" fill="none" stroke="#E0C9A6" stroke-width="1"/>
-      <rect x="80" y="30" width="40" height="90" fill="none" stroke="#7C3AED" stroke-width="1"/>
+      <rect x="80" y="30" width="40" height="90" fill="none" stroke="#8B1E2D" stroke-width="1"/>
       <rect x="120" y="30" width="40" height="90" fill="none" stroke="#E0C9A6" stroke-width="1"/>
       <!-- Top flaps -->
-      <polygon points="0,30 10,0 30,0 40,30" fill="none" stroke="#7C3AED" stroke-width="1" stroke-dasharray="2 2"/>
+      <polygon points="0,30 10,0 30,0 40,30" fill="none" stroke="#8B1E2D" stroke-width="1" stroke-dasharray="2 2"/>
       <polygon points="40,30 40,5 80,5 80,30" fill="none" stroke="#E0C9A6" stroke-width="1"/>
-      <polygon points="80,30 90,0 110,0 120,30" fill="none" stroke="#7C3AED" stroke-width="1" stroke-dasharray="2 2"/>
+      <polygon points="80,30 90,0 110,0 120,30" fill="none" stroke="#8B1E2D" stroke-width="1" stroke-dasharray="2 2"/>
       <polygon points="120,30 120,5 160,5 160,30" fill="none" stroke="#E0C9A6" stroke-width="1"/>
     </g>
 
     <text x="20" y="220" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="600" fill="#E0C9A6">FINISHES &amp; STOCK</text>
-    <text x="20" y="244" font-family="'Inter', sans-serif" font-size="9" fill="#D4CCE0">• 380gsm Colorplan Stone</text>
-    <text x="20" y="266" font-family="'Inter', sans-serif" font-size="9" fill="#D4CCE0">• Matte Violet Foil Stamping</text>
-    <text x="20" y="288" font-family="'Inter', sans-serif" font-size="9" fill="#D4CCE0">• Blind Embossed Crest Mark</text>
-    <text x="20" y="310" font-family="'Inter', sans-serif" font-size="9" fill="#D4CCE0">• Biodegradable Soy-Based Inks</text>
+    <text x="20" y="244" font-family="'Inter', sans-serif" font-size="9" fill="#E8CCD0">• 380gsm Colorplan Stone</text>
+    <text x="20" y="266" font-family="'Inter', sans-serif" font-size="9" fill="#E8CCD0">• Matte Maroon Foil Stamping</text>
+    <text x="20" y="288" font-family="'Inter', sans-serif" font-size="9" fill="#E8CCD0">• Blind Embossed Crest Mark</text>
+    <text x="20" y="310" font-family="'Inter', sans-serif" font-size="9" fill="#E8CCD0">• Biodegradable Soy-Based Inks</text>
     
-    <rect x="20" y="340" width="180" height="40" fill="#2E1045"/>
+    <rect x="20" y="340" width="180" height="40" fill="#4A141D"/>
     <text x="110" y="364" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700" fill="#E0C9A6">RETAIL APPROVED 2026</text>
   </g>
 </svg>

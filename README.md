@@ -1,7 +1,7 @@
 # SLR GRAPHICS : Premium Creative Agency Website
 
 > **Main Tagline:** GIVE YOUR BRAND A VISUAL IDENTITY  
-> **Aesthetic:** Editorial dark-purple and warm sand interface inspired by high-end Behance and Awwwards creative agency showcases.
+> **Aesthetic:** Editorial deep maroon and warm sand interface inspired by high-end Behance and Awwwards creative agency showcases.
 
 A complete, production-ready website designed and developed for **SLR GRAPHICS**, an independent graphic design and visual communications studio.
 
@@ -11,11 +11,11 @@ A complete, production-ready website designed and developed for **SLR GRAPHICS**
 
 - **Brand Visual System:** Built with exact color specifications:
   - Default Editorial Sand Background: `#E0C9A6` with deep ink black typography (`#0E0E0E`)
-  - Accent Palette: Midnight Plum (`#180828`) and precision solid violet (`#7C3AED`)
-  - Instant Palette Switcher: Toggle between **Editorial Sand** (`#E0C9A6`) and **Midnight Violet** (`#0D0316`)
-  - Clean Dark-Purple Footer with violet accent border (`#12041D` / `#7C3AED`)
+  - Accent Palette: Velvet Maroon (`#2B080C`) and regal solid crimson maroon (`#8B1E2D`)
+  - Instant Palette Switcher: Toggle between **Editorial Sand** (`#E0C9A6`) and **Dark Maroon** (`#180407`)
+  - Clean Dark-Maroon Footer with crimson accent border (`#220508` / `#8B1E2D`)
 - **Strict Brand Rules Enforced:**
-  - Zero purple gradients (clean, solid editorial color blocks only)
+  - Zero gradients (clean, solid editorial color blocks only)
   - Zero pill-shaped buttons (strict architectural rectangular styling)
   - Zero emoji icons (clean geometric SVG icons only)
   - Zero em dashes (typography strictly adheres to colons, slashes, and clean spacing)

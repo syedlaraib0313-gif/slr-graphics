@@ -139,7 +139,7 @@
         "Color System & Foil Finish Standards",
         "Retail Pouch & Stamp Dieline Specs"
       ],
-      specs: "Colorway: Deep Plum (#180828), Sand (#E0C9A6), Violet Accent (#7C3AED). Typography: Space Grotesk + Inter. Paper: 350gsm Colorplan."
+      specs: "Colorway: Deep Maroon (#2B080C), Sand (#E0C9A6), Crimson Accent (#8B1E2D). Typography: Space Grotesk + Inter. Paper: 350gsm Colorplan."
     },
     {
       id: "lumen-audio-social",
@@ -184,7 +184,7 @@
         "Blind-Embossed Crest & Tamper-Evident Seals",
         "Technical Production Specs for Carton Printers"
       ],
-      specs: "Substrate: 380gsm Uncoated Stone Board. Finishes: Matte Violet Foil & Blind Emboss."
+      specs: "Substrate: 380gsm Uncoated Stone Board. Finishes: Matte Maroon Foil & Blind Emboss."
     },
     {
       id: "strata-collateral",
@@ -199,7 +199,7 @@
         "Corporate Presentation Folders & Stationery",
         "Institutional Investor PDF Slide Template"
       ],
-      specs: "Card Stock: 600gsm Duplex Cotton. Foiling: Metallic Violet & Deep Black Foil Stamp."
+      specs: "Card Stock: 600gsm Duplex Cotton. Foiling: Metallic Crimson & Deep Maroon Foil Stamp."
     },
     {
       id: "neo-spatial-uiux",
@@ -289,7 +289,7 @@
   const toastContainer = document.getElementById("toastContainer");
 
   // =========================================================================
-  // THEME MANAGEMENT (Sand / Dark Purple)
+  // THEME MANAGEMENT (Editorial Sand / Dark Maroon)
   // =========================================================================
 
   function initTheme() {
@@ -298,17 +298,17 @@
 
     if (themeToggleBtn) {
       themeToggleBtn.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-theme") === "dark-purple" ? "sand" : "dark-purple";
+        const currentTheme = document.documentElement.getAttribute("data-theme") === "dark-maroon" ? "sand" : "dark-maroon";
         applyTheme(currentTheme);
       });
     }
   }
 
   function applyTheme(theme) {
-    if (theme === "dark-purple") {
-      document.documentElement.setAttribute("data-theme", "dark-purple");
-      if (themeModeLabel) themeModeLabel.textContent = "THEME: PURPLE";
-      localStorage.setItem("slr_theme", "dark-purple");
+    if (theme === "dark-maroon" || theme === "dark-purple") {
+      document.documentElement.setAttribute("data-theme", "dark-maroon");
+      if (themeModeLabel) themeModeLabel.textContent = "THEME: MAROON";
+      localStorage.setItem("slr_theme", "dark-maroon");
     } else {
       document.documentElement.removeAttribute("data-theme");
       if (themeModeLabel) themeModeLabel.textContent = "THEME: SAND";

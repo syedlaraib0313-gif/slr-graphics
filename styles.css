@@ -3,8 +3,8 @@
    Brand Palette:
    - Primary Background: #E0C9A6 (Warm Sand / Editorial Kraft)
    - Primary Text: #0E0E0E (Ink Black)
-   - Accent Purple: #180828 (Midnight Plum / Aubergine)
-   - Accent Violet: #7C3AED (Solid Precision Violet)
+   - Accent Maroon: #2B080C (Deep Velvet Maroon / Midnight Burgundy)
+   - Accent Crimson: #8B1E2D (Regal Heritage Maroon / Crimson Accent)
    - No Gradients, No Pill Buttons, No Emojis, No Em Dashes
    ========================================================================== */
 
@@ -13,24 +13,33 @@
   --bg-main: #E0C9A6;
   --bg-surface: #E8D6BD;
   --bg-surface-elevated: #EFE2CF;
-  --bg-contrast: #180828;
+  --bg-contrast: #2B080C;
   --bg-modal: #EFE2CF;
   
   --text-main: #0E0E0E;
   --text-muted: #4B453E;
   --text-inverse: #FAF7F2;
-  --text-accent: #7C3AED;
+  --text-accent: #8B1E2D;
 
   --border-main: #C9B291;
   --border-strong: #0E0E0E;
-  --border-accent: #7C3AED;
+  --border-accent: #8B1E2D;
 
-  --purple-deep: #180828;
-  --purple-card: #220D38;
-  --purple-footer: #12041D;
-  --violet-solid: #7C3AED;
-  --violet-dark: #6D28D9;
-  --violet-light: #A78BFA;
+  /* Maroon Brand Palette */
+  --maroon-deep: #2B080C;
+  --maroon-card: #3D0D14;
+  --maroon-footer: #220508;
+  --maroon-solid: #8B1E2D;
+  --maroon-dark: #6D1421;
+  --maroon-light: #C53B4E;
+
+  /* Backward compatible aliases */
+  --purple-deep: var(--maroon-deep);
+  --purple-card: var(--maroon-card);
+  --purple-footer: var(--maroon-footer);
+  --violet-solid: var(--maroon-solid);
+  --violet-dark: var(--maroon-dark);
+  --violet-light: var(--maroon-light);
 
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -41,26 +50,26 @@
   --transition-fast: 0.18s ease;
   --transition-base: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-editorial: 0 4px 0 #0E0E0E;
-  --shadow-elevated: 0 12px 30px rgba(24, 8, 40, 0.12);
+  --shadow-elevated: 0 12px 30px rgba(43, 8, 12, 0.12);
 }
 
-[data-theme="dark-purple"] {
-  --bg-main: #0D0316;
-  --bg-surface: #170725;
-  --bg-surface-elevated: #210B34;
+[data-theme="dark-maroon"], [data-theme="dark-purple"] {
+  --bg-main: #180407;
+  --bg-surface: #26070B;
+  --bg-surface-elevated: #360C12;
   --bg-contrast: #FAF7F2;
-  --bg-modal: #170725;
+  --bg-modal: #26070B;
 
   --text-main: #FAF7F2;
-  --text-muted: #B8ACC4;
+  --text-muted: #D1B8BC;
   --text-inverse: #0E0E0E;
-  --text-accent: #A78BFA;
+  --text-accent: #C53B4E;
 
-  --border-main: #2F114D;
+  --border-main: #4F131C;
   --border-strong: #FAF7F2;
-  --border-accent: #7C3AED;
+  --border-accent: #8B1E2D;
 
-  --shadow-editorial: 0 4px 0 #7C3AED;
+  --shadow-editorial: 0 4px 0 #8B1E2D;
   --shadow-elevated: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
@@ -715,7 +724,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(24, 8, 40, 0.85);
+  background-color: rgba(43, 8, 12, 0.88);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1115,13 +1124,13 @@ button {
 }
 
 /* ==========================================================================
-   FOOTER (CLEAN DARK-PURPLE WITH VIOLET ACCENT)
+   FOOTER (CLEAN DARK-MAROON WITH ACCENT)
    ========================================================================== */
 
 .site-footer {
-  background-color: var(--purple-footer);
+  background-color: var(--maroon-footer);
   color: #FAF7F2;
-  border-top: 3px solid var(--violet-solid);
+  border-top: 3px solid var(--maroon-solid);
   padding-top: 80px;
   padding-bottom: 40px;
 }
@@ -1147,13 +1156,13 @@ button {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--violet-light);
+  color: var(--maroon-light);
   margin-bottom: 20px;
 }
 
 .footer-description {
   font-size: 0.875rem;
-  color: #B5A8C2;
+  color: #D1B8BC;
   line-height: 1.5;
   max-width: 380px;
 }
@@ -1164,7 +1173,7 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: var(--violet-light);
+  color: var(--maroon-light);
   margin-bottom: 20px;
 }
 
@@ -1177,7 +1186,7 @@ button {
 
 .footer-link {
   font-size: 0.875rem;
-  color: #D4CCE0;
+  color: #E8CCD0;
   transition: color var(--transition-fast);
 }
 
@@ -1187,14 +1196,14 @@ button {
 
 .footer-bottom-bar {
   padding-top: 32px;
-  border-top: 1px solid #2B0F47;
+  border-top: 1px solid #4F131C;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
   font-size: 0.8125rem;
-  color: #9C8FA8;
+  color: #BFA5A9;
 }
 
 .footer-legal-links {
@@ -1222,7 +1231,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(14, 4, 22, 0.85);
+  background-color: rgba(24, 4, 7, 0.85);
   backdrop-filter: blur(4px);
   z-index: 2000;
   display: none;

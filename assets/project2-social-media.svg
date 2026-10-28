@@ -1,85 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
   <defs>
     <pattern id="dot-p2" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#7C3AED" fill-opacity="0.3"/>
+      <circle cx="2" cy="2" r="1" fill="#8B1E2D" fill-opacity="0.3"/>
     </pattern>
   </defs>
-  <rect width="800" height="560" fill="#140621"/>
+  <rect width="800" height="560" fill="#2B080C"/>
   <rect width="800" height="560" fill="url(#dot-p2)"/>
 
   <rect x="24" y="24" width="752" height="512" fill="none" stroke="#E0C9A6" stroke-width="1" stroke-opacity="0.3"/>
 
   <text x="48" y="60" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#E0C9A6" letter-spacing="3">CASE STUDY 02 / SOCIAL MEDIA DESIGN</text>
-  <text x="752" y="60" text-anchor="end" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#7C3AED" letter-spacing="2">CAMPAIGN SYSTEM</text>
+  <text x="752" y="60" text-anchor="end" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#8B1E2D" letter-spacing="2">CAMPAIGN SYSTEM</text>
 
   <!-- 3 Social Grid Posts in Perspective/Row -->
   <!-- Tile 1 -->
   <g transform="translate(48, 96)">
-    <rect width="216" height="280" fill="#1D0A30" stroke="#7C3AED" stroke-width="1.5" rx="2"/>
+    <rect width="216" height="280" fill="#3D0D14" stroke="#8B1E2D" stroke-width="1.5" rx="2"/>
     <!-- Post Header -->
     <circle cx="24" cy="24" r="8" fill="#E0C9A6"/>
     <text x="38" y="28" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600" fill="#FAF7F2">lumen.audio</text>
     <!-- Post Visual -->
     <rect x="16" y="44" width="184" height="184" fill="#E0C9A6"/>
-    <circle cx="108" cy="136" r="50" fill="#140621"/>
-    <path d="M78 136 C 88 106, 128 166, 138 136" fill="none" stroke="#7C3AED" stroke-width="3"/>
-    <text x="108" y="196" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#140621" letter-spacing="3">MONITOR 01</text>
+    <circle cx="108" cy="136" r="50" fill="#2B080C"/>
+    <path d="M78 136 C 88 106, 128 166, 138 136" fill="none" stroke="#8B1E2D" stroke-width="3"/>
+    <text x="108" y="196" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#2B080C" letter-spacing="3">MONITOR 01</text>
     <!-- Post Footer -->
     <text x="16" y="250" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#E0C9A6">FREQUENCY RESPONSE</text>
-    <text x="16" y="264" font-family="'Inter', sans-serif" font-size="7" fill="#A79BB0">20Hz - 40,000Hz Ultra-Linear</text>
+    <text x="16" y="264" font-family="'Inter', sans-serif" font-size="7" fill="#D1B8BC">20Hz - 40,000Hz Ultra-Linear</text>
   </g>
 
   <!-- Tile 2 (Center Hero Tile) -->
   <g transform="translate(292, 96)">
-    <rect width="216" height="280" fill="#E0C9A6" stroke="#140621" stroke-width="1.5" rx="2"/>
-    <circle cx="24" cy="24" r="8" fill="#140621"/>
-    <text x="38" y="28" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600" fill="#140621">lumen.audio</text>
+    <rect width="216" height="280" fill="#E0C9A6" stroke="#2B080C" stroke-width="1.5" rx="2"/>
+    <circle cx="24" cy="24" r="8" fill="#2B080C"/>
+    <text x="38" y="28" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600" fill="#2B080C">lumen.audio</text>
     <!-- Visual Center -->
-    <rect x="16" y="44" width="184" height="184" fill="#140621"/>
+    <rect x="16" y="44" width="184" height="184" fill="#2B080C"/>
     <!-- Graphic waveform -->
     <g transform="translate(26, 136)">
-      <line x1="0" y1="-20" x2="0" y2="20" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="0" y1="-20" x2="0" y2="20" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="10" y1="-35" x2="10" y2="35" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="20" y1="-50" x2="20" y2="50" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="20" y1="-50" x2="20" y2="50" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="30" y1="-25" x2="30" y2="25" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="40" y1="-65" x2="40" y2="65" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="40" y1="-65" x2="40" y2="65" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="50" y1="-40" x2="50" y2="40" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="60" y1="-55" x2="60" y2="55" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="60" y1="-55" x2="60" y2="55" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="70" y1="-70" x2="70" y2="70" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="80" y1="-45" x2="80" y2="45" stroke="#7C3AED" stroke-width="3"/>
-      <line x1="90" y1="-60" x2="90" y2="60" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="80" y1="-45" x2="80" y2="45" stroke="#8B1E2D" stroke-width="3"/>
+      <line x1="90" y1="-60" x2="90" y2="60" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="100" y1="-35" x2="100" y2="35" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="110" y1="-50" x2="110" y2="50" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="110" y1="-50" x2="110" y2="50" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="120" y1="-20" x2="120" y2="20" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="130" y1="-40" x2="130" y2="40" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="130" y1="-40" x2="130" y2="40" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="140" y1="-15" x2="140" y2="15" stroke="#E0C9A6" stroke-width="3"/>
-      <line x1="150" y1="-30" x2="150" y2="30" stroke="#7C3AED" stroke-width="3"/>
+      <line x1="150" y1="-30" x2="150" y2="30" stroke="#8B1E2D" stroke-width="3"/>
       <line x1="160" y1="-10" x2="160" y2="10" stroke="#E0C9A6" stroke-width="3"/>
     </g>
-    <text x="16" y="250" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="700" fill="#140621">FLAGSHIP RELEASE</text>
+    <text x="16" y="250" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="700" fill="#2B080C">FLAGSHIP RELEASE</text>
     <text x="16" y="264" font-family="'Inter', sans-serif" font-size="7" fill="#4A453E">Available Worldwide: Q4</text>
   </g>
 
   <!-- Tile 3 (Story Template) -->
   <g transform="translate(536, 96)">
-    <rect width="216" height="280" fill="#1D0A30" stroke="#7C3AED" stroke-width="1.5" rx="2"/>
+    <rect width="216" height="280" fill="#3D0D14" stroke="#8B1E2D" stroke-width="1.5" rx="2"/>
     <circle cx="24" cy="24" r="8" fill="#E0C9A6"/>
     <text x="38" y="28" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600" fill="#FAF7F2">lumen.audio</text>
-    <rect x="16" y="44" width="184" height="184" fill="#0E0317"/>
-    <rect x="36" y="64" width="144" height="144" fill="none" stroke="#7C3AED" stroke-width="1" stroke-dasharray="3 3"/>
-    <circle cx="108" cy="136" r="36" fill="#7C3AED"/>
+    <rect x="16" y="44" width="184" height="184" fill="#1F060A"/>
+    <rect x="36" y="64" width="144" height="144" fill="none" stroke="#8B1E2D" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="108" cy="136" r="36" fill="#8B1E2D"/>
     <polygon points="102,124 120,136 102,148" fill="#FFFFFF"/>
     <text x="16" y="250" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#E0C9A6">ACOUSTIC BLUEPRINTS</text>
-    <text x="16" y="264" font-family="'Inter', sans-serif" font-size="7" fill="#A79BB0">Swipe Up to Read Whitepaper</text>
+    <text x="16" y="264" font-family="'Inter', sans-serif" font-size="7" fill="#D1B8BC">Swipe Up to Read Whitepaper</text>
   </g>
 
   <!-- Campaign Summary Bottom Strip -->
   <g transform="translate(48, 400)">
-    <rect width="704" height="104" fill="#0C0314" stroke="#2A0E47" stroke-width="1"/>
+    <rect width="704" height="104" fill="#1A0407" stroke="#4A141D" stroke-width="1"/>
     <text x="24" y="36" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#E0C9A6" letter-spacing="1">CAMPAIGN DELIVERABLES</text>
-    <text x="24" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#D4CCE0">18 Modular Feed Squares</text>
-    <text x="240" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#D4CCE0">9 Animated Story Assets</text>
-    <text x="440" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#D4CCE0">YouTube Master Thumbnails</text>
-    <text x="24" y="84" font-family="'Inter', sans-serif" font-size="9" fill="#7C3AED">Format: 1080x1080px / 1080x1920px (Figma + Motion Master Exports)</text>
+    <text x="24" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#E8CCD0">18 Modular Feed Squares</text>
+    <text x="240" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#E8CCD0">9 Animated Story Assets</text>
+    <text x="440" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#E8CCD0">YouTube Master Thumbnails</text>
+    <text x="24" y="84" font-family="'Inter', sans-serif" font-size="9" fill="#8B1E2D">Format: 1080x1080px / 1080x1920px (Figma + Motion Master Exports)</text>
   </g>
 </svg>

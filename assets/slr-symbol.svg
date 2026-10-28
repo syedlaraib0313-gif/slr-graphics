@@ -3,24 +3,24 @@
   <rect width="320" height="320" fill="none"/>
   
   <!-- Outer Alignment Frame -->
-  <rect x="20" y="20" width="280" height="280" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <rect x="20" y="20" width="280" height="280" fill="none" stroke="#8B1E2D" stroke-width="1.5" stroke-dasharray="8 8"/>
   <circle cx="20" cy="20" r="3" fill="#E0C9A6"/>
   <circle cx="300" cy="20" r="3" fill="#E0C9A6"/>
   <circle cx="20" cy="300" r="3" fill="#E0C9A6"/>
   <circle cx="300" cy="300" r="3" fill="#E0C9A6"/>
   
   <!-- Precision Interlocking Architectural Glyphs -->
-  <!-- S segment (Solid Dark Plum & Sand) -->
-  <path d="M60 70 H220 V120 H120 V160 H220 V250 H60 V200 H160 V160 H60 Z" fill="#180828" stroke="#E0C9A6" stroke-width="2"/>
+  <!-- S segment (Solid Dark Maroon & Sand) -->
+  <path d="M60 70 H220 V120 H120 V160 H220 V250 H60 V200 H160 V160 H60 Z" fill="#2B080C" stroke="#E0C9A6" stroke-width="2"/>
   
-  <!-- L and R Interlock (Vibrant Violet & Cream) -->
-  <path d="M180 110 H260 V250 H210 V160 H180 Z" fill="#7C3AED"/>
+  <!-- L and R Interlock (Vibrant Crimson & Cream) -->
+  <path d="M180 110 H260 V250 H210 V160 H180 Z" fill="#8B1E2D"/>
   
   <!-- Diagonal Dynamic Tension Blade -->
   <polygon points="190,180 250,250 210,250 165,195" fill="#E0C9A6"/>
   
   <!-- Precision Focal Points -->
-  <circle cx="60" cy="70" r="4" fill="#7C3AED"/>
+  <circle cx="60" cy="70" r="4" fill="#8B1E2D"/>
   <circle cx="260" cy="250" r="4" fill="#E0C9A6"/>
-  <circle cx="160" cy="160" r="5" fill="#7C3AED"/>
+  <circle cx="160" cy="160" r="5" fill="#8B1E2D"/>
 </svg>
